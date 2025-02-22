@@ -42,7 +42,7 @@ export { default as Thumbnail } from "./components/Thumbnail/Thumbnail";
 export { default as StepTracker } from "./components/StepTracker/StepTracker";
 export { default as Pill } from "./components/Pill/Pill";
 export { default as PillGroup } from "./components/PillGroup/PillGroup";
-
+export { default as Portal } from "./components/Portal/Portal";
 // Cards
 
 // Indicators
