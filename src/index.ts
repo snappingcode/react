@@ -44,6 +44,8 @@ export { default as Pill } from "./components/Pill/Pill";
 export { default as PillGroup } from "./components/PillGroup/PillGroup";
 export { default as Portal } from "./components/Portal/Portal";
 export { default as NoContent } from "./components/NoContent/NoContent";
+export { default as Paper } from "./components/Paper/Paper";
+
 // Cards
 
 // Indicators
