@@ -1,0 +1,60 @@
+{
+  "name": "@snapping/react",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Shared React components, hooks, and utils for react projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snappingcode/react"
+  },
+  "author": "Roberto Carraro",
+  "license": "ISC",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "npm run build:types && rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@react-google-maps/api": "^2.20.6",
+    "lottie-react": "^2.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.2.0",
+    "zustand": "^5.0.2",
+    "chart.js": "^4.4.7",
+    "react-chartjs-2": "^5.2.0"
+  },
+  "dependencies": {
+    "expr-eval": "^2.0.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/supercluster": "^7.1.3",
+    "rollup": "^4.2.0",
+    "rollup-plugin-dts": "^5.3.0",
+    "typescript": "^5.2.0",
+    "tslib": "^2.8.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "components",
+    "ui-library",
+    "forms",
+    "buttons",
+    "dynamic-forms",
+    "fields",
+    "cumbre",
+    "design-system"
+  ]
+}
