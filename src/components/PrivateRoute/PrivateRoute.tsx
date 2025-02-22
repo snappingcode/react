@@ -38,7 +38,8 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
     const isAuthenticated = !!getToken();
     const user = getUser();
     const location: any = useSafeLocation();
-
+    // ⚠️ **NO renderizar hasta que el Router esté disponible**
+    if (!location) return null;
     if (!isAuthenticated) {
         return <Navigate to={loginPath} replace />;
     }
