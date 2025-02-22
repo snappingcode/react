@@ -1,6 +1,21 @@
-import React from "react";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Location, Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+
+const useSafeLocation = () => {
+    const [location, setLocation] = useState<Location | null>(null);
+
+    useEffect(() => {
+        try {
+            setLocation(useLocation());
+        } catch (error) {
+            console.warn("useLocation() was used outside of a Router");
+        }
+    }, []);
+
+    return location;
+};
+
 
 interface VerificationStep {
     key: string;
@@ -22,7 +37,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
     const { getToken, getUser } = useAuth();
     const isAuthenticated = !!getToken();
     const user = getUser();
-    const location = useLocation();
+    const location: any = useSafeLocation();
 
     if (!isAuthenticated) {
         return <Navigate to={loginPath} replace />;

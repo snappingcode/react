@@ -30,6 +30,7 @@ export const NavigationTabs: React.FC<NavigationTabsProps> = ({
     activeTabStyle,
 }) => {
     const location = useLocation();
+    if (!location) return null; // 👈 Evita errores si no hay Router
     const [justifyContent, setJustifyContent] = useState<React.CSSProperties["justifyContent"]>("center");
     const [minHeight, setMinHeight] = useState<string>("75px"); // Estado para la altura mínima
     const containerRef = useRef<HTMLDivElement>(null);
