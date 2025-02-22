@@ -1,5 +1,4 @@
-// src/AuthContext.tsx
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
 interface AuthContextProps {
     token: string | null;
@@ -19,34 +18,37 @@ interface AuthProviderProps {
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-    const [token, setTokenState] = useState<string | null>(localStorage.getItem('authToken'));
-    const [user, setUserState] = useState<any | null>(JSON.parse(localStorage.getItem('authUser') || 'null'));
+    const [token, setTokenState] = useState<string | null>(null);
+    const [user, setUserState] = useState<any | null>(null);
+
+    React.useEffect(() => {
+        if (typeof window !== "undefined") {
+            setTokenState(localStorage.getItem("authToken"));
+            setUserState(JSON.parse(localStorage.getItem("authUser") || "null"));
+        }
+    }, []);
 
     const setToken = (token: string) => {
-        localStorage.setItem('authToken', token);
+        localStorage.setItem("authToken", token);
         setTokenState(token);
     };
 
-    const getToken = () => {
-        return localStorage.getItem('authToken');
-    };
+    const getToken = () => localStorage.getItem("authToken");
 
     const deleteToken = () => {
-        localStorage.removeItem('authToken');
+        localStorage.removeItem("authToken");
         setTokenState(null);
     };
 
     const setUser = (user: any) => {
-        localStorage.setItem('authUser', JSON.stringify(user));
+        localStorage.setItem("authUser", JSON.stringify(user));
         setUserState(user);
     };
 
-    const getUser = () => {
-        return JSON.parse(localStorage.getItem('authUser') || 'null');
-    };
+    const getUser = () => JSON.parse(localStorage.getItem("authUser") || "null");
 
     const deleteUser = () => {
-        localStorage.removeItem('authUser');
+        localStorage.removeItem("authUser");
         setUserState(null);
     };
 
@@ -57,11 +59,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     );
 };
 
-
 export const useAuth = () => {
     const context = useContext(AuthContext);
     if (!context) {
-        throw new Error('useAuth must be used within an AuthProvider');
+        throw new Error("useAuth must be used within an AuthProvider");
     }
     return context;
 };
