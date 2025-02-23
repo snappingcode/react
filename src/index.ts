@@ -3,7 +3,6 @@
 // Buttons
 export { default as Button } from "./components/buttons/Button/Button";
 export { default as IconButton } from "./components/buttons/IconButton/IconButton";
-export { default as LinkButton } from "./components/buttons/LinkButton/LinkButton";
 export { default as LockToggleButton } from "./components/buttons/LockToggleButton/LockToggleButton";
 export { default as PlayPauseButton } from "./components/buttons/PlayPauseButton/PlayPauseButton";
 export { default as ActionsMenuButton } from "./components/buttons/ActionsMenuButton/ActionsMenuButton";
@@ -27,8 +26,6 @@ export { default as MultiStepForm } from "./components/MultiStepForm/MultiStepFo
 // Utility Components
 export { default as Icon } from "./components/Icon/Icon";
 export { default as Popover } from "./components/Popover/Popover";
-export { default as PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
-export { default as SideMenu } from "./components/SideMenu/SideMenu";
 export { default as Touchable } from "./components/Touchable/Touchable";
 export { default as Header } from "./components/Header/Header";
 export { default as SortableContainer } from "./components/Sortable/SortableContainer";
@@ -45,7 +42,6 @@ export { default as PillGroup } from "./components/PillGroup/PillGroup";
 export { default as Portal } from "./components/Portal/Portal";
 export { default as NoContent } from "./components/NoContent/NoContent";
 export { default as Paper } from "./components/Paper/Paper";
-export { default as NavigationTabs } from "./components/NavigationTabs/NavigationTabs";
 
 // Cards
 
