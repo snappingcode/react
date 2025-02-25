@@ -47,6 +47,7 @@ export { default as Breadcrumbs } from "./components/Breadcrumbs/Breadcrumbs";
 export { default as ContentAnimator } from "./components/ContentAnimator/ContentAnimator";
 export { default as AlertMessage } from "./components/AlertMessage/AlertMessage";
 export { default as DynamicContent } from "./components/DynamicContent/DynamicContent";
+export { default as OtpInput } from "./components/OtpInput/OtpInput";
 
 // Cards
 
