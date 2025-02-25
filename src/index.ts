@@ -42,6 +42,11 @@ export { default as PillGroup } from "./components/PillGroup/PillGroup";
 export { default as Portal } from "./components/Portal/Portal";
 export { default as NoContent } from "./components/NoContent/NoContent";
 export { default as Paper } from "./components/Paper/Paper";
+export { default as Autocomplete } from "./components/Autocomplete/Autocomplete";
+export { default as Breadcrumbs } from "./components/Breadcrumbs/Breadcrumbs";
+export { default as ContentAnimator } from "./components/ContentAnimator/ContentAnimator";
+export { default as AlertMessage } from "./components/AlertMessage/AlertMessage";
+export { default as DynamicContent } from "./components/DynamicContent/DynamicContent";
 
 // Cards
 
