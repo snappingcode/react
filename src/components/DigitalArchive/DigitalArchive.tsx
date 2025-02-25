@@ -61,7 +61,7 @@ const DigitalArchive: React.FC<DigitalArchiveProps> = ({
                         >
                             <RingBinder
 
-                                label={item.display_name || `Binder ${index + 1}`}
+                                label={item.label || `Binder ${index + 1}`}
                                 color={item.color}
                                 onClick={() => { }}
                             />

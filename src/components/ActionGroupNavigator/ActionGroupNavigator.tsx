@@ -5,7 +5,7 @@ import { themeColors } from '../../config';
 // Define the interface for items in the navigator
 interface NavigatorItem {
     name: string;
-    displayName: string;
+    label: string;
     icon?: string | null;
     color?: string;
     type: 'action' | 'group';
@@ -63,7 +63,7 @@ const ActionGroupNavigator: React.FC<ActionGroupNavigatorProps> = ({
                     startIcon={item.icon || ''}
                     startIconColor={item.color}
                     onClick={() => onSelect(item)}
-                    title={item.displayName}
+                    title={item.label}
                     animateTitle={enableAnimation}
                     animationSpeed={animationSpeed}
                     onAnimationComplete={() => handleAnimationComplete(item.name)}

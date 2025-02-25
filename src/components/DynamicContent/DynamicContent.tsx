@@ -7,13 +7,14 @@ import DigitalArchive from '../DigitalArchive/DigitalArchive';
 
 import FormModal from '../modals/FormModal/FormModal';
 import MultiStepContent from '../MultiStepContent/MultiStepContent';
+import SearchBar from '../SearchBar/SearchBar';
 
 
 
 interface DynamicContentProps {
     type: string;
     name?: string;
-    displayName?: string;
+    label?: string;
     apiBaseUrl?: string;
     config?: Record<string, any>;
 }
@@ -27,8 +28,6 @@ const DynamicContent: React.FC<DynamicContentProps & {
     //onEvent?: Record<string, (data: any) => void>;
 }> = ({
     type,
-    name,
-    displayName,
     apiBaseUrl,
     config,
     onSubmit,
@@ -58,7 +57,7 @@ const DynamicContent: React.FC<DynamicContentProps & {
                                 submitEndpoint={config?.submitEndpoint}
                                 apiBaseUrl={apiBaseUrl}
                                 useSecureConnection={config?.submitEndpoint || true}
-                                renderRadioOption={(option, index, isActive) => (
+                                renderRadioOption={(option, _index, isActive) => (
                                     <div
                                         style={{
                                             display: 'flex',
@@ -77,7 +76,7 @@ const DynamicContent: React.FC<DynamicContentProps & {
                                         <span>{option.label}</span>
                                     </div>
                                 )}
-                                renderCheckboxOption={(option, index, isChecked) => (
+                                renderCheckboxOption={(option, _index, isChecked) => (
                                     <div
                                         style={{
                                             display: 'flex',
@@ -118,31 +117,41 @@ const DynamicContent: React.FC<DynamicContentProps & {
                     );
                 case 'list':
                     return (
-                        <DynamicList
-                            startSlots={config?.startSlots || []}
-                            endSlots={config?.endSlots || []}
-                            apiBaseUrl={apiBaseUrl}
-                            endpoint={config?.endpoint}
-                            useSecureConnection={config?.useSecureConnection}
-                            onItemChangeSuccess={(item) => {
-                                console.log('Item changed successfully:', item);
-                                onItemChangeSuccess?.(item);
-                                //onEvent?.onItemChangeSuccess?.(item); // En `onEvent`
-                            }}
-                            onItemChangeError={(error) => {
-                                onItemChangeError?.(error);
-                            }}
-                            onActionClick={(actionData, itemData) => {
-                                console.log('actionData', actionData)
-                                console.log('itemData', itemData)
-                                setFormModalIsOpen(true);
-                            }}
-                            itemStyle={{
-                                border: 'none',
-                                boxShadow: "0px 1.5px 0px rgba(0, 0, 0, 0.15)",
-                                marginBottom: 10
-                            }}
-                        />
+                        <div>
+                            <SearchBar
+                                containerStyle={{
+                                    marginBottom: 10
+                                }}
+                                placeholder={"Buscar..."}
+                            />
+                            <DynamicList
+                                startSlots={config?.startSlots || []}
+                                endSlots={config?.endSlots || []}
+                                apiBaseUrl={apiBaseUrl}
+                                endpoint={config?.endpoint}
+                                useSecureConnection={config?.useSecureConnection}
+                                onItemChangeSuccess={(item) => {
+                                    console.log('Item changed successfully:', item);
+                                    onItemChangeSuccess?.(item);
+                                    //onEvent?.onItemChangeSuccess?.(item); // En `onEvent`
+                                }}
+                                onItemChangeError={(error) => {
+                                    onItemChangeError?.(error);
+                                }}
+                                onActionClick={(actionData, itemData) => {
+                                    console.log('actionData', actionData)
+                                    console.log('itemData', itemData)
+                                    setFormModalIsOpen(true);
+                                }}
+                                itemStyle={{
+                                    border: 'none',
+                                    boxShadow: "0px 1.5px 0px rgba(0, 0, 0, 0.15)",
+                                    marginBottom: 10
+                                }}
+                            />
+
+                        </div>
+
                     );
                 case 'digitalArchive':
                     return <DigitalArchive

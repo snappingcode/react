@@ -5,7 +5,7 @@ import DynamicForm from '../DynamicForm/DynamicForm';
 interface StepConfig {
     type: string; // Tipo de paso, ej. "selection", "form", "buttonGroup", etc.
     name: string; // Identificador único del paso.
-    displayName: string; // Nombre visible del paso.
+    label: string; // Nombre visible del paso.
     config?: Record<string, any>; // Configuración específica para el paso.
 }
 
@@ -34,7 +34,7 @@ const MultiStepContent: React.FC<MultiStepContentProps> = ({ containerStyle, ste
     return (
         <div style={containerStyle}>
 
-            <h3>{currentStep?.displayName}</h3>
+            <h3>{currentStep?.label}</h3>
 
             <div>
 

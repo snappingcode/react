@@ -19,7 +19,7 @@ import NoContent from '../NoContent/NoContent';
 interface SlotConfig {
     type: string;
     name: string;
-    displayName: string;
+    label: string;
     config?: Record<string, any>;
 }
 

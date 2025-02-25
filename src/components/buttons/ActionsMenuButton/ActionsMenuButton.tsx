@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 
 interface MenuItem {
     name: string; // Unique key for the menu item
-    displayName: string; // Display name for the menu item
+    label: string; // Display name for the menu item
     icon?: string; // Optional icon for the menu item
     style?: React.CSSProperties; // Custom styles for the button
     onClick?: () => void; // Optional specific click handler for the menu item
@@ -67,7 +67,7 @@ const ActionsMenuButton: React.FC<ActionsMenuButtonProps> = ({
                         {menuItems.map((item, index) => (
                             <Button
                                 key={item.name}
-                                title={item.displayName}
+                                title={item.label}
                                 onClick={() => handleItemClick(item)}
                                 type="clear"
                                 hasShadow={false}

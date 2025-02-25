@@ -6,7 +6,7 @@ import { themeColors } from '../../config';
 // Define the interface for items in the navigator
 interface ActionItem {
     name: string;
-    displayName: string;
+    label: string;
     icon?: string | null;
     color?: string;
 }
@@ -63,7 +63,7 @@ const FavoriteActions: React.FC<FavoriteActionsProps> = ({
                     startIconColor={item.color}
                     key={item.name}
                     onClick={() => onSelect(item)}
-                    title={item.displayName}
+                    title={item.label}
 
                     animateTitle={enableAnimation}
                     animationSpeed={animationSpeed}

@@ -1,7 +1,7 @@
 // src/icons.ts
 export interface Icon {
   name: string;
-  displayName: string;
+  label: string;
   type: string;
   hasWrapper: 0 | 1;
   hasInverted: 0 | 1;
@@ -15,7 +15,7 @@ export interface Icon {
 export const icons: Icon[] = [
   {
     name: "activityLog",
-    displayName: "Registro de actividad",
+    label: "Registro de actividad",
     type: "singleColor",
     paths: [
       {
@@ -28,7 +28,7 @@ export const icons: Icon[] = [
   },
   {
     name: "addFile",
-    displayName: "Icon 2",
+    label: "Icon 2",
     type: "singleColor",
     paths: [
       {
@@ -41,7 +41,7 @@ export const icons: Icon[] = [
   },
   {
     name: "add",
-    displayName: "Agregar",
+    label: "Agregar",
     type: "singleColor",
     paths: [
       {
@@ -54,7 +54,7 @@ export const icons: Icon[] = [
   },
   {
     name: "addressesCard",
-    displayName: "Tarjeta de Direcciones",
+    label: "Tarjeta de Direcciones",
     type: "singleColor",
     paths: [
       {
@@ -67,7 +67,7 @@ export const icons: Icon[] = [
   },
   {
     name: "address",
-    displayName: "Domicilio",
+    label: "Domicilio",
     type: "singleColor",
     paths: [
       {
@@ -80,7 +80,7 @@ export const icons: Icon[] = [
   },
   {
     name: "addressPicker",
-    displayName: "Icon 3",
+    label: "Icon 3",
     type: "singleColor",
     paths: [
       {
@@ -93,7 +93,7 @@ export const icons: Icon[] = [
   },
   {
     name: "addToEnd",
-    displayName: "Agregar al Final",
+    label: "Agregar al Final",
     type: "singleColor",
     paths: [
       {
@@ -106,7 +106,7 @@ export const icons: Icon[] = [
   },
   {
     name: "addToTop",
-    displayName: "Agregar al Principio",
+    label: "Agregar al Principio",
     type: "singleColor",
     paths: [
       {
@@ -119,7 +119,7 @@ export const icons: Icon[] = [
   },
   {
     name: "addWrapper",
-    displayName: "Icon 4",
+    label: "Icon 4",
     type: "wrapper",
     paths: [
       {
@@ -132,7 +132,7 @@ export const icons: Icon[] = [
   },
   {
     name: "alertCircle",
-    displayName: "Círculo de Alerta",
+    label: "Círculo de Alerta",
     type: "singleColor",
     paths: [
       {
@@ -145,7 +145,7 @@ export const icons: Icon[] = [
   },
   {
     name: "alert",
-    displayName: "Alerta",
+    label: "Alerta",
     type: "singleColor",
     paths: [
       {
@@ -158,7 +158,7 @@ export const icons: Icon[] = [
   },
   {
     name: "alignCenter",
-    displayName: "Alinear al Centro",
+    label: "Alinear al Centro",
     type: "singleColor",
     paths: [
       {
@@ -171,7 +171,7 @@ export const icons: Icon[] = [
   },
   {
     name: "alignJustify",
-    displayName: "Justificar Alineación",
+    label: "Justificar Alineación",
     type: "singleColor",
     paths: [
       {
@@ -184,7 +184,7 @@ export const icons: Icon[] = [
   },
   {
     name: "alignLeft",
-    displayName: "Alinear a la Izquierda",
+    label: "Alinear a la Izquierda",
     type: "singleColor",
     paths: [
       {
@@ -197,7 +197,7 @@ export const icons: Icon[] = [
   },
   {
     name: "alignRight",
-    displayName: "Alinear a la Derecha",
+    label: "Alinear a la Derecha",
     type: "singleColor",
     paths: [
       {
@@ -210,7 +210,7 @@ export const icons: Icon[] = [
   },
   {
     name: "arrow",
-    displayName: "Flecha",
+    label: "Flecha",
     type: "singleColor",
     paths: [
       {
@@ -223,7 +223,7 @@ export const icons: Icon[] = [
   },
   {
     name: "arrowWrapper",
-    displayName: "Icon 5",
+    label: "Icon 5",
     type: "wrapper",
     paths: [
       {
@@ -236,7 +236,7 @@ export const icons: Icon[] = [
   },
   {
     name: "attributes",
-    displayName: "Atributos",
+    label: "Atributos",
     type: "singleColor",
     paths: [
       {
@@ -249,7 +249,7 @@ export const icons: Icon[] = [
   },
   {
     name: "attributesWrapper",
-    displayName: "Icon 6",
+    label: "Icon 6",
     type: "wrapper",
     paths: [
       {
@@ -262,7 +262,7 @@ export const icons: Icon[] = [
   },
   {
     name: "banksCard",
-    displayName: "Tarjeta de Bancos",
+    label: "Tarjeta de Bancos",
     type: "singleColor",
     paths: [
       {
@@ -275,7 +275,7 @@ export const icons: Icon[] = [
   },
   {
     name: "barChartCard",
-    displayName: "Tarjeta de Gráfico de Barras",
+    label: "Tarjeta de Gráfico de Barras",
     type: "singleColor",
     paths: [
       {
@@ -288,7 +288,7 @@ export const icons: Icon[] = [
   },
   {
     name: "basicIndicatorCard",
-    displayName: "Tarjeta de Indicador Básico",
+    label: "Tarjeta de Indicador Básico",
     type: "singleColor",
     paths: [
       {
@@ -301,7 +301,7 @@ export const icons: Icon[] = [
   },
   {
     name: "billingField",
-    displayName: "Campo de Facturación",
+    label: "Campo de Facturación",
     type: "singleColor",
     paths: [
       {
@@ -313,8 +313,8 @@ export const icons: Icon[] = [
     tags: [],
   },
   {
-    name: "dashboard",
-    displayName: "Tablero",
+    name: "board",
+    label: "Tablero",
     type: "singleColor",
     paths: [
       {
@@ -326,8 +326,8 @@ export const icons: Icon[] = [
     tags: [],
   },
   {
-    name: "dashboardWrapper",
-    displayName: "Icon 7",
+    name: "boardWrapper",
+    label: "Icon 7",
     type: "wrapper",
     paths: [
       {
@@ -340,7 +340,7 @@ export const icons: Icon[] = [
   },
   {
     name: "bold",
-    displayName: "Icon 8",
+    label: "Icon 8",
     type: "singleColor",
     paths: [
       {
@@ -353,7 +353,7 @@ export const icons: Icon[] = [
   },
   {
     name: "boldItalic",
-    displayName: "Negrita e Itálica",
+    label: "Negrita e Itálica",
     type: "singleColor",
     paths: [
       {
@@ -366,7 +366,7 @@ export const icons: Icon[] = [
   },
   {
     name: "book",
-    displayName: "Libro",
+    label: "Libro",
     type: "singleColor",
     paths: [
       {
@@ -379,7 +379,7 @@ export const icons: Icon[] = [
   },
   {
     name: "ringBindersCard",
-    displayName: "Tarjeta de Estantería",
+    label: "Tarjeta de Estantería",
     type: "singleColor",
     paths: [
       {
@@ -392,7 +392,7 @@ export const icons: Icon[] = [
   },
   {
     name: "ringBinders",
-    displayName: "Biblioratos",
+    label: "Biblioratos",
     type: "singleColor",
     paths: [
       {
@@ -405,7 +405,7 @@ export const icons: Icon[] = [
   },
   {
     name: "ringBindersWrapper",
-    displayName: "Biblioratos (Envoltura)",
+    label: "Biblioratos (Envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -418,7 +418,7 @@ export const icons: Icon[] = [
   },
   {
     name: "bookWrapper",
-    displayName: "Icon 9",
+    label: "Icon 9",
     type: "wrapper",
     paths: [
       {
@@ -431,7 +431,7 @@ export const icons: Icon[] = [
   },
   {
     name: "boolean",
-    displayName: "Icon 10",
+    label: "Icon 10",
     type: "singleColor",
     paths: [
       {
@@ -444,7 +444,7 @@ export const icons: Icon[] = [
   },
   {
     name: "breakdownChartCard",
-    displayName: "Tarjeta de Gráfico de Desglose",
+    label: "Tarjeta de Gráfico de Desglose",
     type: "singleColor",
     paths: [
       {
@@ -457,7 +457,7 @@ export const icons: Icon[] = [
   },
   {
     name: "breakdown",
-    displayName: "Desglose",
+    label: "Desglose",
     type: "singleColor",
     paths: [
       {
@@ -470,7 +470,7 @@ export const icons: Icon[] = [
   },
   {
     name: "breakdownItem",
-    displayName: "Elemento de Desglose",
+    label: "Elemento de Desglose",
     type: "singleColor",
     paths: [
       {
@@ -483,7 +483,7 @@ export const icons: Icon[] = [
   },
   {
     name: "bus",
-    displayName: "Autobús",
+    label: "Autobús",
     type: "singleColor",
     paths: [
       {
@@ -496,7 +496,7 @@ export const icons: Icon[] = [
   },
   {
     name: "calculatedField",
-    displayName: "Campo Calculado",
+    label: "Campo Calculado",
     type: "singleColor",
     paths: [
       {
@@ -509,7 +509,7 @@ export const icons: Icon[] = [
   },
   {
     name: "calendar",
-    displayName: "Calendario",
+    label: "Calendario",
     type: "singleColor",
     paths: [
       {
@@ -522,7 +522,7 @@ export const icons: Icon[] = [
   },
   {
     name: "calendarWrapper",
-    displayName: "Icon 11",
+    label: "Icon 11",
     type: "wrapper",
     paths: [
       {
@@ -535,7 +535,7 @@ export const icons: Icon[] = [
   },
   {
     name: "camera",
-    displayName: "Cámara",
+    label: "Cámara",
     type: "singleColor",
     paths: [
       {
@@ -548,7 +548,7 @@ export const icons: Icon[] = [
   },
   {
     name: "cancel",
-    displayName: "Cancelar",
+    label: "Cancelar",
     type: "singleColor",
     paths: [
       {
@@ -561,7 +561,7 @@ export const icons: Icon[] = [
   },
   {
     name: "cardManagerCard",
-    displayName: "Tarjeta del Administrador de Tarjetas",
+    label: "Tarjeta del Administrador de Tarjetas",
     type: "singleColor",
     paths: [
       {
@@ -574,7 +574,7 @@ export const icons: Icon[] = [
   },
   {
     name: "cards",
-    displayName: "Tarjetas",
+    label: "Tarjetas",
     type: "singleColor",
     paths: [
       {
@@ -587,7 +587,7 @@ export const icons: Icon[] = [
   },
   {
     name: "cardWrapper",
-    displayName: "Icon 12",
+    label: "Icon 12",
     type: "wrapper",
     paths: [
       {
@@ -600,7 +600,7 @@ export const icons: Icon[] = [
   },
   {
     name: "cart",
-    displayName: "Carrito",
+    label: "Carrito",
     type: "singleColor",
     paths: [
       {
@@ -613,7 +613,7 @@ export const icons: Icon[] = [
   },
   {
     name: "cerealsAndGrains",
-    displayName: "Cereales y Granos",
+    label: "Cereales y Granos",
     type: "singleColor",
     paths: [
       {
@@ -626,7 +626,7 @@ export const icons: Icon[] = [
   },
   {
     name: "multiCheckbox",
-    displayName: "Campo de Casillas de Verificación",
+    label: "Campo de Casillas de Verificación",
     type: "singleColor",
     paths: [
       {
@@ -639,7 +639,7 @@ export const icons: Icon[] = [
   },
   {
     name: "checkboxField",
-    displayName: "Campo de Casilla de Verificación",
+    label: "Campo de Casilla de Verificación",
     type: "singleColor",
     paths: [
       {
@@ -652,7 +652,7 @@ export const icons: Icon[] = [
   },
   {
     name: "check",
-    displayName: "Verificar",
+    label: "Verificar",
     type: "singleColor",
     paths: [
       {
@@ -665,7 +665,7 @@ export const icons: Icon[] = [
   },
   {
     name: "checklist",
-    displayName: "Lista de Verificación",
+    label: "Lista de Verificación",
     type: "singleColor",
     paths: [
       {
@@ -678,7 +678,7 @@ export const icons: Icon[] = [
   },
   {
     name: "checkmarkCircle",
-    displayName: "Círculo de Marca de Verificación",
+    label: "Círculo de Marca de Verificación",
     type: "singleColor",
     paths: [
       {
@@ -691,7 +691,7 @@ export const icons: Icon[] = [
   },
   {
     name: "checkmark",
-    displayName: "Marca de Verificación",
+    label: "Marca de Verificación",
     type: "singleColor",
     paths: [
       {
@@ -704,7 +704,7 @@ export const icons: Icon[] = [
   },
   {
     name: "checkSquare",
-    displayName: "Cuadro de Marca",
+    label: "Cuadro de Marca",
     type: "singleColor",
     paths: [
       {
@@ -717,7 +717,7 @@ export const icons: Icon[] = [
   },
   {
     name: "checkSquareWrapper",
-    displayName: "Icon 13",
+    label: "Icon 13",
     type: "wrapper",
     paths: [
       {
@@ -730,7 +730,7 @@ export const icons: Icon[] = [
   },
   {
     name: "children",
-    displayName: "Niños",
+    label: "Niños",
     type: "singleColor",
     paths: [
       {
@@ -743,7 +743,7 @@ export const icons: Icon[] = [
   },
   {
     name: "circle",
-    displayName: "Círculo",
+    label: "Círculo",
     type: "singleColor",
     paths: [
       {
@@ -756,7 +756,7 @@ export const icons: Icon[] = [
   },
   {
     name: "circleOutline",
-    displayName: "Contorno de Círculo",
+    label: "Contorno de Círculo",
     type: "singleColor",
     paths: [
       {
@@ -769,7 +769,7 @@ export const icons: Icon[] = [
   },
   {
     name: "citrus",
-    displayName: "Cítricos",
+    label: "Cítricos",
     type: "singleColor",
     paths: [
       {
@@ -782,7 +782,7 @@ export const icons: Icon[] = [
   },
   {
     name: "close",
-    displayName: "Cerrar",
+    label: "Cerrar",
     type: "singleColor",
     paths: [
       {
@@ -795,7 +795,7 @@ export const icons: Icon[] = [
   },
   {
     name: "code",
-    displayName: "Código",
+    label: "Código",
     type: "singleColor",
     paths: [
       {
@@ -808,7 +808,7 @@ export const icons: Icon[] = [
   },
   {
     name: "color",
-    displayName: "Color",
+    label: "Color",
     type: "singleColor",
     paths: [
       {
@@ -821,7 +821,7 @@ export const icons: Icon[] = [
   },
   {
     name: "columnChartCard",
-    displayName: "Tarjeta de Gráfico de Columnas",
+    label: "Tarjeta de Gráfico de Columnas",
     type: "singleColor",
     paths: [
       {
@@ -834,7 +834,7 @@ export const icons: Icon[] = [
   },
   {
     name: "comment",
-    displayName: "Comentario",
+    label: "Comentario",
     type: "singleColor",
     paths: [
       {
@@ -847,7 +847,7 @@ export const icons: Icon[] = [
   },
   {
     name: "completedConstruction",
-    displayName: "Construcción Completada",
+    label: "Construcción Completada",
     type: "singleColor",
     paths: [
       {
@@ -860,7 +860,7 @@ export const icons: Icon[] = [
   },
   {
     name: "configurationsCard",
-    displayName: "Tarjeta de Configuraciones",
+    label: "Tarjeta de Configuraciones",
     type: "singleColor",
     paths: [
       {
@@ -873,7 +873,7 @@ export const icons: Icon[] = [
   },
   {
     name: "constructionInPause",
-    displayName: "Construcción en Pausa",
+    label: "Construcción en Pausa",
     type: "singleColor",
     paths: [
       {
@@ -886,7 +886,7 @@ export const icons: Icon[] = [
   },
   {
     name: "constructionInProgress",
-    displayName: "Construcción en Progreso",
+    label: "Construcción en Progreso",
     type: "singleColor",
     paths: [
       {
@@ -899,7 +899,7 @@ export const icons: Icon[] = [
   },
   {
     name: "count",
-    displayName: "Conteo",
+    label: "Conteo",
     type: "singleColor",
     paths: [
       {
@@ -912,7 +912,7 @@ export const icons: Icon[] = [
   },
   {
     name: "countWrapper",
-    displayName: "Icon 14",
+    label: "Icon 14",
     type: "wrapper",
     paths: [
       {
@@ -925,7 +925,7 @@ export const icons: Icon[] = [
   },
   {
     name: "customersCard",
-    displayName: "Tarjeta de Clientes",
+    label: "Tarjeta de Clientes",
     type: "singleColor",
     paths: [
       {
@@ -938,7 +938,7 @@ export const icons: Icon[] = [
   },
   {
     name: "dataListCard",
-    displayName: "Tarjeta de Lista de Datos",
+    label: "Tarjeta de Lista de Datos",
     type: "singleColor",
     paths: [
       {
@@ -951,7 +951,7 @@ export const icons: Icon[] = [
   },
   {
     name: "dataTableCard",
-    displayName: "Tarjeta de Tabla de Datos",
+    label: "Tarjeta de Tabla de Datos",
     type: "singleColor",
     paths: [
       {
@@ -964,7 +964,7 @@ export const icons: Icon[] = [
   },
   {
     name: "dataTablesCard",
-    displayName: "Tarjeta de Tablas de Datos",
+    label: "Tarjeta de Tablas de Datos",
     type: "singleColor",
     paths: [
       {
@@ -977,7 +977,7 @@ export const icons: Icon[] = [
   },
   {
     name: "dateField",
-    displayName: "Campo de Fecha",
+    label: "Campo de Fecha",
     type: "singleColor",
     paths: [
       {
@@ -990,7 +990,7 @@ export const icons: Icon[] = [
   },
   {
     name: "date",
-    displayName: "Fecha",
+    label: "Fecha",
     type: "singleColor",
     paths: [
       {
@@ -1003,7 +1003,7 @@ export const icons: Icon[] = [
   },
   {
     name: "dateTimeField",
-    displayName: "Campo de Fecha y Hora",
+    label: "Campo de Fecha y Hora",
     type: "singleColor",
     paths: [
       {
@@ -1016,7 +1016,7 @@ export const icons: Icon[] = [
   },
   {
     name: "days",
-    displayName: "Días",
+    label: "Días",
     type: "singleColor",
     paths: [
       {
@@ -1029,7 +1029,7 @@ export const icons: Icon[] = [
   },
   {
     name: "decimalField",
-    displayName: "Campo Decimal",
+    label: "Campo Decimal",
     type: "singleColor",
     paths: [
       {
@@ -1042,7 +1042,7 @@ export const icons: Icon[] = [
   },
   {
     name: "delete",
-    displayName: "Eliminar",
+    label: "Eliminar",
     type: "singleColor",
     paths: [
       {
@@ -1055,7 +1055,7 @@ export const icons: Icon[] = [
   },
   {
     name: "deleteWrapper",
-    displayName: "Icon 15",
+    label: "Icon 15",
     type: "wrapper",
     paths: [
       {
@@ -1068,7 +1068,7 @@ export const icons: Icon[] = [
   },
   {
     name: "dividers",
-    displayName: "Icon 16",
+    label: "Icon 16",
     type: "singleColor",
     paths: [
       {
@@ -1081,7 +1081,7 @@ export const icons: Icon[] = [
   },
   {
     name: "documents",
-    displayName: "Documentos",
+    label: "Documentos",
     type: "singleColor",
     paths: [
       {
@@ -1094,7 +1094,7 @@ export const icons: Icon[] = [
   },
   {
     name: "downArrow",
-    displayName: "Flecha hacia Abajo",
+    label: "Flecha hacia Abajo",
     type: "singleColor",
     paths: [
       {
@@ -1107,7 +1107,7 @@ export const icons: Icon[] = [
   },
   {
     name: "download",
-    displayName: "Descargar",
+    label: "Descargar",
     type: "singleColor",
     paths: [
       {
@@ -1120,7 +1120,7 @@ export const icons: Icon[] = [
   },
   {
     name: "downloadWrapper",
-    displayName: "Icon 17",
+    label: "Icon 17",
     type: "wrapper",
     paths: [
       {
@@ -1133,7 +1133,7 @@ export const icons: Icon[] = [
   },
   {
     name: "drag",
-    displayName: "Arrastrar",
+    label: "Arrastrar",
     type: "singleColor",
     paths: [
       {
@@ -1146,7 +1146,7 @@ export const icons: Icon[] = [
   },
   {
     name: "dynamicList",
-    displayName: "Icon 18",
+    label: "Icon 18",
     type: "singleColor",
     paths: [
       {
@@ -1159,7 +1159,7 @@ export const icons: Icon[] = [
   },
   {
     name: "educationalUnits",
-    displayName: "Unidades Educativas",
+    label: "Unidades Educativas",
     type: "singleColor",
     paths: [
       {
@@ -1172,7 +1172,7 @@ export const icons: Icon[] = [
   },
   {
     name: "emailField",
-    displayName: "Campo de Correo Electrónico",
+    label: "Campo de Correo Electrónico",
     type: "singleColor",
     paths: [
       {
@@ -1185,7 +1185,7 @@ export const icons: Icon[] = [
   },
   {
     name: "email",
-    displayName: "Correo Electrónico",
+    label: "Correo Electrónico",
     type: "singleColor",
     paths: [
       {
@@ -1198,7 +1198,7 @@ export const icons: Icon[] = [
   },
   {
     name: "employment",
-    displayName: "Empleo",
+    label: "Empleo",
     type: "singleColor",
     paths: [
       {
@@ -1211,7 +1211,7 @@ export const icons: Icon[] = [
   },
   {
     name: "energy",
-    displayName: "Energía",
+    label: "Energía",
     type: "singleColor",
     paths: [
       {
@@ -1224,7 +1224,7 @@ export const icons: Icon[] = [
   },
   {
     name: "enlarge",
-    displayName: "Ampliar",
+    label: "Ampliar",
     type: "singleColor",
     paths: [
       {
@@ -1237,7 +1237,7 @@ export const icons: Icon[] = [
   },
   {
     name: "eraser",
-    displayName: "Borrador",
+    label: "Borrador",
     type: "singleColor",
     paths: [
       {
@@ -1250,7 +1250,7 @@ export const icons: Icon[] = [
   },
   {
     name: "exitFullscreen",
-    displayName: "Salir de Pantalla Completa",
+    label: "Salir de Pantalla Completa",
     type: "singleColor",
     paths: [
       {
@@ -1263,7 +1263,7 @@ export const icons: Icon[] = [
   },
   {
     name: "export",
-    displayName: "Exportar",
+    label: "Exportar",
     type: "singleColor",
     paths: [
       {
@@ -1276,7 +1276,7 @@ export const icons: Icon[] = [
   },
   {
     name: "exportJson",
-    displayName: "Icon 19",
+    label: "Icon 19",
     type: "singleColor",
     paths: [
       {
@@ -1289,7 +1289,7 @@ export const icons: Icon[] = [
   },
   {
     name: "exportWrapper",
-    displayName: "Icon 20",
+    label: "Icon 20",
     type: "wrapper",
     paths: [
       {
@@ -1302,7 +1302,7 @@ export const icons: Icon[] = [
   },
   {
     name: "extras",
-    displayName: "Extras",
+    label: "Extras",
     type: "singleColor",
     paths: [
       {
@@ -1315,7 +1315,7 @@ export const icons: Icon[] = [
   },
   {
     name: "extrasWrapper",
-    displayName: "Icon 21",
+    label: "Icon 21",
     type: "wrapper",
     paths: [
       {
@@ -1328,7 +1328,7 @@ export const icons: Icon[] = [
   },
   {
     name: "eye",
-    displayName: "Ojo",
+    label: "Ojo",
     type: "singleColor",
     paths: [
       {
@@ -1341,7 +1341,7 @@ export const icons: Icon[] = [
   },
   {
     name: "file",
-    displayName: "Archivo",
+    label: "Archivo",
     type: "singleColor",
     paths: [
       {
@@ -1354,7 +1354,7 @@ export const icons: Icon[] = [
   },
   {
     name: "files",
-    displayName: "Archivos",
+    label: "Archivos",
     type: "singleColor",
     paths: [
       {
@@ -1367,7 +1367,7 @@ export const icons: Icon[] = [
   },
   {
     name: "filledShapeChartCard",
-    displayName: "Tarjeta de Gráfico de Formas Rellenas",
+    label: "Tarjeta de Gráfico de Formas Rellenas",
     type: "singleColor",
     paths: [
       {
@@ -1380,7 +1380,7 @@ export const icons: Icon[] = [
   },
   {
     name: "filters",
-    displayName: "Filtros",
+    label: "Filtros",
     type: "singleColor",
     paths: [
       {
@@ -1393,7 +1393,7 @@ export const icons: Icon[] = [
   },
   {
     name: "fixUnfixCards",
-    displayName: "Fijar/Desfijar Tarjetas",
+    label: "Fijar/Desfijar Tarjetas",
     type: "singleColor",
     paths: [
       {
@@ -1406,7 +1406,7 @@ export const icons: Icon[] = [
   },
   {
     name: "form",
-    displayName: "Formulario",
+    label: "Formulario",
     type: "singleColor",
     paths: [
       {
@@ -1419,7 +1419,7 @@ export const icons: Icon[] = [
   },
   {
     name: "fullscreen",
-    displayName: "Pantalla Completa",
+    label: "Pantalla Completa",
     type: "singleColor",
     paths: [
       {
@@ -1432,7 +1432,7 @@ export const icons: Icon[] = [
   },
   {
     name: "goalsField",
-    displayName: "ODS",
+    label: "ODS",
     type: "singleColor",
     paths: [
       {
@@ -1445,7 +1445,7 @@ export const icons: Icon[] = [
   },
   {
     name: "gridDelete",
-    displayName: "Eliminar Cuadrícula",
+    label: "Eliminar Cuadrícula",
     type: "singleColor",
     paths: [
       {
@@ -1458,7 +1458,7 @@ export const icons: Icon[] = [
   },
   {
     name: "gridDeleteWrapper",
-    displayName: "Icon 22",
+    label: "Icon 22",
     type: "wrapper",
     paths: [
       {
@@ -1471,7 +1471,7 @@ export const icons: Icon[] = [
   },
   {
     name: "grid",
-    displayName: "Cuadrícula",
+    label: "Cuadrícula",
     type: "singleColor",
     paths: [
       {
@@ -1484,7 +1484,7 @@ export const icons: Icon[] = [
   },
   {
     name: "gridWrapper",
-    displayName: "Icon 23",
+    label: "Icon 23",
     type: "wrapper",
     paths: [
       {
@@ -1497,7 +1497,7 @@ export const icons: Icon[] = [
   },
   {
     name: "hashtag",
-    displayName: "Hashtag",
+    label: "Hashtag",
     type: "singleColor",
     paths: [
       {
@@ -1510,7 +1510,7 @@ export const icons: Icon[] = [
   },
   {
     name: "hide",
-    displayName: "Ocultar",
+    label: "Ocultar",
     type: "singleColor",
     paths: [
       {
@@ -1523,7 +1523,7 @@ export const icons: Icon[] = [
   },
   {
     name: "higherLevelStudents",
-    displayName: "Estudiantes de Nivel Superior",
+    label: "Estudiantes de Nivel Superior",
     type: "singleColor",
     paths: [
       {
@@ -1536,7 +1536,7 @@ export const icons: Icon[] = [
   },
   {
     name: "home",
-    displayName: "Casa",
+    label: "Casa",
     type: "singleColor",
     paths: [
       {
@@ -1549,7 +1549,7 @@ export const icons: Icon[] = [
   },
   {
     name: "multiIconCheckbox",
-    displayName: "Icon 24",
+    label: "Icon 24",
     type: "singleColor",
     paths: [
       {
@@ -1562,7 +1562,7 @@ export const icons: Icon[] = [
   },
   {
     name: "icon",
-    displayName: "Icon 25",
+    label: "Icon 25",
     type: "singleColor",
     paths: [
       {
@@ -1575,7 +1575,7 @@ export const icons: Icon[] = [
   },
   {
     name: "iconMaker",
-    displayName: "Icon 26",
+    label: "Icon 26",
     type: "singleColor",
     paths: [
       {
@@ -1588,7 +1588,7 @@ export const icons: Icon[] = [
   },
   {
     name: "iconPicker",
-    displayName: "Icon 27",
+    label: "Icon 27",
     type: "singleColor",
     paths: [
       {
@@ -1601,7 +1601,7 @@ export const icons: Icon[] = [
   },
   {
     name: "iconRadioField",
-    displayName: "Icon 28",
+    label: "Icon 28",
     type: "singleColor",
     paths: [
       {
@@ -1614,7 +1614,7 @@ export const icons: Icon[] = [
   },
   {
     name: "sCardIcon",
-    displayName: "Icon 29",
+    label: "Icon 29",
     type: "singleColor",
     paths: [
       {
@@ -1627,7 +1627,7 @@ export const icons: Icon[] = [
   },
   {
     name: "imageCropperField",
-    displayName: "Campo de Recorte de Imagen",
+    label: "Campo de Recorte de Imagen",
     type: "singleColor",
     paths: [
       {
@@ -1640,7 +1640,7 @@ export const icons: Icon[] = [
   },
   {
     name: "image",
-    displayName: "Imagen",
+    label: "Imagen",
     type: "singleColor",
     paths: [
       {
@@ -1653,7 +1653,7 @@ export const icons: Icon[] = [
   },
   {
     name: "images",
-    displayName: "Imagenes",
+    label: "Imagenes",
     type: "singleColor",
     paths: [
       {
@@ -1666,7 +1666,7 @@ export const icons: Icon[] = [
   },
   {
     name: "block",
-    displayName: "Bloque",
+    label: "Bloque",
     type: "singleColor",
     paths: [
       {
@@ -1679,7 +1679,7 @@ export const icons: Icon[] = [
   },
   {
     name: "mobile",
-    displayName: "Mobile",
+    label: "Mobile",
     type: "singleColor",
     paths: [
       {
@@ -1692,7 +1692,7 @@ export const icons: Icon[] = [
   },
   {
     name: "desktop",
-    displayName: "PC",
+    label: "PC",
     type: "singleColor",
     paths: [
       {
@@ -1705,7 +1705,7 @@ export const icons: Icon[] = [
   },
   {
     name: "import",
-    displayName: "Icon 30",
+    label: "Icon 30",
     type: "singleColor",
     paths: [
       {
@@ -1719,7 +1719,7 @@ export const icons: Icon[] = [
 
   {
     name: "importJson",
-    displayName: "Icon 31",
+    label: "Icon 31",
     type: "singleColor",
     paths: [
       {
@@ -1732,7 +1732,7 @@ export const icons: Icon[] = [
   },
   {
     name: "indicatorCard",
-    displayName: "Tarjeta de Indicador",
+    label: "Tarjeta de Indicador",
     type: "singleColor",
     paths: [
       {
@@ -1745,7 +1745,7 @@ export const icons: Icon[] = [
   },
   {
     name: "indicatorGroupCard",
-    displayName: "Tarjeta de Grupo de Indicadores",
+    label: "Tarjeta de Grupo de Indicadores",
     type: "singleColor",
     paths: [
       {
@@ -1758,7 +1758,7 @@ export const icons: Icon[] = [
   },
   {
     name: "indicatorGroupsCard",
-    displayName: "Tarjeta de Grupos de Indicadores",
+    label: "Tarjeta de Grupos de Indicadores",
     type: "singleColor",
     paths: [
       {
@@ -1771,7 +1771,7 @@ export const icons: Icon[] = [
   },
   {
     name: "indicator",
-    displayName: "Indicador",
+    label: "Indicador",
     type: "singleColor",
     paths: [
       {
@@ -1784,7 +1784,7 @@ export const icons: Icon[] = [
   },
   {
     name: "indicatorsCard",
-    displayName: "Tarjeta de Indicadores",
+    label: "Tarjeta de Indicadores",
     type: "singleColor",
     paths: [
       {
@@ -1797,7 +1797,7 @@ export const icons: Icon[] = [
   },
   {
     name: "integerField",
-    displayName: "Campo Entero",
+    label: "Campo Entero",
     type: "singleColor",
     paths: [
       {
@@ -1810,7 +1810,7 @@ export const icons: Icon[] = [
   },
   {
     name: "interpolatedContent",
-    displayName: "Icon 32",
+    label: "Icon 32",
     type: "singleColor",
     paths: [
       {
@@ -1823,7 +1823,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inventory",
-    displayName: "Inventario",
+    label: "Inventario",
     type: "singleColor",
     paths: [
       {
@@ -1836,7 +1836,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inventoryManagerCard",
-    displayName: "Tarjeta del Administrador de Inventario",
+    label: "Tarjeta del Administrador de Inventario",
     type: "singleColor",
     paths: [
       {
@@ -1849,7 +1849,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inventoryWrapper",
-    displayName: "Icon 33",
+    label: "Icon 33",
     type: "wrapper",
     paths: [
       {
@@ -1862,7 +1862,7 @@ export const icons: Icon[] = [
   },
   {
     name: "json",
-    displayName: "Icon 34",
+    label: "Icon 34",
     type: "singleColor",
     paths: [
       {
@@ -1875,7 +1875,7 @@ export const icons: Icon[] = [
   },
   {
     name: "lineChartCard",
-    displayName: "Tarjeta de Gráfico de Líneas",
+    label: "Tarjeta de Gráfico de Líneas",
     type: "singleColor",
     paths: [
       {
@@ -1888,7 +1888,7 @@ export const icons: Icon[] = [
   },
   {
     name: "linkedRecords",
-    displayName: "Icon 35",
+    label: "Icon 35",
     type: "singleColor",
     paths: [
       {
@@ -1901,7 +1901,7 @@ export const icons: Icon[] = [
   },
   {
     name: "list",
-    displayName: "Lista",
+    label: "Lista",
     type: "singleColor",
     paths: [
       {
@@ -1914,7 +1914,7 @@ export const icons: Icon[] = [
   },
   {
     name: "livestock",
-    displayName: "Ganado",
+    label: "Ganado",
     type: "singleColor",
     paths: [
       {
@@ -1927,7 +1927,7 @@ export const icons: Icon[] = [
   },
   {
     name: "lockedDocument",
-    displayName: "Documento Bloqueado",
+    label: "Documento Bloqueado",
     type: "singleColor",
     paths: [
       {
@@ -1940,7 +1940,7 @@ export const icons: Icon[] = [
   },
   {
     name: "lockToggle",
-    displayName: "Bloquear / Desbloquear",
+    label: "Bloquear / Desbloquear",
     type: "singleColor",
     paths: [
       {
@@ -1953,7 +1953,7 @@ export const icons: Icon[] = [
   },
   {
     name: "locked",
-    displayName: "Bloqueado",
+    label: "Bloqueado",
     type: "singleColor",
     paths: [
       {
@@ -1966,7 +1966,7 @@ export const icons: Icon[] = [
   },
   {
     name: "lockedTap",
-    displayName: "Accion bloqueada",
+    label: "Accion bloqueada",
     type: "singleColor",
     paths: [
       {
@@ -1979,7 +1979,7 @@ export const icons: Icon[] = [
   },
   {
     name: "longTextField",
-    displayName: "Campo de Texto Largo",
+    label: "Campo de Texto Largo",
     type: "singleColor",
     paths: [
       {
@@ -1992,7 +1992,7 @@ export const icons: Icon[] = [
   },
   {
     name: "mapCard",
-    displayName: "Tarjeta de Mapa",
+    label: "Tarjeta de Mapa",
     type: "singleColor",
     paths: [
       {
@@ -2005,7 +2005,7 @@ export const icons: Icon[] = [
   },
   {
     name: "map",
-    displayName: "Mapa",
+    label: "Mapa",
     type: "singleColor",
     paths: [
       {
@@ -2018,7 +2018,7 @@ export const icons: Icon[] = [
   },
   {
     name: "mapWrapper",
-    displayName: "Icon 36",
+    label: "Icon 36",
     type: "wrapper",
     paths: [
       {
@@ -2031,7 +2031,7 @@ export const icons: Icon[] = [
   },
   {
     name: "marker",
-    displayName: "Marcador",
+    label: "Marcador",
     type: "singleColor",
     paths: [
       {
@@ -2044,7 +2044,7 @@ export const icons: Icon[] = [
   },
   {
     name: "moneyField",
-    displayName: "Campo de Dinero",
+    label: "Campo de Dinero",
     type: "singleColor",
     paths: [
       {
@@ -2057,7 +2057,7 @@ export const icons: Icon[] = [
   },
   {
     name: "money",
-    displayName: "Icon 37",
+    label: "Icon 37",
     type: "singleColor",
     paths: [
       {
@@ -2070,7 +2070,7 @@ export const icons: Icon[] = [
   },
   {
     name: "months",
-    displayName: "Meses",
+    label: "Meses",
     type: "singleColor",
     paths: [
       {
@@ -2083,7 +2083,7 @@ export const icons: Icon[] = [
   },
   {
     name: "motorcycle",
-    displayName: "Motocicleta",
+    label: "Motocicleta",
     type: "singleColor",
     paths: [
       {
@@ -2096,7 +2096,7 @@ export const icons: Icon[] = [
   },
   {
     name: "multiLineChartCard",
-    displayName: "Tarjeta de Gráfico de Múltiples Líneas",
+    label: "Tarjeta de Gráfico de Múltiples Líneas",
     type: "singleColor",
     paths: [
       {
@@ -2109,7 +2109,7 @@ export const icons: Icon[] = [
   },
   {
     name: "multiSelectField",
-    displayName: "Campo de Selección Múltiple",
+    label: "Campo de Selección Múltiple",
     type: "singleColor",
     paths: [
       {
@@ -2122,7 +2122,7 @@ export const icons: Icon[] = [
   },
   {
     name: "myIndicatorsCard",
-    displayName: "Tarjeta de Mis Indicadores",
+    label: "Tarjeta de Mis Indicadores",
     type: "singleColor",
     paths: [
       {
@@ -2135,7 +2135,7 @@ export const icons: Icon[] = [
   },
   {
     name: "myTasksCard",
-    displayName: "Tarjeta de Mis Tareas",
+    label: "Tarjeta de Mis Tareas",
     type: "singleColor",
     paths: [
       {
@@ -2148,7 +2148,7 @@ export const icons: Icon[] = [
   },
   {
     name: "notification",
-    displayName: "Notificación",
+    label: "Notificación",
     type: "singleColor",
     paths: [
       {
@@ -2161,7 +2161,7 @@ export const icons: Icon[] = [
   },
   {
     name: "notifications",
-    displayName: "Notificaciones",
+    label: "Notificaciones",
     type: "singleColor",
     paths: [
       {
@@ -2174,7 +2174,7 @@ export const icons: Icon[] = [
   },
   {
     name: "notificationWrapper",
-    displayName: "Icon 38",
+    label: "Icon 38",
     type: "wrapper",
     paths: [
       {
@@ -2187,7 +2187,7 @@ export const icons: Icon[] = [
   },
   {
     name: "nubelon",
-    displayName: "Nubelon",
+    label: "Nubelon",
     type: "singleColor",
     paths: [
       {
@@ -2200,7 +2200,7 @@ export const icons: Icon[] = [
   },
   {
     name: "numbers",
-    displayName: "Icon 39",
+    label: "Icon 39",
     type: "singleColor",
     paths: [
       {
@@ -2213,7 +2213,7 @@ export const icons: Icon[] = [
   },
   {
     name: "paragraph",
-    displayName: "Párrafo",
+    label: "Párrafo",
     type: "singleColor",
     paths: [
       {
@@ -2226,7 +2226,7 @@ export const icons: Icon[] = [
   },
   {
     name: "passwordField",
-    displayName: "Campo de Contraseña",
+    label: "Campo de Contraseña",
     type: "singleColor",
     paths: [
       {
@@ -2239,7 +2239,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pastelColor",
-    displayName: "Icon 40",
+    label: "Icon 40",
     type: "singleColor",
     paths: [
       {
@@ -2252,7 +2252,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pause",
-    displayName: "Pausa",
+    label: "Pausa",
     type: "singleColor",
     paths: [
       {
@@ -2265,7 +2265,7 @@ export const icons: Icon[] = [
   },
   {
     name: "payablesCard",
-    displayName: "Tarjeta de Cuentas por Pagar",
+    label: "Tarjeta de Cuentas por Pagar",
     type: "singleColor",
     paths: [
       {
@@ -2278,7 +2278,7 @@ export const icons: Icon[] = [
   },
   {
     name: "paymentAllocation",
-    displayName: "Asignación de Pagos",
+    label: "Asignación de Pagos",
     type: "singleColor",
     paths: [
       {
@@ -2291,7 +2291,7 @@ export const icons: Icon[] = [
   },
   {
     name: "paymentField",
-    displayName: "Campo de Pago",
+    label: "Campo de Pago",
     type: "singleColor",
     paths: [
       {
@@ -2304,7 +2304,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pencil",
-    displayName: "Lápiz",
+    label: "Lápiz",
     type: "singleColor",
     paths: [
       {
@@ -2317,7 +2317,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pending",
-    displayName: "Pendiente",
+    label: "Pendiente",
     type: "singleColor",
     paths: [
       {
@@ -2330,7 +2330,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pendingWrapper",
-    displayName: "Icon 41",
+    label: "Icon 41",
     type: "wrapper",
     paths: [
       {
@@ -2343,7 +2343,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pickup",
-    displayName: "Recoger",
+    label: "Recoger",
     type: "singleColor",
     paths: [
       {
@@ -2356,7 +2356,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pieChartCard",
-    displayName: "Tarjeta de Gráfico de Pastel",
+    label: "Tarjeta de Gráfico de Pastel",
     type: "singleColor",
     paths: [
       {
@@ -2369,7 +2369,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pin",
-    displayName: "Pin",
+    label: "Pin",
     type: "singleColor",
     paths: [
       {
@@ -2382,7 +2382,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pinWrapper",
-    displayName: "Icon 42",
+    label: "Icon 42",
     type: "wrapper",
     paths: [
       {
@@ -2395,7 +2395,7 @@ export const icons: Icon[] = [
   },
   {
     name: "play",
-    displayName: "Reproducir",
+    label: "Reproducir",
     type: "singleColor",
     paths: [
       {
@@ -2408,7 +2408,7 @@ export const icons: Icon[] = [
   },
   {
     name: "playPause",
-    displayName: "Icon 43",
+    label: "Icon 43",
     type: "singleColor",
     paths: [
       {
@@ -2421,7 +2421,7 @@ export const icons: Icon[] = [
   },
   {
     name: "plus",
-    displayName: "Más",
+    label: "Más",
     type: "singleColor",
     paths: [
       {
@@ -2434,7 +2434,7 @@ export const icons: Icon[] = [
   },
   {
     name: "productsCard",
-    displayName: "Tarjeta de Productos",
+    label: "Tarjeta de Productos",
     type: "singleColor",
     paths: [
       {
@@ -2447,7 +2447,7 @@ export const icons: Icon[] = [
   },
   {
     name: "productVariants",
-    displayName: "Icon 44",
+    label: "Icon 44",
     type: "singleColor",
     paths: [
       {
@@ -2460,7 +2460,7 @@ export const icons: Icon[] = [
   },
   {
     name: "purchasesCard",
-    displayName: "Tarjeta de Compras",
+    label: "Tarjeta de Compras",
     type: "singleColor",
     paths: [
       {
@@ -2473,7 +2473,7 @@ export const icons: Icon[] = [
   },
   {
     name: "radioField",
-    displayName: "Campo de Opción",
+    label: "Campo de Opción",
     type: "singleColor",
     paths: [
       {
@@ -2486,7 +2486,7 @@ export const icons: Icon[] = [
   },
   {
     name: "rankingCard",
-    displayName: "Tarjeta de Clasificación",
+    label: "Tarjeta de Clasificación",
     type: "singleColor",
     paths: [
       {
@@ -2499,7 +2499,7 @@ export const icons: Icon[] = [
   },
   {
     name: "records",
-    displayName: "Registros",
+    label: "Registros",
     type: "singleColor",
     paths: [
       {
@@ -2512,7 +2512,7 @@ export const icons: Icon[] = [
   },
   {
     name: "recordsWrapper",
-    displayName: "Icon 45",
+    label: "Icon 45",
     type: "wrapper",
     paths: [
       {
@@ -2525,7 +2525,7 @@ export const icons: Icon[] = [
   },
   {
     name: "reduce",
-    displayName: "Reducir",
+    label: "Reducir",
     type: "singleColor",
     paths: [
       {
@@ -2538,7 +2538,7 @@ export const icons: Icon[] = [
   },
   {
     name: "refresh",
-    displayName: "Refrescar",
+    label: "Refrescar",
     type: "singleColor",
     paths: [
       {
@@ -2551,7 +2551,7 @@ export const icons: Icon[] = [
   },
   {
     name: "refreshWrapper",
-    displayName: "Icon 46",
+    label: "Icon 46",
     type: "wrapper",
     paths: [
       {
@@ -2564,7 +2564,7 @@ export const icons: Icon[] = [
   },
   {
     name: "regular",
-    displayName: "Regular",
+    label: "Regular",
     type: "singleColor",
     paths: [
       {
@@ -2577,7 +2577,7 @@ export const icons: Icon[] = [
   },
   {
     name: "regularItalic",
-    displayName: "Cursiva Regular",
+    label: "Cursiva Regular",
     type: "singleColor",
     paths: [
       {
@@ -2590,7 +2590,7 @@ export const icons: Icon[] = [
   },
   {
     name: "report",
-    displayName: "Informe",
+    label: "Informe",
     type: "singleColor",
     paths: [
       {
@@ -2603,7 +2603,7 @@ export const icons: Icon[] = [
   },
   {
     name: "reportWrapper",
-    displayName: "Icon 47",
+    label: "Icon 47",
     type: "wrapper",
     paths: [
       {
@@ -2616,7 +2616,7 @@ export const icons: Icon[] = [
   },
   {
     name: "salesCard",
-    displayName: "Tarjeta de Ventas",
+    label: "Tarjeta de Ventas",
     type: "singleColor",
     paths: [
       {
@@ -2629,7 +2629,7 @@ export const icons: Icon[] = [
   },
   {
     name: "saveAsDraft",
-    displayName: "Guardar como Borrador",
+    label: "Guardar como Borrador",
     type: "singleColor",
     paths: [
       {
@@ -2642,7 +2642,7 @@ export const icons: Icon[] = [
   },
   {
     name: "scrapingCard",
-    displayName: "Tarjeta de Scraping",
+    label: "Tarjeta de Scraping",
     type: "singleColor",
     paths: [
       {
@@ -2655,7 +2655,7 @@ export const icons: Icon[] = [
   },
   {
     name: "search",
-    displayName: "Buscar",
+    label: "Buscar",
     type: "singleColor",
     paths: [
       {
@@ -2668,7 +2668,7 @@ export const icons: Icon[] = [
   },
   {
     name: "searchWrapper",
-    displayName: "Icon 48",
+    label: "Icon 48",
     type: "wrapper",
     paths: [
       {
@@ -2681,7 +2681,7 @@ export const icons: Icon[] = [
   },
   {
     name: "selectField",
-    displayName: "Campo de Selección",
+    label: "Campo de Selección",
     type: "singleColor",
     paths: [
       {
@@ -2694,7 +2694,7 @@ export const icons: Icon[] = [
   },
   {
     name: "select",
-    displayName: "Seleccionar",
+    label: "Seleccionar",
     type: "singleColor",
     paths: [
       {
@@ -2707,7 +2707,7 @@ export const icons: Icon[] = [
   },
   {
     name: "separatorField",
-    displayName: "Campo Separador",
+    label: "Campo Separador",
     type: "singleColor",
     paths: [
       {
@@ -2720,7 +2720,7 @@ export const icons: Icon[] = [
   },
   {
     name: "serialNumber",
-    displayName: "Número de Serie",
+    label: "Número de Serie",
     type: "singleColor",
     paths: [
       {
@@ -2733,7 +2733,7 @@ export const icons: Icon[] = [
   },
   {
     name: "serialNumberWrapper",
-    displayName: "Icon 49",
+    label: "Icon 49",
     type: "wrapper",
     paths: [
       {
@@ -2746,7 +2746,7 @@ export const icons: Icon[] = [
   },
   {
     name: "servicesCard",
-    displayName: "Tarjeta de Servicios",
+    label: "Tarjeta de Servicios",
     type: "singleColor",
     paths: [
       {
@@ -2759,7 +2759,7 @@ export const icons: Icon[] = [
   },
   {
     name: "settingsCard",
-    displayName: "Tarjeta de Ajustes",
+    label: "Tarjeta de Ajustes",
     type: "singleColor",
     paths: [
       {
@@ -2772,7 +2772,7 @@ export const icons: Icon[] = [
   },
   {
     name: "settings",
-    displayName: "Ajustes",
+    label: "Ajustes",
     type: "singleColor",
     paths: [
       {
@@ -2785,7 +2785,7 @@ export const icons: Icon[] = [
   },
   {
     name: "settingsWrapper",
-    displayName: "Ajustes (envoltura)",
+    label: "Ajustes (envoltura)",
     type: "singleColor",
     paths: [
       {
@@ -2798,7 +2798,7 @@ export const icons: Icon[] = [
   },
   {
     name: "shoppingCart",
-    displayName: "Carrito de Compras",
+    label: "Carrito de Compras",
     type: "singleColor",
     paths: [
       {
@@ -2811,7 +2811,7 @@ export const icons: Icon[] = [
   },
   {
     name: "show",
-    displayName: "Mostrar",
+    label: "Mostrar",
     type: "singleColor",
     paths: [
       {
@@ -2824,7 +2824,7 @@ export const icons: Icon[] = [
   },
   {
     name: "smile",
-    displayName: "Sonrisa",
+    label: "Sonrisa",
     type: "singleColor",
     paths: [
       {
@@ -2837,7 +2837,7 @@ export const icons: Icon[] = [
   },
   {
     name: "snap",
-    displayName: "Instantánea",
+    label: "Instantánea",
     type: "singleColor",
     paths: [
       {
@@ -2850,7 +2850,7 @@ export const icons: Icon[] = [
   },
   {
     name: "snapWrapper",
-    displayName: "Icon 50",
+    label: "Icon 50",
     type: "wrapper",
     paths: [
       {
@@ -2863,7 +2863,7 @@ export const icons: Icon[] = [
   },
   {
     name: "square",
-    displayName: "Cuadrado",
+    label: "Cuadrado",
     type: "singleColor",
     paths: [
       {
@@ -2876,7 +2876,7 @@ export const icons: Icon[] = [
   },
   {
     name: "squareOutline",
-    displayName: "Contorno de Cuadrado",
+    label: "Contorno de Cuadrado",
     type: "singleColor",
     paths: [
       {
@@ -2889,7 +2889,7 @@ export const icons: Icon[] = [
   },
   {
     name: "stackedColumnChartCard",
-    displayName: "Tarjeta de Gráfico de Columnas Apiladas",
+    label: "Tarjeta de Gráfico de Columnas Apiladas",
     type: "singleColor",
     paths: [
       {
@@ -2902,7 +2902,7 @@ export const icons: Icon[] = [
   },
   {
     name: "statuses",
-    displayName: "Estados",
+    label: "Estados",
     type: "singleColor",
     paths: [
       {
@@ -2915,7 +2915,7 @@ export const icons: Icon[] = [
   },
   {
     name: "status",
-    displayName: "Estado",
+    label: "Estado",
     type: "singleColor",
     paths: [
       {
@@ -2928,7 +2928,7 @@ export const icons: Icon[] = [
   },
   {
     name: "steps",
-    displayName: "Pasos",
+    label: "Pasos",
     type: "singleColor",
     paths: [
       {
@@ -2941,7 +2941,7 @@ export const icons: Icon[] = [
   },
   {
     name: "studentLevelFour",
-    displayName: "Estudiante Nivel Cuatro",
+    label: "Estudiante Nivel Cuatro",
     type: "singleColor",
     paths: [
       {
@@ -2954,7 +2954,7 @@ export const icons: Icon[] = [
   },
   {
     name: "studentLevelOne",
-    displayName: "Estudiante Nivel Uno",
+    label: "Estudiante Nivel Uno",
     type: "singleColor",
     paths: [
       {
@@ -2967,7 +2967,7 @@ export const icons: Icon[] = [
   },
   {
     name: "studentLevelThree",
-    displayName: "Estudiante Nivel Tres",
+    label: "Estudiante Nivel Tres",
     type: "singleColor",
     paths: [
       {
@@ -2980,7 +2980,7 @@ export const icons: Icon[] = [
   },
   {
     name: "studentLevelTwo",
-    displayName: "Estudiante Nivel Dos",
+    label: "Estudiante Nivel Dos",
     type: "singleColor",
     paths: [
       {
@@ -2993,7 +2993,7 @@ export const icons: Icon[] = [
   },
   {
     name: "subscriptionsCard",
-    displayName: "Tarjeta de Suscripciones",
+    label: "Tarjeta de Suscripciones",
     type: "singleColor",
     paths: [
       {
@@ -3006,7 +3006,7 @@ export const icons: Icon[] = [
   },
   {
     name: "suppliersCard",
-    displayName: "Tarjeta de Proveedores",
+    label: "Tarjeta de Proveedores",
     type: "singleColor",
     paths: [
       {
@@ -3019,7 +3019,7 @@ export const icons: Icon[] = [
   },
   {
     name: "t1",
-    displayName: "T1",
+    label: "T1",
     type: "singleColor",
     paths: [
       {
@@ -3032,7 +3032,7 @@ export const icons: Icon[] = [
   },
   {
     name: "t2",
-    displayName: "T2",
+    label: "T2",
     type: "singleColor",
     paths: [
       {
@@ -3045,7 +3045,7 @@ export const icons: Icon[] = [
   },
   {
     name: "t3",
-    displayName: "T3",
+    label: "T3",
     type: "singleColor",
     paths: [
       {
@@ -3058,7 +3058,7 @@ export const icons: Icon[] = [
   },
   {
     name: "table1",
-    displayName: "Tabla 1",
+    label: "Tabla 1",
     type: "singleColor",
     paths: [
       {
@@ -3071,7 +3071,7 @@ export const icons: Icon[] = [
   },
   {
     name: "table2",
-    displayName: "Tabla 2",
+    label: "Tabla 2",
     type: "singleColor",
     paths: [
       {
@@ -3084,7 +3084,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tableCard",
-    displayName: "Tarjeta de Tabla",
+    label: "Tarjeta de Tabla",
     type: "singleColor",
     paths: [
       {
@@ -3097,7 +3097,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tag",
-    displayName: "Etiqueta",
+    label: "Etiqueta",
     type: "singleColor",
     paths: [
       {
@@ -3110,7 +3110,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tagsCard",
-    displayName: "Tarjeta de Etiquetas",
+    label: "Tarjeta de Etiquetas",
     type: "singleColor",
     paths: [
       {
@@ -3123,7 +3123,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tags",
-    displayName: "Etiquetas",
+    label: "Etiquetas",
     type: "singleColor",
     paths: [
       {
@@ -3136,7 +3136,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tagsWrapper",
-    displayName: "Icon 51",
+    label: "Icon 51",
     type: "wrapper",
     paths: [
       {
@@ -3149,7 +3149,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tap",
-    displayName: "Icon 52",
+    label: "Icon 52",
     type: "singleColor",
     paths: [
       {
@@ -3162,7 +3162,7 @@ export const icons: Icon[] = [
   },
   {
     name: "taskBoard",
-    displayName: "Tablero de Tareas",
+    label: "Tablero de Tareas",
     type: "singleColor",
     paths: [
       {
@@ -3175,7 +3175,7 @@ export const icons: Icon[] = [
   },
   {
     name: "taskBoardWrapper",
-    displayName: "Icon 53",
+    label: "Icon 53",
     type: "wrapper",
     paths: [
       {
@@ -3188,7 +3188,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tasksCard",
-    displayName: "Tarjeta de Tareas",
+    label: "Tarjeta de Tareas",
     type: "singleColor",
     paths: [
       {
@@ -3201,7 +3201,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tasks",
-    displayName: "Tareas",
+    label: "Tareas",
     type: "singleColor",
     paths: [
       {
@@ -3214,7 +3214,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tasksWrapper",
-    displayName: "Tareas (envoltura)",
+    label: "Tareas (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3227,7 +3227,7 @@ export const icons: Icon[] = [
   },
   {
     name: "selectableList",
-    displayName: "Lista seleccionable",
+    label: "Lista seleccionable",
     type: "singleColor",
     paths: [
       {
@@ -3240,7 +3240,7 @@ export const icons: Icon[] = [
   },
   {
     name: "selectableListWrapper",
-    displayName: "Lista seleccionable (envoltura)",
+    label: "Lista seleccionable (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3253,7 +3253,7 @@ export const icons: Icon[] = [
   },
   {
     name: "taxesCard",
-    displayName: "Tarjeta de Impuestos",
+    label: "Tarjeta de Impuestos",
     type: "singleColor",
     paths: [
       {
@@ -3266,7 +3266,7 @@ export const icons: Icon[] = [
   },
   {
     name: "textEditorField",
-    displayName: "Campo de Editor de Texto",
+    label: "Campo de Editor de Texto",
     type: "singleColor",
     paths: [
       {
@@ -3279,7 +3279,7 @@ export const icons: Icon[] = [
   },
   {
     name: "textEditor",
-    displayName: "Icon 55",
+    label: "Icon 55",
     type: "singleColor",
     paths: [
       {
@@ -3292,7 +3292,7 @@ export const icons: Icon[] = [
   },
   {
     name: "textField",
-    displayName: "Campo de Texto",
+    label: "Campo de Texto",
     type: "singleColor",
     paths: [
       {
@@ -3305,7 +3305,7 @@ export const icons: Icon[] = [
   },
   {
     name: "text",
-    displayName: "Texto",
+    label: "Texto",
     type: "singleColor",
     paths: [
       {
@@ -3318,7 +3318,7 @@ export const icons: Icon[] = [
   },
   {
     name: "thumbnail",
-    displayName: "Miniatura",
+    label: "Miniatura",
     type: "singleColor",
     paths: [
       {
@@ -3331,7 +3331,7 @@ export const icons: Icon[] = [
   },
   {
     name: "timeDiff",
-    displayName: "Diferencia de Tiempo",
+    label: "Diferencia de Tiempo",
     type: "singleColor",
     paths: [
       {
@@ -3344,7 +3344,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tools",
-    displayName: "Herramientas",
+    label: "Herramientas",
     type: "singleColor",
     paths: [
       {
@@ -3357,7 +3357,7 @@ export const icons: Icon[] = [
   },
   {
     name: "transactionField",
-    displayName: "Campo de Transacción",
+    label: "Campo de Transacción",
     type: "singleColor",
     paths: [
       {
@@ -3370,7 +3370,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tutorialsCard",
-    displayName: "Tarjeta de Tutoriales",
+    label: "Tarjeta de Tutoriales",
     type: "singleColor",
     paths: [
       {
@@ -3383,7 +3383,7 @@ export const icons: Icon[] = [
   },
   {
     name: "txt",
-    displayName: "Texto",
+    label: "Texto",
     type: "singleColor",
     paths: [
       {
@@ -3396,7 +3396,7 @@ export const icons: Icon[] = [
   },
   {
     name: "unemployment",
-    displayName: "Desempleo",
+    label: "Desempleo",
     type: "singleColor",
     paths: [
       {
@@ -3409,7 +3409,7 @@ export const icons: Icon[] = [
   },
   {
     name: "unlocked",
-    displayName: "Desbloqueado",
+    label: "Desbloqueado",
     type: "singleColor",
     paths: [
       {
@@ -3422,7 +3422,7 @@ export const icons: Icon[] = [
   },
   {
     name: "upArrow",
-    displayName: "Flecha hacia Arriba",
+    label: "Flecha hacia Arriba",
     type: "singleColor",
     paths: [
       {
@@ -3435,7 +3435,7 @@ export const icons: Icon[] = [
   },
   {
     name: "upload",
-    displayName: "Subir",
+    label: "Subir",
     type: "singleColor",
     paths: [
       {
@@ -3448,7 +3448,7 @@ export const icons: Icon[] = [
   },
   {
     name: "uploadWrapper",
-    displayName: "Icon 56",
+    label: "Icon 56",
     type: "wrapper",
     paths: [
       {
@@ -3461,7 +3461,7 @@ export const icons: Icon[] = [
   },
   {
     name: "userGroupsCard",
-    displayName: "Tarjeta de Grupos de Usuarios",
+    label: "Tarjeta de Grupos de Usuarios",
     type: "singleColor",
     paths: [
       {
@@ -3474,7 +3474,7 @@ export const icons: Icon[] = [
   },
   {
     name: "userGroups",
-    displayName: "Icon 57",
+    label: "Icon 57",
     type: "singleColor",
     paths: [
       {
@@ -3487,7 +3487,7 @@ export const icons: Icon[] = [
   },
   {
     name: "usersCard",
-    displayName: "Tarjeta de Usuarios",
+    label: "Tarjeta de Usuarios",
     type: "singleColor",
     paths: [
       {
@@ -3500,7 +3500,7 @@ export const icons: Icon[] = [
   },
   {
     name: "users",
-    displayName: "Usuarios",
+    label: "Usuarios",
     type: "singleColor",
     paths: [
       {
@@ -3512,21 +3512,8 @@ export const icons: Icon[] = [
     tags: [],
   },
   {
-    name: "usersWrapper",
-    displayName: "Usuarios (envoltura)",
-    type: "wrapper",
-    paths: [
-      {
-        d: "m 29.928655,8.0285747 c -14.195497,0 -25.9143835,11.7188953 -25.9143835,25.9143823 0,7.778578 3.5916659,14.728257 9.1085495,19.499001 C 5.2333277,58.856284 2e-6,67.900298 2e-6,78.099921 c 0,7.544469 6.3271365,13.871576 13.871575,13.871576 7.544437,0 13.871575,-6.32711 13.871575,-13.871576 0,-1.323675 0.86184,-2.185502 2.185503,-2.185502 h 3.877063 l 0.284213,0.0078 c 1.147519,0.07172 1.967045,0.888835 2.034576,2.038496 3.9e-5,6.68e-4 -3.8e-5,0.0013 0,0.002 l 0.0392,0.999647 c 0.0095,0.248253 0.02854,0.496055 0.05684,0.742875 0.800026,6.88839 6.77496,12.266225 13.779453,12.266225 0.192201,3.9e-4 0.384373,-0.0048 0.576268,-0.01569 l 0.468462,-0.02744 c 0.18729,-0.011 0.374228,-0.02734 0.560586,-0.049 6.888392,-0.800064 12.266259,-6.774938 12.266259,-13.779448 0,-1.323673 0.861841,-2.185502 2.185503,-2.185502 h 3.877063 l 0.284213,0.0078 c 1.147526,0.07172 1.967045,0.88884 2.034576,2.038496 3.9e-5,6.68e-4 -3.8e-5,0.0013 0,0.002 l 0.0392,0.999647 c 0.0095,0.248253 0.02854,0.496055 0.05684,0.742875 0.800011,6.888459 6.774948,12.266225 13.779453,12.266225 7.544438,0 13.871575,-6.327107 13.871575,-13.871576 0,-10.193349 -5.224047,-19.256834 -13.107138,-24.671684 5.507819,-4.770508 9.092869,-11.714116 9.092869,-19.48528 0,-14.195488 -11.718887,-25.9143823 -25.914384,-25.9143823 -8.098185,0 -15.300972,3.8886353 -20.071347,9.8004623 C 45.229626,11.917211 38.026838,8.0285747 29.928655,8.0285747 Z",
-      },
-    ],
-    hasWrapper: 0,
-    hasInverted: 0,
-    tags: [],
-  },
-  {
     name: "video",
-    displayName: "Video",
+    label: "Video",
     type: "singleColor",
     paths: [
       {
@@ -3539,7 +3526,7 @@ export const icons: Icon[] = [
   },
   {
     name: "videos",
-    displayName: "Videos",
+    label: "Videos",
     type: "singleColor",
     paths: [
       {
@@ -3552,7 +3539,7 @@ export const icons: Icon[] = [
   },
   {
     name: "wallet",
-    displayName: "Cartera",
+    label: "Cartera",
     type: "singleColor",
     paths: [
       {
@@ -3565,7 +3552,7 @@ export const icons: Icon[] = [
   },
   {
     name: "whatsApp",
-    displayName: "WhatsApp",
+    label: "WhatsApp",
     type: "singleColor",
     paths: [
       {
@@ -3578,7 +3565,7 @@ export const icons: Icon[] = [
   },
   {
     name: "workflowEntriesCard",
-    displayName: "Tarjeta de Entradas de Flujo de Trabajo",
+    label: "Tarjeta de Entradas de Flujo de Trabajo",
     type: "singleColor",
     paths: [
       {
@@ -3591,7 +3578,7 @@ export const icons: Icon[] = [
   },
   {
     name: "workflowEntries",
-    displayName: "Entradas de Flujo de Trabajo",
+    label: "Entradas de Flujo de Trabajo",
     type: "singleColor",
     paths: [
       {
@@ -3604,7 +3591,7 @@ export const icons: Icon[] = [
   },
   {
     name: "workflow",
-    displayName: "Flujo de Trabajo",
+    label: "Flujo de Trabajo",
     type: "singleColor",
     paths: [
       {
@@ -3617,7 +3604,7 @@ export const icons: Icon[] = [
   },
   {
     name: "workflowsCard",
-    displayName: "Tarjeta de Flujos de Trabajo",
+    label: "Tarjeta de Flujos de Trabajo",
     type: "singleColor",
     paths: [
       {
@@ -3630,7 +3617,7 @@ export const icons: Icon[] = [
   },
   {
     name: "workflowWrapper",
-    displayName: "Icon 58",
+    label: "Icon 58",
     type: "wrapper",
     paths: [
       {
@@ -3643,7 +3630,7 @@ export const icons: Icon[] = [
   },
   {
     name: "work",
-    displayName: "Trabajo",
+    label: "Trabajo",
     type: "singleColor",
     paths: [
       {
@@ -3656,7 +3643,7 @@ export const icons: Icon[] = [
   },
   {
     name: "myRingBindersCard",
-    displayName: "Mis biblioratos",
+    label: "Mis biblioratos",
     type: "singleColor",
     paths: [
       {
@@ -3669,7 +3656,7 @@ export const icons: Icon[] = [
   },
   {
     name: "multiActionCard",
-    displayName: "Tarjeta de acciones multiples",
+    label: "Tarjeta de acciones multiples",
     type: "singleColor",
     paths: [
       {
@@ -3682,7 +3669,7 @@ export const icons: Icon[] = [
   },
   {
     name: "multiActionCardWrapper",
-    displayName: "Tarjeta de acciones multiples (envoltura)",
+    label: "Tarjeta de acciones multiples (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3695,7 +3682,7 @@ export const icons: Icon[] = [
   },
   {
     name: "indicatorCardWrapper",
-    displayName: "Tarjeta de indicador (envoltura)",
+    label: "Tarjeta de indicador (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3708,7 +3695,7 @@ export const icons: Icon[] = [
   },
   {
     name: "dataTableCardWrapper",
-    displayName: "Tarjeta de tabla de datos (envoltura)",
+    label: "Tarjeta de tabla de datos (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3721,7 +3708,7 @@ export const icons: Icon[] = [
   },
   {
     name: "dataListCardWrapper",
-    displayName: "Tarjeta de lista de datos (envoltura)",
+    label: "Tarjeta de lista de datos (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3734,7 +3721,7 @@ export const icons: Icon[] = [
   },
   {
     name: "barChartCardWrapper",
-    displayName: "Tarjeta de Gráfico de Barras (envoltura)",
+    label: "Tarjeta de Gráfico de Barras (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3747,7 +3734,7 @@ export const icons: Icon[] = [
   },
   {
     name: "breakdownChartCardWrapper",
-    displayName: "Tarjeta de Gráfico de Desglose (envoltura)",
+    label: "Tarjeta de Gráfico de Desglose (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3760,7 +3747,7 @@ export const icons: Icon[] = [
   },
   {
     name: "stackedColumnChartCardWrapper",
-    displayName: "Tarjeta de Gráfico de Columnas Apiladas (envoltura)",
+    label: "Tarjeta de Gráfico de Columnas Apiladas (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3773,7 +3760,7 @@ export const icons: Icon[] = [
   },
   {
     name: "columnChartCardWrapper",
-    displayName: "Tarjeta de Gráfico de Columnas (envoltura)",
+    label: "Tarjeta de Gráfico de Columnas (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3786,7 +3773,7 @@ export const icons: Icon[] = [
   },
   {
     name: "filledShapeChartCardWrapper",
-    displayName: "Tarjeta de Gráfico de Formas Rellenas (envoltura)",
+    label: "Tarjeta de Gráfico de Formas Rellenas (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3799,7 +3786,7 @@ export const icons: Icon[] = [
   },
   {
     name: "lineChartCardWrapper",
-    displayName: "Tarjeta de Gráfico de Líneas (envoltura)",
+    label: "Tarjeta de Gráfico de Líneas (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3812,7 +3799,7 @@ export const icons: Icon[] = [
   },
   {
     name: "multiLineChartCardWrapper",
-    displayName: "Tarjeta de Gráfico de Múltiples Líneas (envoltura)",
+    label: "Tarjeta de Gráfico de Múltiples Líneas (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3825,7 +3812,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pieChartCardWrapper",
-    displayName: "Tarjeta de Gráfico de Pastel (envoltura)",
+    label: "Tarjeta de Gráfico de Pastel (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -3838,7 +3825,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tabsManagerCard",
-    displayName: "Tarjeta de manejo de tabs",
+    label: "Tarjeta de manejo de tabs",
     type: "singleColor",
     paths: [
       {
@@ -3851,7 +3838,7 @@ export const icons: Icon[] = [
   },
   {
     name: "configurations",
-    displayName: "Configuraciones",
+    label: "Configuraciones",
     type: "singleColor",
     paths: [
       {
@@ -3864,7 +3851,7 @@ export const icons: Icon[] = [
   },
   {
     name: "settingsMultiColor",
-    displayName: "Configuraciones (Multi color)",
+    label: "Configuraciones (Multi color)",
     type: "multiColor",
     paths: [
       {
@@ -3886,7 +3873,7 @@ export const icons: Icon[] = [
   },
   {
     name: "ringBindersMultiColor",
-    displayName: "Biblioratos (muticolor)",
+    label: "Biblioratos (muticolor)",
     type: "multiColor",
     paths: [
       {
@@ -3908,7 +3895,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tagsMultiColor",
-    displayName: "Etiquetas (multicolor)",
+    label: "Etiquetas (multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -3926,7 +3913,7 @@ export const icons: Icon[] = [
   },
   {
     name: "deletedRecordsMultiColor",
-    displayName: "Registros eliminados (multicolor)",
+    label: "Registros eliminados (multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -3944,7 +3931,7 @@ export const icons: Icon[] = [
   },
   {
     name: "updatePricesMultiColor",
-    displayName: "Actualizar precios (multicolor)",
+    label: "Actualizar precios (multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -3962,7 +3949,7 @@ export const icons: Icon[] = [
   },
   {
     name: "activityLogMultiColor",
-    displayName: "Registro de actividad (multicolor)",
+    label: "Registro de actividad (multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -3984,7 +3971,7 @@ export const icons: Icon[] = [
   },
   {
     name: "websiteBuilderMultiColor",
-    displayName: "Armador de sitio web (multicolor)",
+    label: "Armador de sitio web (multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -4006,7 +3993,7 @@ export const icons: Icon[] = [
   },
   {
     name: "addressMultiColor",
-    displayName: "Domicilio (Multicolor)",
+    label: "Domicilio (Multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -4028,7 +4015,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tutorialsMultiColor",
-    displayName: "Tutoriales (Multicolor)",
+    label: "Tutoriales (Multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -4050,7 +4037,7 @@ export const icons: Icon[] = [
   },
   {
     name: "workflowMultiColor",
-    displayName: "Wokflow (Multicolor)",
+    label: "Wokflow (Multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -4072,7 +4059,7 @@ export const icons: Icon[] = [
   },
   {
     name: "scrapingMultiColor",
-    displayName: "Scraping (Multicolor)",
+    label: "Scraping (Multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -4094,7 +4081,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pointOfSaleMultiColor",
-    displayName: "Punto de venta (Multicolor)",
+    label: "Punto de venta (Multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -4116,7 +4103,7 @@ export const icons: Icon[] = [
   },
   {
     name: "productsMultiColor",
-    displayName: "Productos (Multicolor)",
+    label: "Productos (Multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -4138,7 +4125,7 @@ export const icons: Icon[] = [
   },
   {
     name: "paymentsMultiColor",
-    displayName: "Pagos (Multicolor)",
+    label: "Pagos (Multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -4160,7 +4147,7 @@ export const icons: Icon[] = [
   },
   {
     name: "purchasesMultiColor",
-    displayName: "Compras (Multicolor)",
+    label: "Compras (Multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -4182,7 +4169,7 @@ export const icons: Icon[] = [
   },
   {
     name: "servicesMultiColor",
-    displayName: "Servicios (Multicolor)",
+    label: "Servicios (Multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -4204,7 +4191,7 @@ export const icons: Icon[] = [
   },
   {
     name: "workflowEntriesMultiColor",
-    displayName: "Entradas de workflows (Multicolor)",
+    label: "Entradas de workflows (Multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -4226,7 +4213,7 @@ export const icons: Icon[] = [
   },
   {
     name: "navigationTabsMultiColor",
-    displayName: "Tabs de navegación (Multicolor)",
+    label: "Tabs de navegación (Multicolor)",
     type: "multiColor",
     paths: [
       {
@@ -4248,7 +4235,7 @@ export const icons: Icon[] = [
   },
   {
     name: "websiteBuilderCardWrapper",
-    displayName: "Armador de sitio web - tarjeta (envoltura)",
+    label: "Armador de sitio web - tarjeta (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -4261,7 +4248,7 @@ export const icons: Icon[] = [
   },
   {
     name: "websiteBuilderCard",
-    displayName: "Armador de sitio web - tarjeta",
+    label: "Armador de sitio web - tarjeta",
     type: "singleColor",
     paths: [
       {
@@ -4274,7 +4261,7 @@ export const icons: Icon[] = [
   },
   {
     name: "websiteBuilder",
-    displayName: "Armador de sitio web",
+    label: "Armador de sitio web",
     type: "singleColor",
     paths: [
       {
@@ -4287,7 +4274,7 @@ export const icons: Icon[] = [
   },
   {
     name: "workflowsCardWrapper",
-    displayName: "Tarjeta de Flujos de Trabajo (envoltura)",
+    label: "Tarjeta de Flujos de Trabajo (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -4300,7 +4287,7 @@ export const icons: Icon[] = [
   },
   {
     name: "workflowEntriesCardWrapper",
-    displayName: "Tarjeta de Entradas de Flujo de Trabajo (Envoltura)",
+    label: "Tarjeta de Entradas de Flujo de Trabajo (Envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -4313,7 +4300,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tasksCardWrapper",
-    displayName: "Tarjeta de tareas (envoltura)",
+    label: "Tarjeta de tareas (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -4326,7 +4313,7 @@ export const icons: Icon[] = [
   },
   {
     name: "settingsCardWrapper",
-    displayName: "Tarjeta de ajustes (envoltura)",
+    label: "Tarjeta de ajustes (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -4339,7 +4326,7 @@ export const icons: Icon[] = [
   },
   {
     name: "ringBindersCardWrapper",
-    displayName: "Tarjeta de biblioratos (Envoltura)",
+    label: "Tarjeta de biblioratos (Envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -4352,7 +4339,7 @@ export const icons: Icon[] = [
   },
   {
     name: "myRingBindersCardWrapper",
-    displayName: "Tarjeta de mis biblioratos (Envoltura)",
+    label: "Tarjeta de mis biblioratos (Envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -4365,7 +4352,7 @@ export const icons: Icon[] = [
   },
   {
     name: "indicatorGroupCardWrapper",
-    displayName: "Tarjeta de Grupo de Indicadores (Envoltura)",
+    label: "Tarjeta de Grupo de Indicadores (Envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -4378,7 +4365,7 @@ export const icons: Icon[] = [
   },
   {
     name: "indicatorGroupsCardWrapper",
-    displayName: "Tarjeta de Grupos de Indicadores (Envoltura)",
+    label: "Tarjeta de Grupos de Indicadores (Envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -4391,7 +4378,7 @@ export const icons: Icon[] = [
   },
   {
     name: "downloadFile",
-    displayName: "Descargar archivo",
+    label: "Descargar archivo",
     type: "singleColor",
     paths: [
       {
@@ -4404,7 +4391,7 @@ export const icons: Icon[] = [
   },
   {
     name: "uploadFile",
-    displayName: "Subir archivo",
+    label: "Subir archivo",
     type: "singleColor",
     paths: [
       {
@@ -4417,7 +4404,7 @@ export const icons: Icon[] = [
   },
   {
     name: "profile",
-    displayName: "Perfil",
+    label: "Perfil",
     type: "singleColor",
     paths: [
       {
@@ -4430,7 +4417,7 @@ export const icons: Icon[] = [
   },
   {
     name: "profileWrapper",
-    displayName: "Perfil (cobertura)",
+    label: "Perfil (cobertura)",
     type: "wrapper",
     paths: [
       {
@@ -4443,7 +4430,7 @@ export const icons: Icon[] = [
   },
   {
     name: "debt",
-    displayName: "Deuda",
+    label: "Deuda",
     type: "singleColor",
     paths: [
       {
@@ -4456,7 +4443,7 @@ export const icons: Icon[] = [
   },
   {
     name: "debtWrapper",
-    displayName: "Deuda (cobertura)",
+    label: "Deuda (cobertura)",
     type: "wrapper",
     paths: [
       {
@@ -4469,7 +4456,7 @@ export const icons: Icon[] = [
   },
   {
     name: "contentBuilder",
-    displayName: "Armador de contenido",
+    label: "Armador de contenido",
     type: "singleColor",
     paths: [
       {
@@ -4482,7 +4469,7 @@ export const icons: Icon[] = [
   },
   {
     name: "salesPoint",
-    displayName: "Punto de venta",
+    label: "Punto de venta",
     type: "singleColor",
     paths: [
       {
@@ -4495,7 +4482,7 @@ export const icons: Icon[] = [
   },
   {
     name: "salesPointWrapper",
-    displayName: "Deuda (cobertura)",
+    label: "Deuda (cobertura)",
     type: "wrapper",
     paths: [
       {
@@ -4508,7 +4495,7 @@ export const icons: Icon[] = [
   },
   {
     name: "originBottomLeft",
-    displayName: "Origen abajo izquirda",
+    label: "Origen abajo izquirda",
     type: "singleColor",
     paths: [
       {
@@ -4521,7 +4508,7 @@ export const icons: Icon[] = [
   },
   {
     name: "originBottomRight",
-    displayName: "Origen abajo derecha",
+    label: "Origen abajo derecha",
     type: "singleColor",
     paths: [
       {
@@ -4534,7 +4521,7 @@ export const icons: Icon[] = [
   },
   {
     name: "originTopLeft",
-    displayName: "Origen arriba izquirda",
+    label: "Origen arriba izquirda",
     type: "singleColor",
     paths: [
       {
@@ -4547,7 +4534,7 @@ export const icons: Icon[] = [
   },
   {
     name: "originTopRight",
-    displayName: "Origen arriba derecha",
+    label: "Origen arriba derecha",
     type: "singleColor",
     paths: [
       {
@@ -4561,7 +4548,7 @@ export const icons: Icon[] = [
 
   {
     name: "flexAlignStart",
-    displayName: "Alinear Inicio",
+    label: "Alinear Inicio",
     type: "singleColor",
     paths: [
       {
@@ -4574,7 +4561,7 @@ export const icons: Icon[] = [
   },
   {
     name: "flexAlignCenter",
-    displayName: "Alinear Centro",
+    label: "Alinear Centro",
     type: "singleColor",
     paths: [
       {
@@ -4587,7 +4574,7 @@ export const icons: Icon[] = [
   },
   {
     name: "flexAlignEnd",
-    displayName: "Alinear Fin",
+    label: "Alinear Fin",
     type: "singleColor",
     paths: [
       {
@@ -4600,7 +4587,7 @@ export const icons: Icon[] = [
   },
   {
     name: "flexAlignSpaceBetween",
-    displayName: "Alinear Espacio Entre",
+    label: "Alinear Espacio Entre",
     type: "singleColor",
     paths: [
       {
@@ -4613,7 +4600,7 @@ export const icons: Icon[] = [
   },
   {
     name: "flexJustifyStart",
-    displayName: "Justificar Inicio",
+    label: "Justificar Inicio",
     type: "singleColor",
     paths: [
       {
@@ -4626,7 +4613,7 @@ export const icons: Icon[] = [
   },
   {
     name: "flexJustifyCenter",
-    displayName: "Justificar Centro",
+    label: "Justificar Centro",
     type: "singleColor",
     paths: [
       {
@@ -4639,7 +4626,7 @@ export const icons: Icon[] = [
   },
   {
     name: "flexJustifyEnd",
-    displayName: "Justificar Fin",
+    label: "Justificar Fin",
     type: "singleColor",
     paths: [
       {
@@ -4652,7 +4639,7 @@ export const icons: Icon[] = [
   },
   {
     name: "flexJustifySpaceBetween",
-    displayName: "Justificar Espacio Entre",
+    label: "Justificar Espacio Entre",
     type: "singleColor",
     paths: [
       {
@@ -4665,7 +4652,7 @@ export const icons: Icon[] = [
   },
   {
     name: "save",
-    displayName: "Guardar",
+    label: "Guardar",
     type: "singleColor",
     paths: [
       {
@@ -4678,7 +4665,7 @@ export const icons: Icon[] = [
   },
   {
     name: "tablet",
-    displayName: "Tablet",
+    label: "Tablet",
     type: "singleColor",
     paths: [
       {
@@ -4691,7 +4678,7 @@ export const icons: Icon[] = [
   },
   {
     name: "all",
-    displayName: "Todo",
+    label: "Todo",
     type: "singleColor",
     paths: [
       {
@@ -4704,7 +4691,7 @@ export const icons: Icon[] = [
   },
   {
     name: "asterisk",
-    displayName: "Asterisco",
+    label: "Asterisco",
     type: "singleColor",
     paths: [
       {
@@ -4717,7 +4704,7 @@ export const icons: Icon[] = [
   },
   {
     name: "link",
-    displayName: "Link",
+    label: "Link",
     type: "singleColor",
     paths: [
       {
@@ -4730,7 +4717,7 @@ export const icons: Icon[] = [
   },
   {
     name: "button",
-    displayName: "Botón",
+    label: "Botón",
     type: "singleColor",
     paths: [
       {
@@ -4743,7 +4730,7 @@ export const icons: Icon[] = [
   },
   {
     name: "iconButton",
-    displayName: "Botón de ícono",
+    label: "Botón de ícono",
     type: "singleColor",
     paths: [
       {
@@ -4756,7 +4743,7 @@ export const icons: Icon[] = [
   },
   {
     name: "textDecorationNone",
-    displayName: "Texto deco. ninguna",
+    label: "Texto deco. ninguna",
     type: "singleColor",
     paths: [
       {
@@ -4769,7 +4756,7 @@ export const icons: Icon[] = [
   },
   {
     name: "textDecorationLineThrough",
-    displayName: "Texto deco. linea medio",
+    label: "Texto deco. linea medio",
     type: "singleColor",
     paths: [
       {
@@ -4782,7 +4769,7 @@ export const icons: Icon[] = [
   },
   {
     name: "textDecorationOverline",
-    displayName: "Texto deco. linea arriba",
+    label: "Texto deco. linea arriba",
     type: "singleColor",
     paths: [
       {
@@ -4795,7 +4782,7 @@ export const icons: Icon[] = [
   },
   {
     name: "textDecorationUnderline",
-    displayName: "Texto deco. linea abajo",
+    label: "Texto deco. linea abajo",
     type: "singleColor",
     paths: [
       {
@@ -4808,7 +4795,7 @@ export const icons: Icon[] = [
   },
   {
     name: "textDecorationOverlineUnderline",
-    displayName: "Texto deco. linea arriba y abajo",
+    label: "Texto deco. linea arriba y abajo",
     type: "singleColor",
     paths: [
       {
@@ -4821,7 +4808,7 @@ export const icons: Icon[] = [
   },
   {
     name: "nav",
-    displayName: "Navegación",
+    label: "Navegación",
     type: "singleColor",
     paths: [
       {
@@ -4834,7 +4821,7 @@ export const icons: Icon[] = [
   },
   {
     name: "header",
-    displayName: "Cabecera",
+    label: "Cabecera",
     type: "singleColor",
     paths: [
       {
@@ -4847,7 +4834,7 @@ export const icons: Icon[] = [
   },
   {
     name: "popoverButton",
-    displayName: "Botón con popover",
+    label: "Botón con popover",
     type: "singleColor",
     paths: [
       {
@@ -4860,7 +4847,7 @@ export const icons: Icon[] = [
   },
   {
     name: "profileButton",
-    displayName: "Botón de perfil de usuario",
+    label: "Botón de perfil de usuario",
     type: "singleColor",
     paths: [
       {
@@ -4873,7 +4860,7 @@ export const icons: Icon[] = [
   },
   {
     name: "menu",
-    displayName: "Menu",
+    label: "Menu",
     type: "singleColor",
     paths: [
       {
@@ -4886,7 +4873,7 @@ export const icons: Icon[] = [
   },
   {
     name: "lottie",
-    displayName: "Lottie",
+    label: "Lottie",
     type: "singleColor",
     paths: [
       {
@@ -4899,7 +4886,7 @@ export const icons: Icon[] = [
   },
   {
     name: "copyButton",
-    displayName: "Botón de copiar",
+    label: "Botón de copiar",
     type: "singleColor",
     paths: [
       {
@@ -4912,7 +4899,7 @@ export const icons: Icon[] = [
   },
   {
     name: "downloadButton",
-    displayName: "Botón de descarga",
+    label: "Botón de descarga",
     type: "singleColor",
     paths: [
       {
@@ -4925,7 +4912,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted1",
-    displayName: "Invertido 1",
+    label: "Invertido 1",
     type: "inverted",
     paths: [
       {
@@ -4938,7 +4925,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted2",
-    displayName: "Invertido 2",
+    label: "Invertido 2",
     type: "inverted",
     paths: [
       {
@@ -4951,7 +4938,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted3",
-    displayName: "Invertido 3",
+    label: "Invertido 3",
     type: "inverted",
     paths: [
       {
@@ -4964,7 +4951,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted4",
-    displayName: "Invertido 4",
+    label: "Invertido 4",
     type: "inverted",
     paths: [
       {
@@ -4977,7 +4964,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted5",
-    displayName: "Invertido 5",
+    label: "Invertido 5",
     type: "inverted",
     paths: [
       {
@@ -4990,7 +4977,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted6",
-    displayName: "Invertido 6",
+    label: "Invertido 6",
     type: "inverted",
     paths: [
       {
@@ -5003,7 +4990,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted7",
-    displayName: "Invertido 7",
+    label: "Invertido 7",
     type: "inverted",
     paths: [
       {
@@ -5016,7 +5003,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted8",
-    displayName: "Invertido 8",
+    label: "Invertido 8",
     type: "inverted",
     paths: [
       {
@@ -5029,7 +5016,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted9",
-    displayName: "Invertido 9",
+    label: "Invertido 9",
     type: "inverted",
     paths: [
       {
@@ -5042,7 +5029,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted10",
-    displayName: "Invertido 10",
+    label: "Invertido 10",
     type: "inverted",
     paths: [
       {
@@ -5055,7 +5042,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted11",
-    displayName: "Invertido 11",
+    label: "Invertido 11",
     type: "inverted",
     paths: [
       {
@@ -5068,7 +5055,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted12",
-    displayName: "Invertido 12",
+    label: "Invertido 12",
     type: "inverted",
     paths: [
       {
@@ -5081,7 +5068,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted13",
-    displayName: "Invertido 13",
+    label: "Invertido 13",
     type: "inverted",
     paths: [
       {
@@ -5094,7 +5081,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted14",
-    displayName: "Invertido 14",
+    label: "Invertido 14",
     type: "inverted",
     paths: [
       {
@@ -5107,7 +5094,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted15",
-    displayName: "Invertido 15",
+    label: "Invertido 15",
     type: "inverted",
     paths: [
       {
@@ -5120,7 +5107,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted16",
-    displayName: "Invertido 16",
+    label: "Invertido 16",
     type: "inverted",
     paths: [
       {
@@ -5133,7 +5120,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted17",
-    displayName: "Invertido 17",
+    label: "Invertido 17",
     type: "inverted",
     paths: [
       {
@@ -5146,7 +5133,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted18",
-    displayName: "Invertido 18",
+    label: "Invertido 18",
     type: "inverted",
     paths: [
       {
@@ -5159,7 +5146,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted19",
-    displayName: "Invertido 19",
+    label: "Invertido 19",
     type: "inverted",
     paths: [
       {
@@ -5172,7 +5159,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted20",
-    displayName: "Invertido 20",
+    label: "Invertido 20",
     type: "inverted",
     paths: [
       {
@@ -5185,7 +5172,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted21",
-    displayName: "Invertido 21",
+    label: "Invertido 21",
     type: "inverted",
     paths: [
       {
@@ -5198,7 +5185,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted22",
-    displayName: "Invertido 22",
+    label: "Invertido 22",
     type: "inverted",
     paths: [
       {
@@ -5211,7 +5198,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted23",
-    displayName: "Invertido 23",
+    label: "Invertido 23",
     type: "inverted",
     paths: [
       {
@@ -5224,7 +5211,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted24",
-    displayName: "Invertido 24",
+    label: "Invertido 24",
     type: "inverted",
     paths: [
       {
@@ -5237,7 +5224,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted25",
-    displayName: "Invertido 25",
+    label: "Invertido 25",
     type: "inverted",
     paths: [
       {
@@ -5250,7 +5237,7 @@ export const icons: Icon[] = [
   },
   {
     name: "inverted26",
-    displayName: "Invertido 26",
+    label: "Invertido 26",
     type: "inverted",
     paths: [
       {
@@ -5264,7 +5251,7 @@ export const icons: Icon[] = [
 
   {
     name: "x",
-    displayName: "X",
+    label: "X",
     type: "singleColor",
     paths: [
       {
@@ -5277,7 +5264,7 @@ export const icons: Icon[] = [
   },
   {
     name: "twitter",
-    displayName: "Twitter",
+    label: "Twitter",
     type: "singleColor",
     paths: [
       {
@@ -5290,7 +5277,7 @@ export const icons: Icon[] = [
   },
   {
     name: "apple",
-    displayName: "Apple",
+    label: "Apple",
     type: "singleColor",
     paths: [
       {
@@ -5303,7 +5290,7 @@ export const icons: Icon[] = [
   },
   {
     name: "facebook",
-    displayName: "Facebook",
+    label: "Facebook",
     type: "singleColor",
     paths: [
       {
@@ -5316,7 +5303,7 @@ export const icons: Icon[] = [
   },
   {
     name: "google",
-    displayName: "Google",
+    label: "Google",
     type: "singleColor",
     paths: [
       {
@@ -5329,7 +5316,7 @@ export const icons: Icon[] = [
   },
   {
     name: "microsoft",
-    displayName: "Microsoft",
+    label: "Microsoft",
     type: "singleColor",
     paths: [
       {
@@ -5342,7 +5329,7 @@ export const icons: Icon[] = [
   },
   {
     name: "github",
-    displayName: "GitHub",
+    label: "GitHub",
     type: "singleColor",
     paths: [
       {
@@ -5355,7 +5342,7 @@ export const icons: Icon[] = [
   },
   {
     name: "checkboxChecked",
-    displayName: "Casilla seleccionada",
+    label: "Casilla seleccionada",
     type: "singleColor",
     paths: [
       {
@@ -5368,7 +5355,7 @@ export const icons: Icon[] = [
   },
   {
     name: "checkboxUnchecked",
-    displayName: "Casilla sin seleccionar",
+    label: "Casilla sin seleccionar",
     type: "singleColor",
     paths: [
       {
@@ -5381,7 +5368,7 @@ export const icons: Icon[] = [
   },
   {
     name: "markdown",
-    displayName: "Markdown",
+    label: "Markdown",
     type: "singleColor",
     paths: [
       {
@@ -5394,7 +5381,7 @@ export const icons: Icon[] = [
   },
   {
     name: "modo",
-    displayName: "MODO",
+    label: "MODO",
     type: "singleColor",
     paths: [
       {
@@ -5407,7 +5394,7 @@ export const icons: Icon[] = [
   },
   {
     name: "mercadoPago",
-    displayName: "Mercado Pago",
+    label: "Mercado Pago",
     type: "singleColor",
     paths: [
       {
@@ -5420,7 +5407,7 @@ export const icons: Icon[] = [
   },
   {
     name: "moreHorizontal",
-    displayName: "Más (horizontal)",
+    label: "Más (horizontal)",
     type: "singleColor",
     paths: [
       {
@@ -5433,7 +5420,7 @@ export const icons: Icon[] = [
   },
   {
     name: "moreVertical",
-    displayName: "Más (vertical)",
+    label: "Más (vertical)",
     type: "singleColor",
     paths: [
       {
@@ -5446,7 +5433,7 @@ export const icons: Icon[] = [
   },
   {
     name: "logoutCircle",
-    displayName: "Despedirse (Circulo)",
+    label: "Despedirse (Circulo)",
     type: "singleColor",
     paths: [
       {
@@ -5459,7 +5446,7 @@ export const icons: Icon[] = [
   },
   {
     name: "logout",
-    displayName: "Despedirse",
+    label: "Despedirse",
     type: "singleColor",
     paths: [
       {
@@ -5472,7 +5459,7 @@ export const icons: Icon[] = [
   },
   {
     name: "playStoreMultiColor",
-    displayName: "Play Store (Multi Color)",
+    label: "Play Store (Multi Color)",
     type: "multiColor",
     paths: [
       {
@@ -5498,7 +5485,7 @@ export const icons: Icon[] = [
   },
   {
     name: "back",
-    displayName: "Volver",
+    label: "Volver",
     type: "singleColor",
     paths: [
       {
@@ -5511,7 +5498,7 @@ export const icons: Icon[] = [
   },
   {
     name: "chevronLeftSm",
-    displayName: "Flecha izquierda pequeña",
+    label: "Flecha izquierda pequeña",
     type: "singleColor",
     paths: [
       {
@@ -5524,7 +5511,7 @@ export const icons: Icon[] = [
   },
   {
     name: "chevronLeft",
-    displayName: "Flecha izquierda",
+    label: "Flecha izquierda",
     type: "singleColor",
     paths: [
       {
@@ -5537,7 +5524,7 @@ export const icons: Icon[] = [
   },
   {
     name: "chevronRightSm",
-    displayName: "Flecha derecha pequeña",
+    label: "Flecha derecha pequeña",
     type: "singleColor",
     paths: [
       {
@@ -5550,7 +5537,7 @@ export const icons: Icon[] = [
   },
   {
     name: "chevronRight",
-    displayName: "Flecha derecha",
+    label: "Flecha derecha",
     type: "singleColor",
     paths: [
       {
@@ -5563,7 +5550,7 @@ export const icons: Icon[] = [
   },
   {
     name: "chevronUp",
-    displayName: "Flecha arriba",
+    label: "Flecha arriba",
     type: "singleColor",
     paths: [
       {
@@ -5576,7 +5563,7 @@ export const icons: Icon[] = [
   },
   {
     name: "chevronDown",
-    displayName: "Flecha abajo",
+    label: "Flecha abajo",
     type: "singleColor",
     paths: [
       {
@@ -5589,7 +5576,7 @@ export const icons: Icon[] = [
   },
   {
     name: "availableOrders",
-    displayName: "Ordenes disponibles",
+    label: "Ordenes disponibles",
     type: "singleColor",
     paths: [
       {
@@ -5602,7 +5589,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pendingDeliveries",
-    displayName: "Entregas pendientes",
+    label: "Entregas pendientes",
     type: "singleColor",
     paths: [
       {
@@ -5615,7 +5602,7 @@ export const icons: Icon[] = [
   },
   {
     name: "completedDeliveries",
-    displayName: "Entregas completadas",
+    label: "Entregas completadas",
     type: "singleColor",
     paths: [
       {
@@ -5628,7 +5615,7 @@ export const icons: Icon[] = [
   },
   {
     name: "box",
-    displayName: "Caja",
+    label: "Caja",
     type: "singleColor",
     paths: [
       {
@@ -5641,7 +5628,7 @@ export const icons: Icon[] = [
   },
   {
     name: "purchase",
-    displayName: "Compra",
+    label: "Compra",
     type: "singleColor",
     paths: [
       {
@@ -5654,7 +5641,7 @@ export const icons: Icon[] = [
   },
   {
     name: "hand",
-    displayName: "Mano",
+    label: "Mano",
     type: "singleColor",
     paths: [
       {
@@ -5667,7 +5654,7 @@ export const icons: Icon[] = [
   },
   {
     name: "barcode",
-    displayName: "Código de barras",
+    label: "Código de barras",
     type: "singleColor",
     paths: [
       {
@@ -5680,7 +5667,7 @@ export const icons: Icon[] = [
   },
   {
     name: "pendingOrders",
-    displayName: "Pedidos Pendientes",
+    label: "Pedidos Pendientes",
     type: "singleColor",
     paths: [
       {
@@ -5693,7 +5680,7 @@ export const icons: Icon[] = [
   },
   {
     name: "completedOrders",
-    displayName: "Pedidos Completados",
+    label: "Pedidos Completados",
     type: "singleColor",
     paths: [
       {
@@ -5706,7 +5693,7 @@ export const icons: Icon[] = [
   },
   {
     name: "offer",
-    displayName: "Oferta",
+    label: "Oferta",
     type: "singleColor",
     paths: [
       {
@@ -5719,7 +5706,7 @@ export const icons: Icon[] = [
   },
   {
     name: "store",
-    displayName: "Tienda",
+    label: "Tienda",
     type: "singleColor",
     paths: [
       {
@@ -5732,7 +5719,7 @@ export const icons: Icon[] = [
   },
   {
     name: "headset",
-    displayName: "Auricular",
+    label: "Auricular",
     type: "singleColor",
     paths: [
       {
@@ -5745,7 +5732,7 @@ export const icons: Icon[] = [
   },
   {
     name: "headsetWrapper",
-    displayName: "Auricular (envoltura)",
+    label: "Auricular (envoltura)",
     type: "wrapper",
     paths: [
       {
@@ -5758,7 +5745,7 @@ export const icons: Icon[] = [
   },
   {
     name: "workspace",
-    displayName: "Espacio de trabajo",
+    label: "Espacio de trabajo",
     type: "singleColor",
     paths: [
       {
@@ -5771,7 +5758,7 @@ export const icons: Icon[] = [
   },
   {
     name: "heart",
-    displayName: "Corazón",
+    label: "Corazón",
     type: "singleColor",
     paths: [
       {
@@ -5784,7 +5771,7 @@ export const icons: Icon[] = [
   },
   {
     name: "heartOutline",
-    displayName: "Corazón (borde)",
+    label: "Corazón (borde)",
     type: "singleColor",
     paths: [
       {
@@ -5797,7 +5784,7 @@ export const icons: Icon[] = [
   },
   {
     name: "bag",
-    displayName: "Bolsa",
+    label: "Bolsa",
     type: "singleColor",
     paths: [
       {
@@ -5810,7 +5797,7 @@ export const icons: Icon[] = [
   },
   {
     name: "history",
-    displayName: "Historial",
+    label: "Historial",
     type: "singleColor",
     paths: [
       {
@@ -5823,7 +5810,7 @@ export const icons: Icon[] = [
   },
   {
     name: "phone",
-    displayName: "Teléfono",
+    label: "Teléfono",
     type: "singleColor",
     paths: [
       {
@@ -5836,7 +5823,7 @@ export const icons: Icon[] = [
   },
   {
     name: "world",
-    displayName: "Mundo",
+    label: "Mundo",
     type: "singleColor",
     paths: [
       {
@@ -5847,91 +5834,14 @@ export const icons: Icon[] = [
     hasInverted: 0,
     tags: [],
   },
+
   {
     name: "organization",
-    displayName: "Organización",
+    label: "Organización",
     type: "singleColor",
     paths: [
       {
         d: "m 21.833332,11.000025 c -2.400666,0 -4.33333,1.932664 -4.33333,4.33333 0,0 0,46.22232 0,69.33333 0,2.16674 2.166664,4.33329 4.33333,4.33329 7.222243,0 21.666667,0 21.666667,0 v -12.99997 c 0,-2.40064 2.290601,-4.33338 4.333339,-4.33338 h 4.333329 c 2.042729,0 4.333333,1.93274 4.333333,4.33338 0,4.33339 0,8.66668 0,12.99997 0,0 14.444429,0 21.666666,0 2.166667,0 4.333332,-2.16655 4.333332,-4.33329 0,-23.11091 0,-69.33333 0,-69.33333 0,-2.400666 -1.932666,-4.33333 -4.333332,-4.33333 z m 8.666669,12.99999 h 12.999998 v 8.66665 H 30.500001 Z m 25.999999,0 h 13 v 8.66665 h -13 z m -25.999999,25.99996 h 12.999998 v 8.66668 H 30.500001 Z m 25.999999,0 h 13 v 8.66668 h -13 z",
-      },
-    ],
-    hasWrapper: 0,
-    hasInverted: 0,
-    tags: [],
-  },
-  {
-    name: "organizations",
-    displayName: "Organizaciones",
-    type: "singleColor",
-    paths: [
-      {
-        d: "M 13.548588,12.592646 C 11.582085,12.592646 10,14.176327 10,16.142837 v 67.715931 c 0,1.774888 1.773766,3.548586 3.548588,3.548586 h 17.749334 v -10.64896 c 0,-1.966462 1.875282,-3.548586 3.548587,-3.548586 h 3.550187 c 1.673298,0 3.550187,1.582124 3.550187,3.548586 v 10.64896 h 17.747735 c 0.0059,0 0.01172,-0.0016 0.0176,-0.0016 0.01119,1.41e-4 0.02241,0.0016 0.0336,0.0016 h 8.229903 v -10.64896 c 0,-1.966478 1.876879,-3.550183 3.550183,-3.550183 h 3.548594 c 1.673296,0 3.550184,1.583704 3.550184,3.550183 v 10.64896 h 7.825126 C 88.224638,87.407354 90,85.632058 90,83.857171 V 37.946322 c 0,-1.966503 -1.583681,-3.550184 -3.550192,-3.550184 H 63.244804 V 16.142837 c 0,-1.966511 -1.583684,-3.550191 -3.550186,-3.550191 z m 7.100373,12.51125 h 10.648961 v 7.098778 H 20.648961 Z m 21.297922,0 h 10.648961 v 7.098778 H 41.946883 Z M 20.732156,40.141393 h 10.482571 v 7.098778 H 20.732156 Z m 21.379517,0 h 10.484171 v 7.098778 H 42.111673 Z m 25.542467,2.326265 h 10.648959 v 7.098769 H 67.65414 Z M 20.648961,55.460471 h 10.648961 v 7.100375 H 20.648961 Z m 21.297922,0 h 10.648961 v 7.100375 H 41.946883 Z m 25.707257,0 h 10.648959 v 7.098778 H 67.65414 Z",
-      },
-    ],
-    hasWrapper: 0,
-    hasInverted: 0,
-    tags: [],
-  },
-  {
-    name: "organizationsWrapper",
-    displayName: "Organizaciones (Envoltura)",
-    type: "wrapper",
-    paths: [
-      {
-        d: "m 13.548828,2.5957031 c -7.3352113,0 -13.54492175,6.2182702 -13.54492175,13.5468749 v 67.716797 c 0,4.217788 1.80050505,7.271236 4.03710935,9.507813 2.2366043,2.236576 5.2900576,4.037109 9.5078124,4.037109 h 17.75 c 1.952712,-0.196477 3.8044,-0.963372 5.324219,-2.205078 1.519819,1.241706 3.371507,2.008601 5.324219,2.205078 h 17.748046 c 0.01575,1.97e-4 -0.01273,-1.92e-4 0.0059,0 0.142541,0.0015 -0.264621,0 0.04492,0 H 67.9766 c 1.952712,-0.196477 3.8044,-0.963372 5.324219,-2.205078 1.519819,1.241706 3.371507,2.008601 5.324219,2.205078 h 7.824219 c 4.221412,0 7.273823,-1.801191 9.509765,-4.037109 2.235943,-2.235919 4.03711,-5.288325 4.03711,-9.509766 V 37.947266 c 0,-7.335208 -6.211651,-13.546875 -13.546875,-13.546875 H 73.240234 v -8.257813 c 0,-7.3286098 -6.209712,-13.5468749 -13.544922,-13.5468749 z",
-      },
-    ],
-    hasWrapper: 0,
-    hasInverted: 0,
-    tags: [],
-  },
-  {
-    name: "shapesOutline",
-    displayName: "Formas (contorno)",
-    type: "singleColor",
-    paths: [
-      {
-        d: "m 50,9.999999 a 4.0003921,4.0003921 0 0 0 -3.47648,2.01562 l -16.00005,28.00003 a 4.0003921,4.0003921 0 0 0 3.47648,5.98428 h 32.0001 a 4.0003921,4.0003921 0 0 0 3.47647,-5.98428 L 53.47648,12.015619 A 4.0003921,4.0003921 0 0 0 50,9.999999 Z m 0,12.07029 9.10147,15.92974 H 40.89853 Z M 27.99996,54.000073 C 18.10625,54.000073 10,62.106321 10,72.000037 c 0,9.893713 8.10625,17.999965 17.99996,17.999965 9.89372,0 17.99997,-8.106252 17.99997,-17.999965 0,-9.893716 -8.10625,-17.999964 -17.99997,-17.999964 z m 29.99994,0 a 4.0003921,4.0003921 0 0 0 -3.99983,3.999832 V 85.99993 a 4.0003921,4.0003921 0 0 0 3.99983,4.000072 H 85.99993 A 4.0003921,4.0003921 0 0 0 90,85.99993 V 57.999905 a 4.0003921,4.0003921 0 0 0 -4.00007,-3.999832 z m -29.99994,7.999906 c 5.57023,0 10.00006,4.429831 10.00006,10.000058 0,5.570227 -4.42983,9.999821 -10.00006,9.999821 -5.57022,0 -9.99982,-4.429594 -9.99982,-9.999821 0,-5.570227 4.4296,-10.000058 9.99982,-10.000058 z m 34.00002,0 H 81.99986 V 81.999858 H 61.99998 Z",
-      },
-    ],
-    hasWrapper: 0,
-    hasInverted: 0,
-    tags: [],
-  },
-  {
-    name: "shapesOutlineWrapper",
-    displayName: "Formas (Envoltura)",
-    type: "wrapper",
-    paths: [
-      {
-        d: "M 50,2.1238434e-7 C 45.147433,-8.8368762e-4 40.387294,2.7572597 37.979675,6.9706305 L 21.908106,35.096427 v 0.002 c -1.748255,3.061038 -2.177393,6.79758 -1.351722,10.217538 C 8.7897855,48.590645 0,59.349343 0,72.09786 0,87.40102 12.598736,100 27.901593,100 c 7.072283,0 13.496961,-2.771242 18.437574,-7.17663 2.486036,4.116755 6.853775,7.176151 11.696617,7.17663 H 86.16103 C 93.406758,99.999291 99.999294,93.406628 100,86.160758 V 58.034961 C 99.999294,50.789091 93.406758,44.196429 86.16103,44.195719 h -6.572236 c 0.491041,-3.104451 0.06388,-6.364494 -1.4969,-9.097329 v -0.002 L 62.020325,6.9705843 C 59.612707,2.7572597 54.852567,-8.8368762e-4 50,2.1238434e-7 Z",
-      },
-    ],
-    hasWrapper: 0,
-    hasInverted: 0,
-    tags: [],
-  },
-  {
-    name: "shapesGroup",
-    displayName: "Grupo de formas",
-    type: "singleColor",
-    paths: [
-      {
-        d: "m 50.772092,10.010049 c -1.944238,-3.45e-4 -4.048937,0.195019 -5.99585,0.831639 -1.946913,0.63662 -3.779381,1.752266 -4.904324,3.606564 a 1.3106112,1.3106112 0 0 0 -0.189467,0.67906 v -0.365519 l -0.286714,0.469474 a 1.3106112,1.3106112 0 0 0 2.028797,1.624715 c 1.347024,-1.296259 4.150115,-1.358628 6.81743,-1.358121 3.078739,-5.82e-4 6.191919,1.804599 7.719489,4.476768 v 0.0017 a 1.3106112,1.3106112 0 0 0 0,0.0017 l 11.713369,20.499188 a 1.3106112,1.3106112 0 0 0 0.0034,0.0017 c 0.958006,1.679164 1.24995,3.733374 0.959068,5.73261 a 1.3106112,1.3106112 0 0 0 1.297759,1.50064 h 4.66288 c 4.544595,4.43e-4 8.887692,4.343547 8.888144,8.888143 a 1.3106112,1.3106112 0 0 0 0,0.0017 l 0.04192,23.656446 c -6.7e-4,0.738984 -0.651178,2.271782 -1.173684,3.49758 a 1.3106112,1.3106112 0 0 0 1.941609,1.597887 c 3.04674,-2.068767 5.70371,-5.630833 5.704106,-9.47834 a 1.3106112,1.3106112 0 0 0 0,-0.0017 l -0.04024,-23.160145 v -0.0017 C 89.957883,46.65767 84.360771,41.450279 78.080372,41.449698 h -3.544526 c 0.05537,-1.992183 -0.247985,-4.008049 -1.326263,-5.786264 l -0.702535,-1.207218 a 1.3106112,1.3106112 0 0 0 -0.01341,-0.0218 L 61.259799,15.969012 V 16.33453 A 1.3106112,1.3106112 0 0 0 61.070333,15.655471 C 58.966462,12.187864 54.945358,10.009298 50.772092,10.010049 Z m -6.408317,11.255632 c -3.361524,-6.35e-4 -6.65862,1.908522 -8.326451,4.827196 v 0.0017 l -11.012512,19.27022 c -1.194495,2.091492 -1.489178,4.637504 -0.949008,6.980068 -8.061545,2.285603 -14.0758284,9.673113 -14.0758284,18.42349 0,10.54212 8.6794774,19.221595 19.2215964,19.221596 4.831006,0 9.220915,-1.881267 12.613752,-4.87079 1.73546,2.797061 4.719296,4.870466 8.033031,4.87079 h 19.270219 c 5.019311,-4.92e-4 9.586833,-4.568015 9.587325,-9.587324 V 61.132384 c -4.95e-4,-5.019309 -4.568014,-9.585157 -9.587325,-9.585647 h -4.384549 c 0.307623,-2.114301 0.008,-4.324434 -1.052962,-6.181963 L 52.688551,26.094554 v -0.0017 c -1.667799,-2.918677 -4.963252,-4.827831 -8.324776,-4.827196 z m 0,6.832519 a 2.7531799,2.7531799 0 0 1 2.390963,1.386625 l 11.012513,19.270219 a 2.7531799,2.7531799 0 0 1 -2.39264,4.119632 H 33.351263 A 2.7531799,2.7531799 0 0 1 30.958624,48.755044 L 41.971136,29.484825 A 2.7531799,2.7531799 0 0 1 44.363775,28.0982 Z m 0,8.306333 -6.264121,10.963887 H 50.626219 Z M 29.221572,58.379256 c 6.809123,0 12.389075,5.579955 12.389075,12.389076 0,6.809119 -5.579952,12.3874 -12.389075,12.3874 -6.809118,0 -12.3874,-5.578281 -12.3874,-12.3874 0,-6.809121 5.578282,-12.389076 12.3874,-12.389076 z m 20.646783,0 h 19.270219 a 2.7531799,2.7531799 0 0 1 2.753129,2.753128 v 19.27022 a 2.7531799,2.7531799 0 0 1 -2.753129,2.753128 H 49.868355 a 2.7531799,2.7531799 0 0 1 -2.753128,-2.753128 v -19.27022 a 2.7531799,2.7531799 0 0 1 2.753128,-2.753128 z m -20.646783,5.506256 c -3.833576,0 -6.881145,3.04924 -6.881145,6.88282 1e-6,3.83358 3.047569,6.881144 6.881145,6.881144 3.833581,0 6.88282,-3.047564 6.88282,-6.881144 0,-3.83358 -3.049239,-6.88282 -6.88282,-6.88282 z m 23.399911,0 V 77.649476 H 66.385446 V 63.885512 Z",
-      },
-    ],
-    hasWrapper: 0,
-    hasInverted: 0,
-    tags: [],
-  },
-  {
-    name: "shapesGroupWrapper",
-    displayName: "Grupo de formas (Envoltura)",
-    type: "wrapper",
-    paths: [
-      {
-        d: "M 50.762201,2.5347527e-7 C 48.138979,-2.6969652e-4 45.029605,0.21493776 41.599026,1.3369181 38.091247,2.4841469 33.838742,4.8626317 31.089519,9.3951857 l -0.0039,0.00968 c -0.04562,0.075366 -0.06059,0.1654523 -0.104457,0.2418449 -0.02393,0.016022 -0.04779,0.032144 -0.07158,0.048364 l -0.28242,0.4643424 c -0.0064,0.01031 -0.01291,0.02063 -0.01934,0.03096 -0.370992,0.614692 -0.487539,1.327591 -0.725394,1.998605 -0.01608,0.05513 -0.04276,0.105226 -0.05803,0.160585 -0.653952,1.94037 -0.933195,3.989627 -0.553234,6.015163 -0.740863,0.897004 -1.519133,1.754509 -2.116215,2.799595 v 0.002 l -10.90606,19.090212 -0.002,0.002 c -0.979766,1.715844 -1.575724,3.508071 -1.992416,5.31865 C 5.768031,50.73401 0,59.96011 0,70.572323 c 0,16.143375 13.278511,29.427675 29.420041,29.427675 4.063908,0 7.893936,-0.924465 11.389651,-2.435864 2.638316,1.460214 5.638231,2.435527 9.05872,2.435864 h 0.002 19.084629 0.002 c 5.004222,-4.95e-4 9.422005,-1.765695 12.855914,-4.639554 2.786787,0.333343 5.674788,-0.172495 7.998677,-1.754826 5.275443,-3.585868 10.185157,-9.384262 10.188408,-17.966164 v -0.0058 -0.01161 -0.01161 L 99.959453,52.683466 C 99.95648,41.936902 92.294939,33.657387 82.464882,31.637168 82.257462,31.228653 82.111259,30.818289 81.865223,30.412465 l 0.100588,0.168324 -0.649953,-1.11829 -0.04449,-0.07739 c -0.02551,-0.04402 -0.05129,-0.08789 -0.07738,-0.131563 -0.01474,-0.02392 -0.02956,-0.04779 -0.04449,-0.07159 L 70.02286,10.890754 c -0.02379,-0.01622 -0.04765,-0.03235 -0.07158,-0.04837 -0.04386,-0.07639 -0.05884,-0.166479 -0.104457,-0.241845 l -0.0039,-0.0097 C 65.716717,3.7886563 58.514819,-1.2026652e-4 50.76607,2.5347527e-7 Z",
       },
     ],
     hasWrapper: 0,

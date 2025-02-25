@@ -7,7 +7,7 @@ import Icon from '../Icon/Icon';
 // Define the interface for breadcrumb items
 interface BreadcrumbItem {
     name: string;
-    displayName: string;
+    label: string;
     icon?: string | null;
     color?: string;
 }
@@ -42,12 +42,12 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ path, onNavigate, containerSt
                             {item.icon && <Icon style={{
                                 marginRight: 5
                             }} name={item.icon} />}
-                            {item.displayName}
+                            {item.label}
                         </span>
                     ) : (
                         // Clickable breadcrumb items
                         <Button
-                            title={item.displayName}
+                            title={item.label}
                             onClick={() => onNavigate(item, index)}
                             type="clear"
                             hasShadow={false}

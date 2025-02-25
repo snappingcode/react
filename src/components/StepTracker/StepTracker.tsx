@@ -10,10 +10,10 @@ interface Step {
 
 interface StepTrackerProps {
     steps: Step[];
-    stepDisplayNameKey: string;
+    stepLabelKey: string;
 }
 
-const StepTracker: React.FC<StepTrackerProps> = ({ steps, stepDisplayNameKey }) => {
+const StepTracker: React.FC<StepTrackerProps> = ({ steps, stepLabelKey }) => {
     return (
         <div style={styles.container}>
             {steps.map((item, index) => {
@@ -118,7 +118,7 @@ const StepTracker: React.FC<StepTrackerProps> = ({ steps, stepDisplayNameKey }) 
                             justifyContent: 'center',
                             alignItems: 'center',
                         }}>
-                            <div style={styles.displayName}>{item[stepDisplayNameKey]}</div>
+                            <div style={styles.label}>{item[stepLabelKey]}</div>
                         </div>
 
                         <div style={styles.statusIconWrapper}>{statusIcon}</div>
@@ -162,7 +162,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         height: 75,
         position: "relative",
     },
-    displayName: {
+    label: {
         textAlign: "center",
         fontWeight: "500",
         color: themeColors.primaryShade,
