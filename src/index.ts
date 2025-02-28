@@ -48,6 +48,7 @@ export { default as ContentAnimator } from "./components/ContentAnimator/Content
 export { default as AlertMessage } from "./components/AlertMessage/AlertMessage";
 export { default as DynamicContent } from "./components/DynamicContent/DynamicContent";
 export { default as OtpInput } from "./components/OtpInput/OtpInput";
+export { default as Pagination } from "./components/Pagination/Pagination";
 
 // Cards
 
