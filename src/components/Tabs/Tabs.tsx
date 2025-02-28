@@ -89,6 +89,7 @@ const Tabs: React.FC<TabsProps> = ({
                             <div
                                 style={isActive ? {
                                     ...activeTabIndicatorStyle,
+                                    background: color,
                                     transform: "scaleX(1)", // Se expande completamente
                                 } : { transform: "scaleX(0)", }}
                             />
@@ -109,6 +110,7 @@ const activeTabIndicatorStyle: React.CSSProperties = {
     width: "100%",
     height: "2px",
     //background: "linear-gradient(90deg, #F05CD5 0%, #00CE8E 100%)",
+    background: themeColors.primary,
     transform: "scaleX(0)",
     transformOrigin: "center",
     transition: "transform .3s ease-in-out",
