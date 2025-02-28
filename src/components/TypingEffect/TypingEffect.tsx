@@ -22,6 +22,13 @@ const TypingEffect: React.FC<TypingEffectProps> = ({
     const [isTyping, setIsTyping] = useState(true);
 
     useEffect(() => {
+        // Reset the state when the text changes
+        setDisplayedText("");
+        setIndex(0);
+        setIsTyping(true);
+    }, [text]);
+
+    useEffect(() => {
         if (index < text.length) {
             const timeout = setTimeout(() => {
                 setDisplayedText((prev) => prev + text[index]);
@@ -44,7 +51,7 @@ const TypingEffect: React.FC<TypingEffectProps> = ({
                 return () => clearTimeout(timeout);
             }
         }
-    }, [index, text, speed, loop]);
+    }, [index, text, speed, loop, onComplete]);
 
     return (
         <span style={style}>
