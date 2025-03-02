@@ -6,6 +6,7 @@ export { default as IconButton } from "./components/buttons/IconButton/IconButto
 export { default as LockToggleButton } from "./components/buttons/LockToggleButton/LockToggleButton";
 export { default as PlayPauseButton } from "./components/buttons/PlayPauseButton/PlayPauseButton";
 export { default as ActionsMenuButton } from "./components/buttons/ActionsMenuButton/ActionsMenuButton";
+export { default as CartButton } from "./components/buttons/CartButton/CartButton";
 
 // Fields
 export { default as AutocompleteField } from "./components/fields/AutocompleteField/AutocompleteField";
@@ -71,6 +72,7 @@ export { default as GridLoader } from "./components/Loader/GridLoader";
 export { default as DotLoader } from "./components/Loader/DotLoader";
 
 // Drawers
+export { default as Drawer } from "./components/Drawer/Drawer";
 
 // Config
 export { default as themeColors } from "./config/themeColors";

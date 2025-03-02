@@ -109,7 +109,6 @@ const activeTabIndicatorStyle: React.CSSProperties = {
     left: 0,
     width: "100%",
     height: "2px",
-    //background: "linear-gradient(90deg, #F05CD5 0%, #00CE8E 100%)",
     background: themeColors.primary,
     transform: "scaleX(0)",
     transformOrigin: "center",
