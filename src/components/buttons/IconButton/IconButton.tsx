@@ -32,7 +32,6 @@ const resolveIcon = (
     size?: number,
     color?: string
 ) => {
-    console.log(size)
     if (icon) {
         return <Icon name={icon} size={size} color={color} style={{
             display: 'block'
