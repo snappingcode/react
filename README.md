@@ -11,7 +11,7 @@ The `@snapping/react` package provides a collection of reusable React components
 To use `@snapping/react` in your project, first ensure you have the required peer dependencies installed:
 
 ```bash
-npm install react react-dom react-router-dom expr-eval
+npm install react react-dom expr-eval
 ```
 
 Then, install the `@snapping/react` package:

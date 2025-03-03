@@ -17,6 +17,12 @@ export { default as PasswordField } from "./components/fields/PasswordField/Pass
 export { default as PastelColorField } from "./components/fields/PastelColorField/PastelColorField";
 export { default as RadioField } from "./components/fields/RadioField/RadioField";
 export { default as TextField } from "./components/fields/TextField/TextField";
+export { default as NumberField } from "./components/fields/NumberField/NumberField";
+export { default as DateField } from "./components/fields/DateField/DateField";
+export { default as DateTimeField } from "./components/fields/DateTimeField/DateTimeField";
+export { default as TimeField } from "./components/fields/TimeField/TimeField";
+export { default as MonthYearField } from "./components/fields/MonthYearField/MonthYearField";
+export { default as YearField } from "./components/fields/YearField/YearField";
 
 // Dynamic Components
 export { default as DynamicForm } from "./components/DynamicForm/DynamicForm";
