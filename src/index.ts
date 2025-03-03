@@ -51,6 +51,7 @@ export { default as DynamicContent } from "./components/DynamicContent/DynamicCo
 export { default as OtpInput } from "./components/OtpInput/OtpInput";
 export { default as Pagination } from "./components/Pagination/Pagination";
 export { default as Tabs } from "./components/Tabs/Tabs";
+export { default as ExpandablePanel } from "./components/ExpandablePanel/ExpandablePanel";
 
 // Cards
 
