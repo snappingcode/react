@@ -40,13 +40,15 @@ const CartButton: React.FC<CartButtonProps> = ({
 
     return (
         <div
-            className={`cumbre-cart-button ${className || ''}`}
+            className={`snapping-cart-button ${className || ''}`}
             style={{
                 position: 'fixed',
                 bottom: '30px',
                 right: '30px',
+                cursor: 'pointer',
                 ...containerStyle
             }}
+            onClick={onClick}
         >
             {totalItems > 0 && (
                 <div
@@ -70,7 +72,7 @@ const CartButton: React.FC<CartButtonProps> = ({
                 >{totalItems}</div>
             )}
             <IconButton
-                onClick={onClick}
+                onClick={() => { }}
                 icon={icon}
                 size={size}
                 type={type}

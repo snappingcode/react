@@ -111,10 +111,15 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(({
         borderRadius: `${borderRadius}px`,
         border: type === "outline" ? `2px solid ${resolvedColor}` : "none",
         backgroundColor: type === "solid" ? resolvedColor : "transparent",
-        boxShadow: hasShadow
+        // boxShadow: hasShadow
+        //     ? isPressed
+        //         ? "none"
+        //         : "0px 2px 5px rgba(0, 0, 0, 0.2)"
+        //     : "none",
+        filter: hasShadow
             ? isPressed
                 ? "none"
-                : "0px 2px 5px rgba(0, 0, 0, 0.2)"
+                : "drop-shadow(0 1.5px 0 #ccc)"
             : "none",
         cursor: disabled ? "not-allowed" : "pointer",
         transition: "all 0.2s ease-in-out",

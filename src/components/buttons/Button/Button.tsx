@@ -162,10 +162,15 @@ const Button = forwardRef<HTMLDivElement, ButtonProps>(
             border: type === "outline" ? `2px solid ${resolvedColor}` : "none",
             backgroundColor: type === "solid" ? resolvedColor : "transparent",
             color: contentColor,
-            boxShadow: hasShadow
+            // boxShadow: hasShadow
+            //     ? isPressed
+            //         ? "none"
+            //         : "0px 2px 0px rgba(0, 0, 0, 0.15)"
+            //     : "none",
+            filter: hasShadow
                 ? isPressed
                     ? "none"
-                    : "0px 2px 0px rgba(0, 0, 0, 0.15)"
+                    : "drop-shadow(0 1.5px 0 #ccc)"
                 : "none",
             transform: isPressed ? "scale(0.98)" : "scale(1)",
             cursor: disabled ? "not-allowed" : "pointer",
