@@ -58,6 +58,8 @@ export { default as OtpInput } from "./components/OtpInput/OtpInput";
 export { default as Pagination } from "./components/Pagination/Pagination";
 export { default as Tabs } from "./components/Tabs/Tabs";
 export { default as ExpandablePanel } from "./components/ExpandablePanel/ExpandablePanel";
+export { default as ActiveFilters } from "./components/ActiveFilters/ActiveFilters";
+export { default as DynamicFilters } from "./components/DynamicFilters/DynamicFilters";
 
 // Cards
 
