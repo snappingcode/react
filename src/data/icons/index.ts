@@ -2420,8 +2420,8 @@ export const icons: Icon[] = [
     tags: [],
   },
   {
-    name: "plusCircle",
-    label: "Más (Circle)",
+    name: "plus",
+    label: "Más",
     type: "singleColor",
     paths: [
       {
@@ -2446,8 +2446,8 @@ export const icons: Icon[] = [
     tags: [],
   },
   {
-    name: "plus",
-    label: "Más",
+    name: "plusCircle",
+    label: "Más (Circle)",
     type: "singleColor",
     paths: [
       {
