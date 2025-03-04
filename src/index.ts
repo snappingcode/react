@@ -62,6 +62,7 @@ export { default as Tabs } from "./components/Tabs/Tabs";
 export { default as ExpandablePanel } from "./components/ExpandablePanel/ExpandablePanel";
 export { default as ActiveFilters } from "./components/ActiveFilters/ActiveFilters";
 export { default as Counter } from "./components/Counter/Counter";
+
 // Cards
 
 // Indicators
