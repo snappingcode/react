@@ -5,7 +5,7 @@ interface TextFieldProps {
     label?: string;
     description?: string;
     value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange: (value: string) => void;
     onSave?: (value: string) => void;
     onCancel?: () => void;
     placeholder?: string;
@@ -110,7 +110,7 @@ const TextField: React.FC<TextFieldProps> = ({
                 onChange={(e) => {
                     const newValue = e.target.value;
                     setTempValue(newValue);
-                    if (!isEditing) onChange(e);
+                    if (!isEditing) onChange(newValue);
                 }}
                 placeholder={placeholder}
                 id={id}
