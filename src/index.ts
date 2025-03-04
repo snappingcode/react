@@ -39,6 +39,7 @@ export { default as SortableContainer } from "./components/Sortable/SortableCont
 export { default as SortableHandle } from "./components/Sortable/SortableHandle";
 export { default as Toast } from "./components/Toast/Toast";
 export { default as Text } from "./components/Text/Text";
+export { default as TextLines } from "./components/TextLines/TextLines";
 export { default as Color } from "./components/Color/Color";
 export { default as InterpolatedContent } from "./components/InterpolatedContent/InterpolatedContent";
 export { default as SearchBar } from "./components/SearchBar/SearchBar";
