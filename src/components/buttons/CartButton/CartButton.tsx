@@ -34,17 +34,20 @@ const CartButton: React.FC<CartButtonProps> = ({
     containerStyle,
     buttonStyle,
     badgeStyle,
-    size = "xl",
+    size = "md",
     totalItems
 }) => {
-
+    const sizeStyles = {
+        xs: { badgePadding: "4px", badgeFontSize: "10px", iconSize: 16 },
+        sm: { badgePadding: "6px", badgeFontSize: "12px", iconSize: 24 },
+        md: { badgePadding: "10px", badgeFontSize: "16px", iconSize: 28 },
+        lg: { badgePadding: "14px", badgeFontSize: "18px", iconSize: 34 },
+        xl: { badgePadding: "18px", badgeFontSize: "22px", iconSize: 40 },
+    };
     return (
         <div
             className={`snapping-cart-button ${className || ''}`}
             style={{
-                position: 'fixed',
-                bottom: '30px',
-                right: '30px',
                 cursor: 'pointer',
                 ...containerStyle
             }}
@@ -58,10 +61,9 @@ const CartButton: React.FC<CartButtonProps> = ({
                         right: '0px',
                         background: themeColors.textShade,
                         color: "#fff",
-                        paddingLeft: 8,
-                        paddingRight: 8,
-                        paddingBottom: 5,
-                        paddingTop: 5,
+                        padding: sizeStyles[size].badgePadding,
+                        fontSize: sizeStyles[size].badgeFontSize,
+
                         borderRadius: 99,
                         lineHeight: 1,
                         fontWeight: '700',
@@ -80,9 +82,10 @@ const CartButton: React.FC<CartButtonProps> = ({
                 borderRadius={borderRadius}
                 disabled={disabled}
                 iconPaths={iconPaths}
-                iconSize={iconSize}
+                iconSize={iconSize || sizeStyles[size].iconSize}
                 hasShadow={hasShadow}
                 style={buttonStyle}
+
             />
 
         </div>

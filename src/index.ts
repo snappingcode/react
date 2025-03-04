@@ -29,6 +29,7 @@ export { default as DynamicForm } from "./components/DynamicForm/DynamicForm";
 export { default as DynamicIcon } from "./components/DynamicIcon/DynamicIcon";
 export { default as DynamicList } from "./components/DynamicList/DynamicList";
 export { default as MultiStepForm } from "./components/MultiStepForm/MultiStepForm";
+export { default as DynamicFilters } from "./components/DynamicFilters/DynamicFilters";
 
 // Utility Components
 export { default as Icon } from "./components/Icon/Icon";
@@ -60,8 +61,7 @@ export { default as Pagination } from "./components/Pagination/Pagination";
 export { default as Tabs } from "./components/Tabs/Tabs";
 export { default as ExpandablePanel } from "./components/ExpandablePanel/ExpandablePanel";
 export { default as ActiveFilters } from "./components/ActiveFilters/ActiveFilters";
-export { default as DynamicFilters } from "./components/DynamicFilters/DynamicFilters";
-
+export { default as Counter } from "./components/Counter/Counter";
 // Cards
 
 // Indicators

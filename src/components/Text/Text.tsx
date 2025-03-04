@@ -9,10 +9,11 @@ interface TextProps {
 
 const Text: React.FC<TextProps> = ({ style, maxLines, content, showEllipsis = true }) => {
     const textStyles: React.CSSProperties = {
-        display: "block",
+        display: "-webkit-box",
+        WebkitBoxOrient: "vertical",
+        WebkitLineClamp: maxLines, // Limits the number of lines
         overflow: "hidden",
         textOverflow: showEllipsis ? "ellipsis" : "clip",
-        whiteSpace: maxLines ? "nowrap" : "normal",
         ...style,
     };
 
