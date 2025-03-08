@@ -169,7 +169,7 @@ const DynamicList: React.FC<DynamicListProps> = ({
                     const SlotComponent = resolveSlotComponent(slot.type);
                     const resolvedSrc = item[slot.name] ? item[slot.name] : slot?.config?.defaultImage;
                     const resolvedType = slot.type === 'actionButton' ? 'clear' : slot?.config?.type;
-                    const interpolatedTitle = slot?.config?.title ? interpolateString(item, slot?.config?.title) : null;
+                    const interpolatedTitle = slot.type === 'button' ? interpolateString(item, slot.name) : null;
                     return (
                         <div key={slotIndex} style={{ padding: 5 }}>
                             <SlotComponent
@@ -213,7 +213,8 @@ const DynamicList: React.FC<DynamicListProps> = ({
                     const SlotComponent = resolveSlotComponent(slot.type);
                     const resolvedSrc = item[slot.name] ? item[slot.name] : slot?.config?.defaultImage;
                     const resolvedType = slot.type === 'actionButton' ? 'clear' : slot?.config?.type;
-                    const interpolatedTitle = slot?.config?.title ? interpolateString(item, slot?.config?.title) : null;
+                    const interpolatedTitle = slot.type === 'button' ? interpolateString(item, slot.name) : null;
+
                     return (
                         <div key={slotIndex} style={{ padding: 5 }}>
                             <SlotComponent

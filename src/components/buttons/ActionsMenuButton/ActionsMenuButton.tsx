@@ -9,20 +9,22 @@ interface MenuItem {
     label: string; // Display name for the menu item
     icon?: string; // Optional icon for the menu item
     style?: React.CSSProperties; // Custom styles for the button
-    onClick?: () => void; // Optional specific click handler for the menu item
+    onClick?: (actionName: string, extraData?: any) => void; // Optional specific click handler for the menu item
 }
 
 interface ActionsMenuButtonProps {
     buttonStyles?: React.CSSProperties; // Custom styles for the main button
     popoverStyles?: React.CSSProperties; // Custom styles for the popover
     menuItems: MenuItem[]; // List of menu items to display
-    onItemSelect?: (actionName: string) => void; // Global handler for menu item selection
+    extraData?: any;
+    onItemSelect?: (actionName: string, extraData?: any) => void; // Global handler for menu item selection
 }
 
 const ActionsMenuButton: React.FC<ActionsMenuButtonProps> = ({
     buttonStyles,
     popoverStyles,
     menuItems,
+    extraData,
     onItemSelect,
 }) => {
     const [isPopoverOpen, setPopoverOpen] = useState(false);
@@ -38,11 +40,11 @@ const ActionsMenuButton: React.FC<ActionsMenuButtonProps> = ({
     const handleItemClick = (item: MenuItem) => {
         // If the menu item has its own onClick handler, use it
         if (item.onClick) {
-            item.onClick();
+            item.onClick(item.name, extraData);
         }
         // Otherwise, use the global onItemSelect handler if provided
         else if (onItemSelect) {
-            onItemSelect(item.name);
+            onItemSelect(item.name, extraData);
         }
         closePopover(); // Close the popover after handling the click
     };
