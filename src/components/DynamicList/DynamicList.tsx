@@ -16,6 +16,7 @@ import LockToggleButton from '../buttons/LockToggleButton/LockToggleButton';
 import CopyButton from '../buttons/CopyButton/CopyButton';
 import NoContent from '../NoContent/NoContent';
 import Button from '../buttons/Button/Button';
+import interpolateString from '../../utils/interpolateString';
 
 interface SlotConfig {
     type: string;
@@ -168,10 +169,12 @@ const DynamicList: React.FC<DynamicListProps> = ({
                     const SlotComponent = resolveSlotComponent(slot.type);
                     const resolvedSrc = item[slot.name] ? item[slot.name] : slot?.config?.defaultImage;
                     const resolvedType = slot.type === 'actionButton' ? 'clear' : slot?.config?.type;
+                    const interpolatedTitle = slot?.config?.title ? interpolateString(item, slot?.config?.title) : null;
                     return (
                         <div key={slotIndex} style={{ padding: 5 }}>
                             <SlotComponent
                                 src={resolvedSrc}
+                                title={interpolatedTitle}
                                 pills={item[slot.name]}
                                 steps={item[slot.name]}
                                 value={item[slot.name]}
@@ -210,10 +213,12 @@ const DynamicList: React.FC<DynamicListProps> = ({
                     const SlotComponent = resolveSlotComponent(slot.type);
                     const resolvedSrc = item[slot.name] ? item[slot.name] : slot?.config?.defaultImage;
                     const resolvedType = slot.type === 'actionButton' ? 'clear' : slot?.config?.type;
+                    const interpolatedTitle = slot?.config?.title ? interpolateString(item, slot?.config?.title) : null;
                     return (
                         <div key={slotIndex} style={{ padding: 5 }}>
                             <SlotComponent
                                 src={resolvedSrc}
+                                title={interpolatedTitle}
                                 pills={item[slot.name]}
                                 steps={item[slot.name]}
                                 value={item[slot.name]}

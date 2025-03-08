@@ -91,6 +91,7 @@ export { default as themeColors } from "./config/themeColors";
 // Stores
 
 // Utils
+export { default as interpolateString } from "./utils/interpolateString";
 
 // httpClient
 export {
