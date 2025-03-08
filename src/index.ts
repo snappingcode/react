@@ -7,7 +7,7 @@ export { default as LockToggleButton } from "./components/buttons/LockToggleButt
 export { default as PlayPauseButton } from "./components/buttons/PlayPauseButton/PlayPauseButton";
 export { default as ActionsMenuButton } from "./components/buttons/ActionsMenuButton/ActionsMenuButton";
 export { default as CartButton } from "./components/buttons/CartButton/CartButton";
-
+export { default as CopyButton } from "./components/buttons/CopyButton/CopyButton";
 // Fields
 export { default as AutocompleteField } from "./components/fields/AutocompleteField/AutocompleteField";
 export { default as CheckboxField } from "./components/fields/CheckboxField/CheckboxField";

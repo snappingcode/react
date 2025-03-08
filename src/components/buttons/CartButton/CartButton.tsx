@@ -49,6 +49,7 @@ const CartButton: React.FC<CartButtonProps> = ({
             className={`snapping-cart-button ${className || ''}`}
             style={{
                 cursor: 'pointer',
+                position: 'relative',
                 ...containerStyle
             }}
             onClick={onClick}
@@ -57,8 +58,8 @@ const CartButton: React.FC<CartButtonProps> = ({
                 <div
                     style={{
                         position: 'absolute',
-                        top: '0px',
-                        right: '0px',
+                        top: -5,
+                        right: -5,
                         background: themeColors.textShade,
                         color: "#fff",
                         padding: sizeStyles[size].badgePadding,

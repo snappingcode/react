@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { themeColors } from '../../config';
 import IconButton from '../buttons/IconButton/IconButton';
+
 
 interface CounterProps {
     containerStyle?: React.CSSProperties;
@@ -48,17 +50,27 @@ const Counter: React.FC<CounterProps> = ({
         setValue(defaultValue)
     }, [defaultValue])
     return (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', ...containerStyle }}>
+        <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '5px',
+            padding: 5,
+            ...containerStyle
+        }}>
             {/* Decrement Button */}
 
             <IconButton
-                style={{ ...buttonStyle }}
+                style={{
+                    background: themeColors.light,
+                    ...buttonStyle
+                }}
                 type='clear'
                 onClick={decrement}
                 size={'xs'}
                 icon='minus'
                 disabled={disabled}
                 hasShadow={false}
+                color={themeColors.textShade}
             />
 
             {/* Input Field */}
@@ -68,7 +80,7 @@ const Counter: React.FC<CounterProps> = ({
                 readOnly={readOnly}
                 className={`${inputClassName} no-spinner`}
                 style={{
-                    textAlign: 'center',
+                    textAlign: 'right',
                     width: '40px',
                     border: 'none',
                     ...inputStyle
@@ -84,8 +96,12 @@ const Counter: React.FC<CounterProps> = ({
                 size={'xs'}
                 icon='plus'
                 disabled={disabled}
-                style={{ ...buttonStyle }}
+                style={{
+                    background: themeColors.light,
+                    ...buttonStyle
+                }}
                 hasShadow={false}
+                color={themeColors.textShade}
             />
 
         </div>

@@ -38,7 +38,7 @@ const PillGroup: React.FC<PillGroupProps> = ({
     pillColor,
     pillTextColor,
     pillSize,
-    pillTextKey
+    pillTextKey = 'label'
 }) => {
     return (
         <div

@@ -9,7 +9,7 @@ interface CopyButtonProps {
     className?: string;
 }
 
-export const CopyButton: React.FC<CopyButtonProps> = ({ textToCopy, label, className }) => {
+const CopyButton: React.FC<CopyButtonProps> = ({ textToCopy, label, className }) => {
     const [copied, setCopied] = useState(false);
 
     const handleCopy = async () => {
@@ -36,3 +36,4 @@ export const CopyButton: React.FC<CopyButtonProps> = ({ textToCopy, label, class
         </button>
     );
 };
+export default CopyButton;

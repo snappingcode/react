@@ -13,8 +13,9 @@ import SortableHandle from '../Sortable/SortableHandle';
 import Loader from '../Loader/Loader';
 import SortableContainer from '../Sortable/SortableContainer';
 import LockToggleButton from '../buttons/LockToggleButton/LockToggleButton';
-import { CopyButton } from '../buttons/CopyButton/CopyButton';
+import CopyButton from '../buttons/CopyButton/CopyButton';
 import NoContent from '../NoContent/NoContent';
+import Button from '../buttons/Button/Button';
 
 interface SlotConfig {
     type: string;
@@ -115,6 +116,8 @@ const DynamicList: React.FC<DynamicListProps> = ({
                 return IconButton;
             case 'copyButton':
                 return CopyButton;
+            case 'button':
+                return Button;
             case 'thumbnail':
                 return Thumbnail;
             case 'interpolatedContent':
@@ -143,7 +146,8 @@ const DynamicList: React.FC<DynamicListProps> = ({
                 marginBottom: '10px',
                 marginTop: '5px',
                 cursor: isClickable ? 'pointer' : 'default',
-                boxShadow: '0 2px 2px rgba(0, 0, 0, 0.1)',
+                filter: "drop-shadow(0 2px 0 #ccc)",
+                //boxShadow: '0 2px 2px rgba(0, 0, 0, 0.1)',
                 ...itemStyle,
             }}
             className="precooked-dynamic-list-item"
@@ -163,7 +167,7 @@ const DynamicList: React.FC<DynamicListProps> = ({
                 {startSlots.map((slot, slotIndex) => {
                     const SlotComponent = resolveSlotComponent(slot.type);
                     const resolvedSrc = item[slot.name] ? item[slot.name] : slot?.config?.defaultImage;
-                    const resolvedType = slot.type === 'actionButton' ? 'clear' : null;
+                    const resolvedType = slot.type === 'actionButton' ? 'clear' : slot?.config?.type;
                     return (
                         <div key={slotIndex} style={{ padding: 5 }}>
                             <SlotComponent
@@ -205,7 +209,7 @@ const DynamicList: React.FC<DynamicListProps> = ({
                 {endSlots.map((slot, slotIndex) => {
                     const SlotComponent = resolveSlotComponent(slot.type);
                     const resolvedSrc = item[slot.name] ? item[slot.name] : slot?.config?.defaultImage;
-                    const resolvedType = slot.type === 'actionButton' ? 'clear' : null;
+                    const resolvedType = slot.type === 'actionButton' ? 'clear' : slot?.config?.type;
                     return (
                         <div key={slotIndex} style={{ padding: 5 }}>
                             <SlotComponent
