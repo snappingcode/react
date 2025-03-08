@@ -1,6 +1,6 @@
 {
   "name": "@snapping/react",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "type": "module",
   "description": "Shared React components, hooks, and utils for react projects",
   "repository": {
