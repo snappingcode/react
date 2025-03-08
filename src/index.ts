@@ -62,8 +62,12 @@ export { default as Tabs } from "./components/Tabs/Tabs";
 export { default as ExpandablePanel } from "./components/ExpandablePanel/ExpandablePanel";
 export { default as ActiveFilters } from "./components/ActiveFilters/ActiveFilters";
 export { default as Counter } from "./components/Counter/Counter";
+export { default as StackedThumbnails } from "./components/StackedThumbnails/StackedThumbnails";
 
 // Cards
+
+// Modals
+export { default as Modal } from "./components/Modal/Modal";
 
 // Indicators
 export { default as RankingIndicator } from "./components/indicators/RankingIndicator/RankingIndicator";

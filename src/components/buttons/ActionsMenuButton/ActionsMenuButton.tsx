@@ -18,6 +18,7 @@ interface ActionsMenuButtonProps {
     menuItems: MenuItem[]; // List of menu items to display
     extraData?: any;
     onItemSelect?: (actionName: string, extraData?: any) => void; // Global handler for menu item selection
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const ActionsMenuButton: React.FC<ActionsMenuButtonProps> = ({
@@ -26,6 +27,7 @@ const ActionsMenuButton: React.FC<ActionsMenuButtonProps> = ({
     menuItems,
     extraData,
     onItemSelect,
+    onClick
 }) => {
     const [isPopoverOpen, setPopoverOpen] = useState(false);
     const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -70,7 +72,9 @@ const ActionsMenuButton: React.FC<ActionsMenuButtonProps> = ({
                             <Button
                                 key={item.name}
                                 title={item.label}
-                                onClick={() => handleItemClick(item)}
+                                onClick={() =>
+                                    handleItemClick(item)
+                                }
                                 type="clear"
                                 hasShadow={false}
                                 color="text"
