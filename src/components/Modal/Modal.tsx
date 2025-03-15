@@ -44,15 +44,15 @@ const Modal: React.FC<ModalProps> = ({
         [onClose]
     );
 
-    // useEffect(() => {
-    //     if (isOpen) {
-    //         setIsVisible(true);
-    //         document.addEventListener("keydown", handleKeyPress);
-    //     } else {
-    //         document.removeEventListener("keydown", handleKeyPress);
-    //     }
-    //     return () => document.removeEventListener("keydown", handleKeyPress);
-    // }, [isOpen, handleKeyPress]);
+    useEffect(() => {
+        if (isOpen) {
+            setIsVisible(true);
+            document.addEventListener("keydown", handleKeyPress);
+        } else {
+            document.removeEventListener("keydown", handleKeyPress);
+        }
+        return () => document.removeEventListener("keydown", handleKeyPress);
+    }, [isOpen, handleKeyPress]);
 
     useEffect(() => {
         if (isOpen) {

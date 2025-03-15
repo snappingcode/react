@@ -1,4 +1,4 @@
-import { Parser } from 'expr-eval';
+import { Parser } from "expr-eval";
 
 /**
  * Interpolates a template string with values from a given object.
@@ -8,26 +8,44 @@ import { Parser } from 'expr-eval';
  * @returns {string} The interpolated string.
  */
 const interpolateString = (data: any, template: string) => {
-    let interpolatedString = template;
+  console.log("🔍 Original data:", data);
+  console.log("🔍 Template before interpolation:", template);
 
-    const parser = new Parser();
-    const matches = template?.match(/{{\s*[\w\.]+\s*}}/g) || [];
+  let interpolatedString = template;
+  const parser = new Parser();
+  const matches = template?.match(/{{\s*[\w\.]+\s*}}/g) || [];
+  console.log("matches", matches);
+  console.log("template", template);
+  matches.forEach((match) => {
+    const path = match.slice(2, -2).trim();
+    console.log(`🔹 Evaluating path: "${path}"`);
 
+    try {
+      let value: any = parser.evaluate(path, data);
+      console.log(`✅ Evaluated value (${path}):`, value);
 
-    matches.forEach((match) => {
-        const path = match.slice(2, -2).trim();
-        try {
-            const value = parser.evaluate(path, data) || '';
-            interpolatedString = interpolatedString.replace(new RegExp(match, 'g'), value.toString());
-        } catch (error) {
-            console.error(`Error parsing ${path}:`, error);
-            interpolatedString = interpolatedString.replace(new RegExp(match, 'g'), '');
-        }
-    });
+      // 🔥 Si el valor es un objeto o array, lo convertimos a JSON válido
+      if (typeof value === "object" && value !== null) {
+        console.log(`⚠️ Value is an object, converting to JSON:`, value);
+        value = JSON.stringify(value, null, 2); // Pretty print JSON for better readability
+      }
 
+      interpolatedString = interpolatedString.replace(
+        new RegExp(match, "g"),
+        value
+      );
+      console.log(`✅ Updated interpolatedString:`, interpolatedString);
+    } catch (error) {
+      console.error(`❌ Error parsing ${path}:`, error);
+      interpolatedString = interpolatedString.replace(
+        new RegExp(match, "g"),
+        ""
+      );
+    }
+  });
 
-
-    return interpolatedString;
+  console.log("🔍 Final interpolated string:", interpolatedString);
+  return interpolatedString;
 };
 
 export default interpolateString;

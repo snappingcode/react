@@ -542,7 +542,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({
                                 >
                                     <IconButton
                                         onClick={() => handleSubmit()}
-                                        icon={sendButtonIcon}
+                                        icon={sendButtonIcon || 'check'}
                                         iconPaths={sendButtonIconPaths}
                                         iconSize={sendButtonIconSize}
                                         style={sendButtonStyle}

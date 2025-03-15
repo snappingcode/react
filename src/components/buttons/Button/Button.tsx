@@ -185,8 +185,9 @@ const Button = forwardRef<HTMLDivElement, ButtonProps>(
             fontSize: sizeStyles[size]?.fontSize,
             margin: "0 8px",
             color: contentColor,
-            position: "relative",
-            top: -1,
+            // position: "relative",
+            // top: -1,
+            lineHeight: 1,
             ...titleStyle,
         };
 
