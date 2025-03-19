@@ -2,7 +2,7 @@ import React from 'react';
 
 import themeColors from '../../config/themeColors';
 import DynamicIcon from '../DynamicIcon/DynamicIcon';
-import { icons } from '../../data/icons';
+import icons from '../../data/icons';
 
 const resolveColor = (color: string | undefined, colorKey: string | undefined, extraData: any) => {
     if (colorKey && extraData && extraData[colorKey]) {

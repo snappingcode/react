@@ -110,3 +110,6 @@ export { AuthProvider, useAuth } from "./contexts/AuthContext";
 
 // hooks
 export { default as useIsMobile } from "./hooks/useIsMobile";
+
+// data
+export { default as icons } from "./data/icons";

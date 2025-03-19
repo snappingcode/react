@@ -12,7 +12,7 @@ export interface Icon {
   }[];
 }
 
-export const icons: Icon[] = [
+const icons: Icon[] = [
   {
     name: "activityLog",
     label: "Registro de actividad",
@@ -6018,3 +6018,5 @@ export const icons: Icon[] = [
     tags: [],
   },
 ];
+
+export default icons;
