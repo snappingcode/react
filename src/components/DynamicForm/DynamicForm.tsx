@@ -102,7 +102,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({
     mode = "create",
     apiBaseUrl,
     extraData,
-    useSecureConnection = false,
+    useSecureConnection = true,
     sendButtonType = "solid",
     sendButtonSize = "md",
     sendButtonColor = "primary",

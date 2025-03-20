@@ -64,6 +64,7 @@ export { default as ExpandablePanel } from "./components/ExpandablePanel/Expanda
 export { default as ActiveFilters } from "./components/ActiveFilters/ActiveFilters";
 export { default as Counter } from "./components/Counter/Counter";
 export { default as StackedThumbnails } from "./components/StackedThumbnails/StackedThumbnails";
+export { default as TypingEffect } from "./components/TypingEffect/TypingEffect";
 
 // Cards
 
