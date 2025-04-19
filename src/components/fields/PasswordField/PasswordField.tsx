@@ -6,7 +6,7 @@ interface PasswordFieldProps {
     label?: string;
     description?: string;
     value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (value: string) => void;
     placeholder?: string;
     containerStyle?: React.CSSProperties;
     labelStyle?: React.CSSProperties;
@@ -89,7 +89,12 @@ const PasswordField: React.FC<PasswordFieldProps> = ({
                     ref={inputRef}
                     type={showPassword ? 'text' : 'password'}
                     value={value}
-                    onChange={onChange}
+                    //onChange={onChange}
+                    onChange={(e) => {
+                        const newValue = e.target.value;
+
+                        if (onChange) onChange(newValue);
+                    }}
                     placeholder={placeholder}
                     id={id}
                     autoComplete={autoComplete}
