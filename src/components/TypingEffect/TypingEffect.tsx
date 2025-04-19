@@ -51,7 +51,13 @@ const TypingEffect: React.FC<TypingEffectProps> = ({
                 return () => clearTimeout(timeout);
             }
         }
-    }, [index, text, speed, loop, onComplete]);
+    }, [
+        index,
+        text,
+        speed,
+        loop,
+        //onComplete
+    ]);
 
     return (
         <span style={style}>
