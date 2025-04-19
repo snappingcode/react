@@ -26,6 +26,7 @@ export { default as TimeField } from "./components/fields/TimeField/TimeField";
 export { default as MonthYearField } from "./components/fields/MonthYearField/MonthYearField";
 export { default as YearField } from "./components/fields/YearField/YearField";
 export { default as CheckboxGroupField } from "./components/fields/CheckboxGroupField/CheckboxGroupField";
+export { default as MoneyField } from "./components/fields/MoneyField/MoneyField";
 
 // Dynamic Components
 export { default as DynamicForm } from "./components/DynamicForm/DynamicForm";

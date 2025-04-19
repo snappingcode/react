@@ -20,6 +20,7 @@ import PastelColorField from '../fields/PastelColorField/PastelColorField';
 import ColorField from '../fields/ColorField/ColorField';
 import DynamicListField from '../fields/DynamicListField/DynamicListField';
 import AutocompleteField from '../fields/AutocompleteField/AutocompleteField';
+import MoneyField from '../fields/MoneyField/MoneyField';
 
 interface Field {
     type: string;
@@ -275,6 +276,17 @@ export const renderField = ({
                 {...commonStyle}
                 value={getNestedValue(formValues, name) || ''}
                 placeholder={config?.placeholder}
+                label={label}
+                onChange={(value) => handleFieldChange(name, value)}
+            />;
+        case "money":
+            return <MoneyField
+                {...commonStyle}
+                value={getNestedValue(formValues, name) || ''}
+                placeholder={config?.placeholder}
+                currencySymbol={config?.currencySymbol}
+                symbolPosition={config?.symbolPosition}
+                symbolStyle={config?.symbolStyle}
                 label={label}
                 onChange={(value) => handleFieldChange(name, value)}
             />;
