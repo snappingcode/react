@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Button from "../buttons/Button/Button";
 import { themeColors } from "../../config";
 
-interface Button {
+interface ButtonType {
     title: string;
     color?: string;
     startIcon?: string;
@@ -25,7 +25,7 @@ interface Button {
 }
 
 interface ButtonGroupProps {
-    buttons: Button[];
+    buttons: ButtonType[];
     containerStyle?: React.CSSProperties;
     buttonStyle?: React.CSSProperties;
     enableAnimation?: boolean; // Enable or disable animation
