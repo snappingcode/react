@@ -279,6 +279,7 @@ export const renderField = ({
                 placeholder={config?.placeholder}
                 label={label}
                 onChange={(value) => handleFieldChange(name, value)}
+                description={config?.description}
             />;
         case "money":
             return <MoneyField
@@ -290,6 +291,7 @@ export const renderField = ({
                 symbolStyle={config?.symbolStyle}
                 label={label}
                 onChange={(value) => handleFieldChange(name, value)}
+                description={config?.description}
             />;
         case "password":
             return <PasswordField
@@ -299,6 +301,7 @@ export const renderField = ({
                 placeholder={config?.placeholder}
                 label={label}
                 onChange={(value) => handleFieldChange(name, value)}
+                description={config?.description}
             />;
         case "checkbox":
             return <CheckboxField
@@ -307,6 +310,7 @@ export const renderField = ({
                 value={formValues[name] || false}
                 label={label}
                 onChange={(value) => handleFieldChange(name, value)}
+                description={config?.description}
             />;
         case "radio":
             return <RadioField
@@ -318,6 +322,7 @@ export const renderField = ({
                 renderOption={renderRadioOption}
                 bodyStyle={{ ...fieldBodyStyle, ...config?.bodyStyle }}
                 headerStyle={{ ...fieldHeaderStyle, ...config?.headerStyle }}
+                description={config?.description}
             />;
         case "iconPicker":
             return <IconPickerField
@@ -327,6 +332,7 @@ export const renderField = ({
                 onChange={(value) => handleFieldChange(name, value)}
                 bodyStyle={{ ...fieldBodyStyle, ...config?.bodyStyle }}
                 headerStyle={{ ...fieldHeaderStyle, ...config?.headerStyle }}
+                description={config?.description}
             />;
         // case "configuration":
         //     return <ConfigurationField
@@ -352,6 +358,7 @@ export const renderField = ({
                 modalSubtitle={config?.modalSubtitle}
                 bodyStyle={{ ...fieldBodyStyle, ...config?.bodyStyle }}
                 headerStyle={{ ...fieldHeaderStyle, ...config?.headerStyle }}
+                description={config?.description}
             />;
         case "pastelColor":
             return <PastelColorField
@@ -361,6 +368,7 @@ export const renderField = ({
                 onChange={(value) => handleFieldChange(name, value)}
                 bodyStyle={{ ...fieldBodyStyle, ...config?.bodyStyle }}
                 headerStyle={{ ...fieldHeaderStyle, ...config?.headerStyle }}
+                description={config?.description}
             />;
         case "color":
             return <ColorField
@@ -370,6 +378,7 @@ export const renderField = ({
                 onChange={(value) => handleFieldChange(name, value)}
                 bodyStyle={{ ...fieldBodyStyle, ...config?.bodyStyle }}
                 headerStyle={{ ...fieldHeaderStyle, ...config?.headerStyle }}
+                description={config?.description}
             />;
         case "dynamicList":
             return <DynamicListField
@@ -381,6 +390,7 @@ export const renderField = ({
                 headerStyle={{ ...fieldHeaderStyle, ...config?.headerStyle }}
                 slots={config?.slots}
                 forceMobileView={config?.forceMobileView}
+                description={config?.description}
             />;
         case "autocomplete":
             return <AutocompleteField
@@ -400,6 +410,7 @@ export const renderField = ({
                 itemImageKey={config?.itemImageKey}
                 itemImageStyle={config?.itemImageStyle}
                 searchParam={config?.searchParam}
+                description={config?.description}
             />;
         default:
             return null;

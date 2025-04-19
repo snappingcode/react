@@ -111,13 +111,16 @@ const CheckboxField: React.FC<CheckboxFieldProps> = ({
                         ...descriptionStyle
                     }}>{description}</p>}
                 </div>
-
-                <Icon
-                    name={value ? 'checkboxChecked' : 'checkboxUnchecked'}
-                    color={iconColor}
-                    size={iconSize}
-                    paths={value ? checkedIconPaths : uncheckedIconPaths}
-                />
+                <div style={{
+                    width: iconSize
+                }}>
+                    <Icon
+                        name={value ? 'checkboxChecked' : 'checkboxUnchecked'}
+                        color={iconColor}
+                        size={iconSize}
+                        paths={value ? checkedIconPaths : uncheckedIconPaths}
+                    />
+                </div>
             </div>
         </div>
     );

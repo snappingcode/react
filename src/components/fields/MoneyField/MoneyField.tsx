@@ -94,6 +94,7 @@ const MoneyField: React.FC<MoneyFieldProps> = ({
                             marginRight: 4,
                             color: themeColors.text,
                             fontWeight: 'bold',
+                            padding: 5,
                             ...symbolStyle
                         }}>
                             {currencySymbol}
@@ -126,6 +127,7 @@ const MoneyField: React.FC<MoneyFieldProps> = ({
                             marginLeft: 4,
                             color: themeColors.text,
                             fontWeight: 'bold',
+                            padding: 5,
                             ...symbolStyle
                         }}>
                             {currencySymbol}
