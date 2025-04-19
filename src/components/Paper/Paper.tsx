@@ -49,7 +49,7 @@ const createStyles = (size: "sm" | "md" | "lg"): Record<string, React.CSSPropert
             padding: "10px",
             paddingTop: "0px",
             boxSizing: "border-box",
-            //marginTop: `${dynamicValue}px`, // Valor dinámico
+            marginTop: `${dynamicValue}px`, // Valor dinámico
             display: "inline-block",
         },
         topBar: {

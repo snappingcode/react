@@ -21,6 +21,7 @@ import ColorField from '../fields/ColorField/ColorField';
 import DynamicListField from '../fields/DynamicListField/DynamicListField';
 import AutocompleteField from '../fields/AutocompleteField/AutocompleteField';
 import MoneyField from '../fields/MoneyField/MoneyField';
+import CheckboxField from '../fields/CheckboxField/CheckboxField';
 
 interface Field {
     type: string;
@@ -296,6 +297,14 @@ export const renderField = ({
                 //value={getNestedValue(formValues, name) || ''}
                 value={formValues[name] || ''}
                 placeholder={config?.placeholder}
+                label={label}
+                onChange={(value) => handleFieldChange(name, value)}
+            />;
+        case "checkbox":
+            return <CheckboxField
+                {...commonStyle}
+                //value={getNestedValue(formValues, name) || ''}
+                value={formValues[name] || false}
                 label={label}
                 onChange={(value) => handleFieldChange(name, value)}
             />;

@@ -2,12 +2,10 @@ import React from 'react';
 import { themeColors } from '../../../config';
 import Icon from '../../Icon/Icon';
 
-
-
 interface CheckboxFieldProps {
     label?: string;
     description?: string;
-    checked: boolean;
+    value: boolean;
     onChange: (checked: boolean) => void;
     containerStyle?: React.CSSProperties;
     labelStyle?: React.CSSProperties;
@@ -26,7 +24,7 @@ interface CheckboxFieldProps {
 const CheckboxField: React.FC<CheckboxFieldProps> = ({
     label,
     description,
-    checked,
+    value,
     onChange,
     containerStyle,
     labelStyle,
@@ -79,11 +77,11 @@ const CheckboxField: React.FC<CheckboxFieldProps> = ({
                     cursor: "pointer",
                     ...bodyStyle
                 }}
-                onClick={() => onChange(!checked)}
+                onClick={() => onChange(!value)}
                 role='button'
                 tabIndex={0}
                 onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') onChange(!checked);
+                    if (e.key === 'Enter' || e.key === ' ') onChange(!value);
                 }}
             >
                 <div
@@ -115,10 +113,10 @@ const CheckboxField: React.FC<CheckboxFieldProps> = ({
                 </div>
 
                 <Icon
-                    name={checked ? 'checkboxChecked' : 'checkboxUnchecked'}
+                    name={value ? 'checkboxChecked' : 'checkboxUnchecked'}
                     color={iconColor}
                     size={iconSize}
-                    paths={checked ? checkedIconPaths : uncheckedIconPaths}
+                    paths={value ? checkedIconPaths : uncheckedIconPaths}
                 />
             </div>
         </div>
