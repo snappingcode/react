@@ -6,14 +6,18 @@ interface SortableContainerProps {
     items: any[];
     onSortEnd: (newOrder: any[]) => void;
     renderItem: (item: any, index: number) => React.ReactNode;
-    useDragHandle?: boolean; // Nueva prop
+    useDragHandle?: boolean;
+    noContentText?: string;
+    noContentIcon?: string;
 }
 
 const SortableContainer: React.FC<SortableContainerProps> = ({
     items,
     onSortEnd,
     renderItem,
-    useDragHandle = false, // Valor por defecto
+    useDragHandle = false,
+    noContentText = 'No content available',
+    noContentIcon = 'records',
 }) => {
     return (
         <DragHandleProvider>
@@ -22,6 +26,8 @@ const SortableContainer: React.FC<SortableContainerProps> = ({
                 onSortEnd={onSortEnd}
                 renderItem={renderItem}
                 useDragHandle={useDragHandle}
+                noContentIcon={noContentIcon}
+                noContentText={noContentText}
             />
         </DragHandleProvider>
     );

@@ -1,22 +1,19 @@
-import React, { useState } from 'react';
+import React, { } from 'react';
 import { themeColors } from '../../../config';
 
 interface TextFieldProps {
     label?: string;
     description?: string;
     value: string;
-    onChange: (value: string) => void;
-    onSave?: (value: string) => void;
-    onCancel?: () => void;
+    onChange?: (value: string) => void;
     placeholder?: string;
-    mode?: 'create' | 'edit' | 'readOnly';
     containerStyle?: React.CSSProperties;
     labelStyle?: React.CSSProperties;
     inputStyle?: React.CSSProperties;
     descriptionStyle?: React.CSSProperties;
     className?: string;
     id?: string;
-    [key: string]: any;
+    disabled?: boolean;
 }
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -24,97 +21,29 @@ const TextField: React.FC<TextFieldProps> = ({
     description,
     value,
     onChange,
-    onSave,
-    onCancel,
     placeholder,
-    mode = 'create',
     containerStyle,
     labelStyle,
     inputStyle,
     descriptionStyle,
     className,
     id,
+    disabled,
     ...props
 }) => {
-    const [isEditing, setIsEditing] = useState(false);
-    const [tempValue, setTempValue] = useState(value);
-
-    const handleSave = () => {
-        if (onSave) onSave(tempValue);
-        setIsEditing(false);
-    };
-
-    const handleCancel = () => {
-        setTempValue(value);
-        setIsEditing(false);
-        if (onCancel) onCancel();
-    };
 
     const renderInput = () => {
-        if (mode === 'readOnly') {
-            return (
-                <span
-                    style={{
-                        display: 'inline-block',
-                        padding: '5px',
-                        color: themeColors.text,
-                        background: 'transparent',
-                        ...inputStyle,
-                    }}
-                >
-                    {value || '-'}
-                </span>
-            );
-        }
-
-        if (mode === 'edit' && !isEditing) {
-            return (
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <input
-                        type="text"
-                        value={value}
-                        placeholder={placeholder}
-                        id={id}
-                        disabled
-                        style={{
-                            outline: 'none',
-                            //backgroundColor: 'transparent',
-                            border: 'none',
-                            width: '100%',
-                            color: themeColors.text,
-
-                            ...inputStyle,
-                        }}
-                    />
-                    <button
-                        type="button"
-                        onClick={() => setIsEditing(true)}
-                        style={{
-                            marginLeft: '10px',
-                            background: 'none',
-                            border: 'none',
-                            cursor: 'pointer',
-                            color: themeColors.primary,
-                        }}
-                    >
-                        ✏️
-                    </button>
-                </div>
-            );
-        }
-
         return (
             <input
                 type="text"
-                value={isEditing ? tempValue : value}
+                value={value}
                 onChange={(e) => {
                     const newValue = e.target.value;
-                    setTempValue(newValue);
-                    if (!isEditing) onChange(newValue);
+                    onChange?.(newValue);
                 }}
                 placeholder={placeholder}
                 id={id}
-                disabled={mode === 'edit' && !isEditing}
+                disabled={disabled}
                 style={{
                     outline: 'none',
                     backgroundColor: 'transparent',
@@ -132,45 +61,6 @@ const TextField: React.FC<TextFieldProps> = ({
         );
     };
 
-    const renderEditControls = () => {
-        if (mode === 'edit' && isEditing) {
-            return (
-                <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '5px' }}>
-                    <button
-                        type="button"
-                        onClick={handleSave}
-                        style={{
-                            background: themeColors.success,
-                            color: '#fff',
-                            border: 'none',
-                            borderRadius: '5px',
-                            padding: '5px 10px',
-                            cursor: 'pointer',
-                            marginRight: '5px',
-                        }}
-                    >
-                        Save
-                    </button>
-                    <button
-                        type="button"
-                        onClick={handleCancel}
-                        style={{
-                            background: themeColors.danger,
-                            color: '#fff',
-                            border: 'none',
-                            borderRadius: '5px',
-                            padding: '5px 10px',
-                            cursor: 'pointer',
-                        }}
-                    >
-                        Cancel
-                    </button>
-                </div>
-            );
-        }
-        return null;
-    };
-
     return (
         <>
             <div
@@ -185,8 +75,7 @@ const TextField: React.FC<TextFieldProps> = ({
                     boxSizing: 'border-box',
                     backgroundColor: '#fff',
                     position: 'relative',
-                    //padding: '10px',
-                    //marginTop: '10px',
+
                     ...containerStyle,
                 }}
             >
@@ -209,7 +98,7 @@ const TextField: React.FC<TextFieldProps> = ({
                 )}
 
                 {renderInput()}
-                {renderEditControls()}
+
             </div>
             {description && (
                 <p

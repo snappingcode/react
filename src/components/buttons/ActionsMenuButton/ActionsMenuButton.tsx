@@ -9,25 +9,21 @@ interface MenuItem {
     label: string; // Display name for the menu item
     icon?: string; // Optional icon for the menu item
     style?: React.CSSProperties; // Custom styles for the button
-    onClick?: (actionName: string, extraData?: any) => void; // Optional specific click handler for the menu item
+    onClick?: (actionName: string) => void; // Optional specific click handler for the menu item
 }
 
 interface ActionsMenuButtonProps {
     buttonStyles?: React.CSSProperties; // Custom styles for the main button
     popoverStyles?: React.CSSProperties; // Custom styles for the popover
     menuItems: MenuItem[]; // List of menu items to display
-    extraData?: any;
-    onItemSelect?: (actionName: string, extraData?: any) => void; // Global handler for menu item selection
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    onItemSelect?: (actionName: string) => void; // Global handler for menu item selection
 }
 
 const ActionsMenuButton: React.FC<ActionsMenuButtonProps> = ({
     buttonStyles,
     popoverStyles,
     menuItems,
-    extraData,
     onItemSelect,
-    onClick
 }) => {
     const [isPopoverOpen, setPopoverOpen] = useState(false);
     const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -42,11 +38,11 @@ const ActionsMenuButton: React.FC<ActionsMenuButtonProps> = ({
     const handleItemClick = (item: MenuItem) => {
         // If the menu item has its own onClick handler, use it
         if (item.onClick) {
-            item.onClick(item.name, extraData);
+            item.onClick(item.name);
         }
         // Otherwise, use the global onItemSelect handler if provided
         else if (onItemSelect) {
-            onItemSelect(item.name, extraData);
+            onItemSelect(item.name);
         }
         closePopover(); // Close the popover after handling the click
     };
@@ -72,9 +68,7 @@ const ActionsMenuButton: React.FC<ActionsMenuButtonProps> = ({
                             <Button
                                 key={item.name}
                                 title={item.label}
-                                onClick={() =>
-                                    handleItemClick(item)
-                                }
+                                onClick={() => handleItemClick(item)}
                                 type="clear"
                                 hasShadow={false}
                                 color="text"
@@ -87,6 +81,7 @@ const ActionsMenuButton: React.FC<ActionsMenuButtonProps> = ({
                                     ...item.style, // Apply custom styles from the menu item
                                 }}
                                 startIcon={item.icon}
+                                startIconSize={20}
                             />
                         ))}
                     </div>

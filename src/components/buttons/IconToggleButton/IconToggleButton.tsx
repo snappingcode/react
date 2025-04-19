@@ -3,16 +3,21 @@ import { httpClient, HttpClient, securedHttpClient } from "../../../httpClient";
 import Loader from "../../Loader/Loader";
 import IconButton from "../IconButton/IconButton";
 
-interface LockToggleButtonProps {
+
+interface IconToggleButtonProps {
     value: boolean;
     size?: "xs" | "sm" | "md" | "lg" | "xl";
-    className?: string; // Agregada la propiedad className opcional
-    style?: React.CSSProperties; // Agregada la propiedad style opcional
+    className?: string; // Clase CSS opcional
+    style?: React.CSSProperties; // Estilo en línea opcional
     apiBaseUrl?: string; // Base URL para el cliente HTTP
-    endpoint: string; // Endpoint para realizar la solicitud
-    useInterceptor?: boolean; // Indica si debe usar interceptores para el cliente HTTP
-    onChangeSuccess?: (newValue: boolean) => void; // Callback para manejar éxito
-    onChangeError?: (error: any) => void; // Callback para manejar errores
+    path: string; // Path para la solicitud
+    useAuthToken?: boolean; // Define si se usa el cliente seguro
+    onChangeSuccess?: (newValue: boolean) => void; // Callback en caso de éxito
+    onChangeError?: (error: any) => void; // Callback en caso de error
+    activeIcon: string; // Ícono cuando el valor es true
+    inactiveIcon: string; // Ícono cuando el valor es false
+    activeColor?: string; // Color del ícono cuando el valor es true
+    inactiveColor?: string; // Color del ícono cuando el valor es false
 }
 
 const loaderSizeMap: Record<"xs" | "sm" | "md" | "lg" | "xl", number> = {
@@ -31,21 +36,27 @@ const paddingMap: Record<"xs" | "sm" | "md" | "lg" | "xl", number> = {
     xl: 7,
 };
 
-const LockToggleButton: React.FC<LockToggleButtonProps> = ({
-    value = true,
+const IconToggleButton: React.FC<IconToggleButtonProps> = ({
+    value,
     size = "md",
     className,
     style,
     apiBaseUrl,
-    endpoint,
-    useInterceptor = false,
+    path,
+    useAuthToken = false,
     onChangeSuccess,
     onChangeError,
+    activeIcon,
+    inactiveIcon,
+    activeColor = "primary",
+    inactiveColor = "text",
 }) => {
     const [processing, setProcessing] = useState(false);
 
-    const client: HttpClient = useInterceptor ? securedHttpClient : httpClient;
+    // Selecciona el cliente HTTP adecuado
+    const client: HttpClient = useAuthToken ? securedHttpClient : httpClient;
 
+    // Configura la base URL si está definida
     if (apiBaseUrl) {
         client.setBaseURL(apiBaseUrl);
     }
@@ -53,22 +64,22 @@ const LockToggleButton: React.FC<LockToggleButtonProps> = ({
     const handleClick = async () => {
         setProcessing(true);
         try {
-            // Simula una demora de 2 segundos (2000 ms)
+            // Simula una demora de 2 segundos
             await new Promise((resolve) => setTimeout(resolve, 2000));
-            // Realiza la solicitud al endpoint
-            const newValue = !value; // Alterna el valor
-            await client.post(endpoint, { value: newValue }); // Envía el nuevo estado al servidor
+            // Alterna el valor y realiza la solicitud
+            const newValue = !value;
+            await client.post(path, { value: newValue });
 
-            // Llama al callback de éxito si está definido
+            // Callback de éxito
             if (onChangeSuccess) {
                 onChangeSuccess(newValue);
             }
 
             setProcessing(false);
         } catch (error: any) {
-            console.error("Error while toggling locked/unlocked:", error);
+            console.error("Error while toggling state:", error);
 
-            // Llama al callback de error si está definido
+            // Callback de error
             if (onChangeError) {
                 onChangeError(error);
             }
@@ -78,7 +89,10 @@ const LockToggleButton: React.FC<LockToggleButtonProps> = ({
     };
 
     return (
-        <div className={`precooked-lock-toggle-button ${className}`} style={{ ...style }}>
+        <div
+            className={`snapping-icon-toggle-button ${className || ""}`}
+            style={{ ...style }}
+        >
             {processing ? (
                 <div
                     style={{
@@ -88,15 +102,15 @@ const LockToggleButton: React.FC<LockToggleButtonProps> = ({
                         paddingLeft: paddingMap[size],
                     }}
                 >
-                    <Loader color={"primary"} size={loaderSizeMap[size]} />
+                    <Loader color="primary" size={loaderSizeMap[size]} />
                 </div>
             ) : (
                 <IconButton
                     type="clear"
                     hasShadow={false}
-                    color={value ? "primary" : "text"}
+                    color={value ? activeColor : inactiveColor}
                     onClick={handleClick}
-                    icon={value ? "locked" : "unlocked"}
+                    icon={value ? activeIcon : inactiveIcon}
                     size={size}
                 />
             )}
@@ -104,4 +118,4 @@ const LockToggleButton: React.FC<LockToggleButtonProps> = ({
     );
 };
 
-export default LockToggleButton;
+export default IconToggleButton;

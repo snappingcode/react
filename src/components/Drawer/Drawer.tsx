@@ -6,12 +6,13 @@ export interface DrawerProps {
     anchor: 'left' | 'right' | 'top' | 'bottom';
     duration?: number; // Animation duration in ms
     onClose?: () => void;
-    overlay?: boolean; // Show overlay
+    showOverlay?: boolean; // Show overlay
     children?: React.ReactNode;
     drawerStyle?: CSSProperties; // Custom styles for the drawer
     overlayStyle?: CSSProperties; // Custom styles for the overlay
     height?: number | string; // Height of the drawer
     width?: number | string; // Width of the drawer
+    zIndex?: number;
 }
 
 const Drawer: React.FC<DrawerProps> = ({
@@ -19,12 +20,13 @@ const Drawer: React.FC<DrawerProps> = ({
     anchor,
     duration = 300,
     onClose,
-    overlay = true,
+    showOverlay = true,
     children,
     drawerStyle,
     overlayStyle,
     height,
     width,
+    zIndex = 9999
 }) => {
     // Compute position based on anchor
     const getTransform = (): string => {
@@ -57,7 +59,7 @@ const Drawer: React.FC<DrawerProps> = ({
         transform: getTransform(),
         transition: `transform ${duration}ms ease-in-out`,
         backgroundColor: '#fff',
-        zIndex: 1000,
+        zIndex: zIndex + 1,
         ...drawerStyle,
     };
 
@@ -71,13 +73,14 @@ const Drawer: React.FC<DrawerProps> = ({
         opacity: isOpen ? 1 : 0,
         pointerEvents: isOpen ? 'auto' : 'none',
         transition: `opacity ${duration}ms ease-in-out`,
-        zIndex: 999,
+        zIndex: zIndex + 1,
+        cursor: "pointer",
         ...overlayStyle,
     };
 
     const drawerContent = (
         <>
-            {overlay && (
+            {showOverlay && (
                 <div style={overlayStyles} onClick={onClose} />
             )}
             <div style={drawerStyles}>{children}</div>

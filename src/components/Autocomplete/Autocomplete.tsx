@@ -1,15 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Popover from '../Popover/Popover';
 import { httpClient, securedHttpClient } from '../../httpClient';
 import { themeColors } from '../../config';
 import Icon from '../Icon/Icon';
+import Popover from '../Popover/Popover';
+
 
 interface AutocompleteProps {
     apiBaseUrl?: string;
-    endpoint?: string;
-    useSecureConnection?: boolean;
+    path?: string;
+    useAuthToken?: boolean;
     localData?: any[];
-    renderItem: (item: any, index: number, results: any[]) => React.ReactNode;
+    renderItem?: (item: any, index: number, results: any[]) => React.ReactNode;
     itemStyle?: React.CSSProperties;
     containerStyle?: React.CSSProperties;
     searchInputStyle?: React.CSSProperties;
@@ -26,12 +27,18 @@ interface AutocompleteProps {
     popoverStyle?: React.CSSProperties;
     loadingIndicator?: React.ReactNode;
     maxResults?: number;
+    itemLabelKey?: string;
+    itemDescriptionKey?: string;
+    itemImageKey?: string;
+    itemLabelStyle?: React.CSSProperties;
+    itemDescriptionStyle?: React.CSSProperties;
+    itemImageStyle?: React.CSSProperties;
 }
 
 const Autocomplete: React.FC<AutocompleteProps> = ({
     apiBaseUrl,
-    endpoint,
-    useSecureConnection = false,
+    path,
+    useAuthToken = false,
     localData = [],
     renderItem,
     itemStyle,
@@ -50,6 +57,12 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
     popoverStyle,
     loadingIndicator,
     maxResults = 10,
+    itemLabelKey,
+    itemDescriptionKey,
+    itemImageKey,
+    itemLabelStyle,
+    itemDescriptionStyle,
+    itemImageStyle
 }) => {
     const [query, setQuery] = useState(defaultValue);
     const [results, setResults] = useState<any[]>([]);
@@ -62,19 +75,19 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
     const optionRefs = useRef<(HTMLDivElement | null)[]>([]);
     const debounceTimeout = useRef<number | null>(null);
     const [popoverWidth, setPopoverWidth] = useState<number | undefined>(undefined);
-    const client = useSecureConnection ? securedHttpClient : httpClient;
+    const client = useAuthToken ? securedHttpClient : httpClient;
     if (apiBaseUrl) client.setBaseURL(apiBaseUrl);
     const handleSearch = async (searchQuery: string) => {
         setError(null);
         setLoading(true);
 
         try {
-            //const url = apiBaseUrl && endpoint ? `${apiBaseUrl}${endpoint}` : endpoint || '';
+            //const url = apiBaseUrl && path ? `${apiBaseUrl}${path}` : path || '';
             if (onSearch) onSearch(searchQuery);
 
-            if (endpoint) {
-                const response = await client.get(`${endpoint}?query=${encodeURIComponent(searchQuery)}`);
-                setResults(response.slice(0, maxResults));
+            if (path) {
+                const response = await client.get(`${path}?query=${encodeURIComponent(searchQuery)}`);
+                setResults(response?.data.slice(0, maxResults));
             } else {
                 const filteredData = localData.filter((item) =>
                     JSON.stringify(item).toLowerCase().includes(searchQuery.toLowerCase())
@@ -108,7 +121,8 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
 
     const handleSelect = (item: any) => {
         if (onSelect) onSelect(item);
-        setQuery(item.label || item.name || '');
+        //setQuery(item.label || item.name || '');
+        setQuery('');
         setPopoverOpen(false);
     };
 
@@ -137,15 +151,10 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
     }, [activeIndex]);
 
     const renderContent = () => {
-        if (loading) {
-            return loadingIndicator || <p>{loadingText}</p>;
-        }
-        if (error) {
-            return <p style={{ color: 'red' }}>{error}</p>;
-        }
-        if (hasSearched && results.length === 0) {
-            return <p>{noResultsText}</p>;
-        }
+        if (loading) return loadingIndicator || <p>{loadingText}</p>;
+        if (error) return <p style={{ color: 'red' }}>{error}</p>;
+        if (hasSearched && results.length === 0) return <p>{noResultsText}</p>;
+
         return results.map((item, index) => (
             <div
                 key={index}
@@ -154,23 +163,47 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
                 }}
                 onClick={() => handleSelect(item)}
                 style={{
-                    paddingLeft: 5,
-                    paddingRight: 5,
-                    paddingTop: 10,
-                    paddingBottom: 10,
-                    cursor: 'pointer',
-                    backgroundColor: activeIndex === index ? '#f0f0f0' : 'transparent',
-                    borderBottom: index === results.length - 1 ? 'none' : '1px solid #ccc',
+                    display: "flex",
+                    alignItems: "center",
+                    padding: "10px",
+                    cursor: "pointer",
+                    backgroundColor: activeIndex === index ? "#f0f0f0" : "transparent",
+                    borderBottom: index === results.length - 1 ? "none" : "1px solid #ccc",
                     color: themeColors.text,
                     fontSize: 14,
-                    ...itemStyle
+                    ...itemStyle,
                 }}
             >
-                {renderItem(item, index, results)}
+                {/* Si renderItem está definido, lo usamos en lugar de la estructura predeterminada */}
+                {renderItem
+                    ? renderItem(item, index, results)
+                    : (
+                        <>
+                            {/* Imagen a la izquierda */}
+                            {itemImageKey && item[itemImageKey] && (
+                                <img
+                                    src={item[itemImageKey]}
+                                    alt=""
+                                    style={{
+                                        width: 40,
+                                        height: 40,
+                                        borderRadius: "50%",
+                                        marginRight: 10,
+                                        ...itemImageStyle
+                                    }}
+                                />
+                            )}
+
+                            {/* Contenedor de texto */}
+                            <div style={{ display: "flex", flexDirection: "column" }}>
+                                {itemLabelKey && <span style={{ fontWeight: "bold", ...itemLabelStyle }}>{item[itemLabelKey]}</span>}
+                                {itemDescriptionKey && <span style={{ color: "#777", ...itemDescriptionStyle }}>{item[itemDescriptionKey]}</span>}
+                            </div>
+                        </>
+                    )}
             </div>
         ));
     };
-
     useEffect(() => {
         if (inputRef.current) {
             setPopoverWidth(inputRef.current.offsetWidth);
@@ -228,23 +261,29 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
             </div>
 
             {hasSearched && (
-                <Popover
-                    content={renderContent()}
-                    anchorRef={inputRef as React.RefObject<HTMLElement>}
-                    isOpen={isPopoverOpen}
-                    onClose={() => setPopoverOpen(false)}
-                    containerStyle={{
-                        maxHeight: '300px',
-                        overflowY: 'auto',
-                        borderRadius: '5px',
-                        boxShadow: '0 4px 0px rgba(0, 0, 0, 0.1)',
-                        width: popoverWidth,
-                        ...popoverStyle
-                    }}
-                    backdropStyle={{
-                        backgroundColor: 'transparent',
-                    }}
-                />
+                <>
+                    <Popover
+                        content={renderContent()}
+                        anchorRef={inputRef as React.RefObject<HTMLElement>}
+                        isOpen={isPopoverOpen}
+                        onClose={() => setPopoverOpen(false)}
+                        containerStyle={{
+                            maxHeight: '300px',
+                            overflowY: 'auto',
+                            borderRadius: '5px',
+                            boxShadow: '0 4px 0px rgba(0, 0, 0, 0.1)',
+                            width: popoverWidth,
+                            zIndex: 999999,
+                            ...popoverStyle
+                        }}
+                        backdropStyle={{
+                            backgroundColor: 'transparent',
+                            zIndex: 999999
+                        }}
+
+                    />
+                </>
+
             )}
         </div>
     );

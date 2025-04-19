@@ -53,10 +53,10 @@ const DynamicContent: React.FC<DynamicContentProps & {
                                 sendButtonIcon={config?.sendButtonIcon}
                                 sendButtonTitle={config?.sendButtonTitle}
                                 mode={config?.mode}
-                                fetchEndpoint={config?.fetchEndpoint}
-                                submitEndpoint={config?.submitEndpoint}
+                                fetchPath={config?.fetchPath}
+                                submitPath={config?.submitPath}
                                 apiBaseUrl={apiBaseUrl}
-                                useSecureConnection={config?.submitEndpoint || true}
+                                useAuthToken={config?.useAuthToken || true}
                                 renderRadioOption={(option, _index, isActive) => (
                                     <div
                                         style={{
@@ -103,11 +103,11 @@ const DynamicContent: React.FC<DynamicContentProps & {
                                     onSubmit?.(formData); // Prop específica
                                     //onEvent?.onSubmit?.(formData); // En `onEvent`
                                 }}
-                                onError={(error) => {
+                                onSubmitError={(error) => {
                                     //alert(error);
                                     onError?.(error); //
                                 }}
-                                onSuccess={(formData) => {
+                                onSubmitSuccess={(formData) => {
                                     console.log('success', formData);
                                     onSuccess?.(formData, config?.successMessage); // Prop específica
                                     //onEvent?.onSuccess?.(formData); // En `onEvent`
@@ -128,8 +128,8 @@ const DynamicContent: React.FC<DynamicContentProps & {
                                 startSlots={config?.startSlots || []}
                                 endSlots={config?.endSlots || []}
                                 apiBaseUrl={apiBaseUrl}
-                                endpoint={config?.endpoint}
-                                useSecureConnection={config?.useSecureConnection}
+                                listPath={config?.listPath}
+                                useAuthToken={config?.useAuthToken}
                                 onItemChangeSuccess={(item) => {
                                     console.log('Item changed successfully:', item);
                                     onItemChangeSuccess?.(item);
@@ -138,7 +138,7 @@ const DynamicContent: React.FC<DynamicContentProps & {
                                 onItemChangeError={(error) => {
                                     onItemChangeError?.(error);
                                 }}
-                                onActionClick={(actionData, itemData) => {
+                                onItemActionClick={(actionData, itemData) => {
                                     console.log('actionData', actionData)
                                     console.log('itemData', itemData)
                                     setFormModalIsOpen(true);
@@ -188,7 +188,9 @@ const DynamicContent: React.FC<DynamicContentProps & {
                                 name: 'name',
                                 label: 'Nombre del usuario',
                                 value: '',
-                                size: 12,
+                                config: {
+                                    size: 12,
+                                }
                             },
                         ]}
                         mode="create"

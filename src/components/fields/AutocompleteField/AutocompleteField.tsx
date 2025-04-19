@@ -10,22 +10,29 @@ interface AutocompleteFieldProps {
     label?: string;
     description?: string;
     options?: { [key: string]: any }[];
-    value?: string | string[];
+    value?: any | any[];
     multiple?: boolean;
-    onChange: (selectedValue: string | string[]) => void;
+    placeholder?: string;
+    onChange: (selectedValue: any | any[]) => void;
     containerStyle?: React.CSSProperties;
     labelStyle?: React.CSSProperties;
     descriptionStyle?: React.CSSProperties;
     popoverStyle?: React.CSSProperties;
-    baseUrl: string;
+    apiBaseUrl: string;
     path: string;
-    useInterceptor?: boolean;
+    useAuthToken?: boolean;
     searchParam?: string;
     noResultsText?: string;
     searchingText?: string;
-    primaryKey?: string;
-    secondaryKey?: string;
-    thumbnailKey?: string;
+    // Después:
+    itemLabelKey?: string;
+    itemDescriptionKey?: string;
+    itemImageKey?: string;
+
+    // Nuevas (para estilos):
+    itemLabelStyle?: React.CSSProperties;
+    itemDescriptionStyle?: React.CSSProperties;
+    itemImageStyle?: React.CSSProperties;
 }
 
 const AutocompleteField: React.FC<AutocompleteFieldProps> = ({
@@ -34,24 +41,29 @@ const AutocompleteField: React.FC<AutocompleteFieldProps> = ({
     options = [],
     multiple = false,
     value = multiple ? [] : '',
+    placeholder = "Escriba para buscar...",
     onChange,
     containerStyle = {},
     labelStyle = {},
     popoverStyle = {},
     descriptionStyle = {},
-    baseUrl,
+    apiBaseUrl,
     path,
-    useInterceptor = true,
+    useAuthToken = true,
     searchParam = "search",
     noResultsText = "No results found",
     searchingText = "Searching...",
-    primaryKey = "name",
-    secondaryKey,
-    thumbnailKey,
+
+    itemLabelKey = "name",
+    itemDescriptionKey,
+    itemImageKey,
+    itemLabelStyle,
+    itemDescriptionStyle,
+    itemImageStyle
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [searchOptions, setSearchOptions] = useState(options);
-    const [selectedOptions, setSelectedOptions] = useState<string | string[]>(value);
+    const [selectedOptions, setSelectedOptions] = useState<any | any[]>(value);
     const [searchTerm, setSearchTerm] = useState('');
     const [isSearching, setIsSearching] = useState(false);
     const [activeIndex, setActiveIndex] = useState(-1);
@@ -64,13 +76,17 @@ const AutocompleteField: React.FC<AutocompleteFieldProps> = ({
     const closePopover = () => setIsOpen(false);
 
     useEffect(() => {
-        setSelectedOptions(value);
+        if (JSON.stringify(value) !== JSON.stringify(selectedOptions)) {
+            console.log('change value', value);
+            setSelectedOptions(value);
+        }
+
     }, [value]);
 
     useEffect(() => {
-        const client = useInterceptor ? securedHttpClient : httpClient;
-        client.setBaseURL(baseUrl);
-    }, [baseUrl, useInterceptor]);
+        const client = useAuthToken ? securedHttpClient : httpClient;
+        client.setBaseURL(apiBaseUrl);
+    }, [apiBaseUrl, useAuthToken]);
 
     useEffect(() => {
         if (anchorRef.current) {
@@ -81,9 +97,9 @@ const AutocompleteField: React.FC<AutocompleteFieldProps> = ({
     const fetchOptions = async (query: string) => {
         setIsSearching(true);
         try {
-            const client = useInterceptor ? securedHttpClient : httpClient;
+            const client = useAuthToken ? securedHttpClient : httpClient;
             const response = await client.get(`${path}?${searchParam}=${query}`);
-            setSearchOptions(response);
+            setSearchOptions(response?.data);
             setActiveIndex(-1);
             openPopover();
         } catch (error) {
@@ -103,30 +119,32 @@ const AutocompleteField: React.FC<AutocompleteFieldProps> = ({
         }
     }, [searchTerm]);
 
-    const handleSelectOption = (optionName: string) => {
+
+    const handleSelectOption = (selectedItem: any) => {
         if (multiple) {
             const newSelection = Array.isArray(selectedOptions)
-                ? selectedOptions.includes(optionName)
-                    ? selectedOptions.filter((v) => v !== optionName)
-                    : [...selectedOptions, optionName]
-                : [optionName];
+                ? selectedOptions.find((item: any) => item[itemLabelKey] === selectedItem[itemLabelKey])
+                    ? selectedOptions.filter((item: any) => item[itemLabelKey] !== selectedItem[itemLabelKey])
+                    : [...selectedOptions, selectedItem]
+                : [selectedItem];
+
             setSelectedOptions(newSelection);
             onChange(newSelection);
         } else {
-            setSelectedOptions(optionName);
-            onChange(optionName);
+            setSelectedOptions(selectedItem);
+            onChange(selectedItem);
             closePopover();
         }
     };
 
-    const removeOption = (optionName: string) => {
+    const removeOption = (itemToRemove: any) => {
         if (multiple && Array.isArray(selectedOptions)) {
-            const newSelection = selectedOptions.filter((v) => v !== optionName);
+            const newSelection = selectedOptions.filter((item: any) => item[itemLabelKey] !== itemToRemove[itemLabelKey]);
             setSelectedOptions(newSelection);
             onChange(newSelection);
         } else if (!multiple) {
-            setSelectedOptions('');
-            onChange('');
+            setSelectedOptions(null);
+            onChange(null);
             setSearchTerm('');
         }
     };
@@ -144,7 +162,7 @@ const AutocompleteField: React.FC<AutocompleteFieldProps> = ({
             );
         } else if (e.key === 'Enter' && activeIndex >= 0) {
             e.preventDefault();
-            handleSelectOption(searchOptions[activeIndex][primaryKey]);
+            handleSelectOption(searchOptions[activeIndex]);
         }
     };
 
@@ -168,51 +186,79 @@ const AutocompleteField: React.FC<AutocompleteFieldProps> = ({
 
     return (
         <>
-            <div style={{ position: 'relative', ...containerStyle }}>
-                <label style={labelStyle}>{label}</label>
+            <div style={{
+                background: '#fff',
+                width: '100%',
 
-                {/* Renderizar el input o la pill seleccionada en el modo de selección única */}
-                {(!multiple && selectedOptions) ? (
-                    <div
+
+                boxSizing: 'border-box',
+                backgroundColor: '#fff',
+                position: 'relative',
+
+                ...containerStyle,
+            }}>
+                {label && (
+                    <label
                         style={{
-                            border: '1px solid #ccc',
-                            padding: 5
+                            position: 'absolute',
+                            top: '-13px',
+                            left: '10px',
+                            display: 'inline-block',
+                            padding: '0 5px',
+                            background: '#fff',
+                            fontWeight: '600',
+                            color: themeColors.text,
+                            ...labelStyle,
                         }}
                     >
+                        {label}
+                    </label>
+                )}
+
+                {/* Single selection */}
+                {(!multiple && selectedOptions) ? (
+                    <div style={{ padding: 5 }}>
                         <div
                             style={{
                                 display: 'inline-flex',
                                 alignItems: 'center',
                                 gap: '5px',
                                 padding: '10px',
-                                border: '1px solid #ccc'
+                                cursor: 'pointer'
                             }}
-                            onClick={() => removeOption(selectedOptions as string)}
+                            onClick={() => removeOption(selectedOptions)}
                         >
-                            {thumbnailKey && searchOptions.find((opt) => opt[primaryKey] === selectedOptions)?.[thumbnailKey] && (
+                            {itemImageKey && selectedOptions[itemImageKey] && (
                                 <img
-                                    src={`${baseUrl}${searchOptions.find((opt) => opt[primaryKey] === selectedOptions)?.[thumbnailKey]}`}
-                                    alt={selectedOptions as string}
-                                    style={{ width: '24px', height: '24px', borderRadius: '50%' }}
+                                    src={`${apiBaseUrl}${selectedOptions[itemImageKey]}`}
+                                    alt={selectedOptions[itemLabelKey]}
+                                    style={{ width: '24px', height: '24px', borderRadius: '50%', ...itemImageStyle }}
                                 />
                             )}
                             <div>
-                                <span>{searchOptions.find((opt) => opt[primaryKey] === selectedOptions)?.[primaryKey]}</span>
-                                {secondaryKey && searchOptions.find((opt) => opt[primaryKey] === selectedOptions)?.[secondaryKey] && (
-                                    <div style={{ fontSize: '0.8em', color: themeColors.textTint }}>
-                                        {searchOptions.find((opt) => opt[primaryKey] === selectedOptions)?.[secondaryKey]}
+                                <span style={itemLabelStyle}>{selectedOptions[itemLabelKey]}</span>
+                                {itemDescriptionKey && selectedOptions[itemDescriptionKey] && (
+                                    <div style={{ fontSize: '0.8em', color: themeColors.textTint, ...itemDescriptionStyle }}>
+                                        {selectedOptions[itemDescriptionKey]}
                                     </div>
                                 )}
                             </div>
                             <Icon name="close" size={12} color={themeColors.textTint} />
                         </div>
-
                     </div>
                 ) : (
-                    <div ref={anchorRef} style={{ padding: '10px', border: '1px solid #ccc', cursor: 'pointer' }}>
+                    <div ref={anchorRef} style={{
+                        padding: '10px',
+                        border: '1px solid #ccc',
+                        cursor: 'pointer',
+                        borderColor: themeColors.medium,
+                        borderWidth: '2px',
+                        borderRadius: '10px',
+                        borderStyle: 'solid',
+                    }}>
                         <input
                             type="text"
-                            placeholder="Escriba para buscar..."
+                            placeholder={placeholder}
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             style={{ width: '100%', outline: 'none', border: 'none' }}
@@ -221,13 +267,13 @@ const AutocompleteField: React.FC<AutocompleteFieldProps> = ({
                     </div>
                 )}
 
-                {/* Pills para selección múltiple */}
+                {/* Multiple selection pills */}
                 {multiple && Array.isArray(selectedOptions) && selectedOptions.length > 0 && (
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginTop: '5px' }}>
-                        {selectedOptions.map((val) => {
-                            const optionData = searchOptions.find((opt) => opt[primaryKey] === val);
-                            return (
-                                <div key={val} style={{
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginTop: '10px', marginBottom: 10 }}>
+                        {selectedOptions.map((item) => (
+                            <div
+                                key={item[itemLabelKey]}
+                                style={{
                                     display: 'flex',
                                     alignItems: 'center',
                                     padding: '5px 8px',
@@ -235,30 +281,31 @@ const AutocompleteField: React.FC<AutocompleteFieldProps> = ({
                                     borderRadius: '12px',
                                     fontSize: '0.9em',
                                     gap: '5px',
+                                    cursor: 'pointer'
                                 }}
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        removeOption(val);
-                                    }}>
-                                    {thumbnailKey && optionData?.[thumbnailKey] && (
-                                        <img
-                                            src={`${baseUrl}${optionData[thumbnailKey]}`}
-                                            alt={val}
-                                            style={{ width: '16px', height: '16px', borderRadius: '50%' }}
-                                        />
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    removeOption(item);
+                                }}
+                            >
+                                {itemImageKey && item[itemImageKey] && (
+                                    <img
+                                        src={`${apiBaseUrl}${item[itemImageKey]}`}
+                                        alt={item[itemLabelKey]}
+                                        style={{ width: '16px', height: '16px', borderRadius: '50%', ...itemImageStyle }}
+                                    />
+                                )}
+                                <div>
+                                    <span style={itemLabelStyle}>{item[itemLabelKey]}</span>
+                                    {itemDescriptionKey && item[itemDescriptionKey] && (
+                                        <div style={{ fontSize: '0.8em', color: themeColors.textTint, ...itemDescriptionStyle }}>
+                                            {item[itemDescriptionKey]}
+                                        </div>
                                     )}
-                                    <div>
-                                        <span>{optionData?.[primaryKey]}</span>
-                                        {secondaryKey && optionData?.[secondaryKey] && (
-                                            <div style={{ fontSize: '0.8em', color: themeColors.textTint }}>
-                                                {optionData[secondaryKey]}
-                                            </div>
-                                        )}
-                                    </div>
-                                    <Icon name="close" size={12} color={themeColors.textTint} />
                                 </div>
-                            );
-                        })}
+                                <Icon name="close" size={12} color={themeColors.textTint} />
+                            </div>
+                        ))}
                     </div>
                 )}
 
@@ -266,6 +313,7 @@ const AutocompleteField: React.FC<AutocompleteFieldProps> = ({
                     isOpen={isOpen}
                     anchorRef={anchorRef as React.RefObject<HTMLElement>}
                     onClose={closePopover}
+                    zIndex={99999999999}
                     content={
                         <div style={{ maxHeight: '200px', overflowY: 'auto', ...popoverStyle }}>
                             {isSearching ? (
@@ -277,69 +325,70 @@ const AutocompleteField: React.FC<AutocompleteFieldProps> = ({
                                     {noResultsText}
                                 </div>
                             ) : (
-                                searchOptions.map((option, index) => (
-                                    <div
-                                        key={index}
-                                        //ref={(el) => (optionRefs.current[index] = el)}
-                                        ref={(el) => {
-                                            optionRefs.current[index] = el; // Asigna el elemento al ref
-                                        }}
-                                        onClick={() => handleSelectOption(option[primaryKey])}
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            padding: '8px',
-                                            cursor: 'pointer',
-                                            backgroundColor: activeIndex === index
-                                                ? themeColors.textTint
-                                                : Array.isArray(selectedOptions) && selectedOptions.includes(option[primaryKey])
-                                                    ? themeColors.textTint
-                                                    : 'transparent',
-                                            color: activeIndex === index
-                                                ? '#fff'
-                                                : Array.isArray(selectedOptions) && selectedOptions.includes(option[primaryKey])
-                                                    ? '#fff'
+                                searchOptions.map((option, index) => {
+                                    const isSelected = multiple
+                                        ? selectedOptions.some((o: any) => o[itemLabelKey] === option[itemLabelKey])
+                                        : selectedOptions?.[itemLabelKey] === option[itemLabelKey];
+
+                                    return (
+                                        <div
+                                            key={option[itemLabelKey]}
+                                            ref={(el) => { optionRefs.current[index] = el }}
+                                            onClick={() => handleSelectOption(option)}
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                padding: '8px',
+                                                cursor: 'pointer',
+                                                backgroundColor: isSelected
+                                                    ? themeColors.medium : activeIndex === index ? themeColors.light
+                                                        : 'transparent',
+                                                color: isSelected ? '#fff' : activeIndex === index ? themeColors.textShade
                                                     : 'inherit',
-                                        }}
-                                    >
-                                        {thumbnailKey && option[thumbnailKey] && (
-                                            <img
-                                                src={`${baseUrl}${option[thumbnailKey]}`}
-                                                alt={option[primaryKey]}
-                                                style={{ width: '24px', height: '24px', borderRadius: '50%', marginRight: '8px' }}
-                                            />
-                                        )}
-                                        <div>
-                                            <div>{option[primaryKey]}</div>
-                                            {secondaryKey && option[secondaryKey] && (
-                                                <div style={{ fontSize: '0.8em', color: themeColors.textTint }}>
-                                                    {option[secondaryKey]}
-                                                </div>
+                                            }}
+                                        >
+                                            {itemImageKey && option[itemImageKey] && (
+                                                <img
+                                                    src={`${apiBaseUrl}${option[itemImageKey]}`}
+                                                    alt={option[itemLabelKey]}
+                                                    style={{ width: '24px', height: '24px', borderRadius: '50%', marginRight: '8px', ...itemImageStyle }}
+                                                />
                                             )}
+                                            <div>
+                                                <div style={itemLabelStyle}>{option[itemLabelKey]}</div>
+                                                {itemDescriptionKey && option[itemDescriptionKey] && (
+                                                    <div style={{ fontSize: '0.8em', ...itemDescriptionStyle }}>
+                                                        {option[itemDescriptionKey]}
+                                                    </div>
+                                                )}
+                                            </div>
                                         </div>
-                                    </div>
-                                ))
+                                    );
+                                })
                             )}
                         </div>
                     }
-                    containerStyle={{
-                        width: popoverWidth,
-                    }}
+                    containerStyle={{ width: popoverWidth }}
                 />
             </div>
 
-            {description && <p style={{
-                fontWeight: 300,
-                fontStyle: 'italic',
-                display: 'block',
-                padding: '3px',
-                margin: 0,
-                color: themeColors.textTint,
-                fontSize: '.9em',
-                ...descriptionStyle
-            }}>{description}</p>}
+            {description && (
+                <p style={{
+                    fontWeight: 300,
+                    fontStyle: 'italic',
+                    display: 'block',
+                    padding: '3px',
+                    margin: 0,
+                    color: themeColors.textTint,
+                    fontSize: '.9em',
+                    ...descriptionStyle
+                }}>
+                    {description}
+                </p>
+            )}
         </>
     );
+
 };
 
 export default AutocompleteField;

@@ -9,6 +9,7 @@ interface PopoverProps {
     containerStyle?: React.CSSProperties;
     backdropStyle?: React.CSSProperties;
     hasShadow?: boolean;
+    zIndex?: number,
 }
 
 const Popover: React.FC<PopoverProps> = ({
@@ -18,7 +19,8 @@ const Popover: React.FC<PopoverProps> = ({
     onClose,
     containerStyle = {},
     backdropStyle = {},
-    hasShadow = true
+    hasShadow = true,
+    zIndex = 9999
 }) => {
     const [popoverPosition, setPopoverPosition] = useState<{ top: number; right: number } | null>(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -66,7 +68,7 @@ const Popover: React.FC<PopoverProps> = ({
                     width: '100vw',
                     height: '100vh',
                     backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                    zIndex: 999,
+                    zIndex: zIndex,
                     ...backdropStyle
                 }}
             />
@@ -76,7 +78,7 @@ const Popover: React.FC<PopoverProps> = ({
                     position: 'absolute',
                     top: popoverPosition.top,
                     right: popoverPosition.right,
-                    zIndex: 1000,
+                    zIndex: zIndex + 1,
                     background: '#fff',
                     borderRadius: 10,
                     boxSizing: "border-box",

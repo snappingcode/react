@@ -1,10 +1,9 @@
 import React, { useState, forwardRef } from "react";
-
-import TypingEffect from "../../TypingEffect/TypingEffect";
 import { themeColors } from "../../../config";
 import Icon from "../../Icon/Icon";
-import DynamicIcon from "../../DynamicIcon/DynamicIcon";
 import Touchable from "../../Touchable/Touchable";
+import DynamicIcon from "../../DynamicIcon/DynamicIcon";
+import TypingEffect from "../../TypingEffect/TypingEffect";
 
 
 const hexToRgb = (hex: string) => {
@@ -91,7 +90,7 @@ const sizeStyles = {
 };
 
 const Button = forwardRef<HTMLDivElement, ButtonProps>(
-    (props, ref) => {
+    (props, _ref) => {
         const {
             title,
             onClick,
@@ -177,7 +176,7 @@ const Button = forwardRef<HTMLDivElement, ButtonProps>(
             transition: "all 0.2s ease-in-out",
             opacity: disabled ? 0.6 : 1,
             boxSizing: "border-box",
-
+            fontWeight: '600',
             ...style,
         };
 
@@ -185,9 +184,9 @@ const Button = forwardRef<HTMLDivElement, ButtonProps>(
             fontSize: sizeStyles[size]?.fontSize,
             margin: "0 8px",
             color: contentColor,
-            // position: "relative",
-            // top: -1,
-            lineHeight: 1,
+            position: "relative",
+            top: -1,
+            fontWeight: "bold",
             ...titleStyle,
         };
 

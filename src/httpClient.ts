@@ -1,4 +1,4 @@
-type HttpMethod = "GET" | "POST" | "PUT" | "DELETE";
+type HttpMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
 
 interface HttpClientConfig {
   baseURL?: string;
@@ -78,6 +78,9 @@ export class HttpClient {
 
   public post(url: string, data?: any) {
     return this.request("POST", url, data);
+  }
+  public patch(url: string, data: any) {
+    return this.request("PATCH", url, data);
   }
 
   public put(url: string, data: any) {

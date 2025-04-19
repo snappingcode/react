@@ -6,11 +6,18 @@ import IconButton from "../buttons/IconButton/IconButton";
 interface SearchBarProps {
     containerStyle?: React.CSSProperties;
     inputStyle?: React.CSSProperties;
-    searchIcon?: string;
-    clearIcon?: string;
+
     placeholder?: string; // Placeholder text for the input
     onChange?: (value: string) => void; // Callback for each change in the input
     onEnterPress?: (value: string) => void; // Callback when pressing enter
+
+    searchIcon?: string;
+    searchIconColor?: string;
+    searchIconSize?: number;
+
+    clearIcon?: string;
+    clearIconColor?: string;
+    clearIconSize?: number;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -19,6 +26,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
     searchIcon = "search", // Default search icon
     clearIcon = "close", // Default clear icon
     placeholder = "Search...",
+    searchIconColor,
+    searchIconSize,
+    clearIconColor,
+    clearIconSize,
     onChange,
     onEnterPress,
 }) => {
@@ -47,16 +58,20 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
     return (
         <div
-            className="precooked-search-bar"
+            className="snapping-search-bar"
             style={{
                 display: "flex",
                 alignItems: "center",
-                border: `1px solid ${themeColors.medium}`,
+                border: `1.5px solid ${themeColors.medium}`,
                 borderRadius: "25px",
-                padding: "5px 10px",
+                padding: "2px 35px 2px 7px",
+                position: "relative",
                 ...containerStyle
             }}>
-            <Icon name={searchIcon} />
+            <Icon name={searchIcon}
+                color={searchIconColor || themeColors.text}
+                size={searchIconSize}
+            />
             <input
                 type="text"
                 value={searchValue}
@@ -66,10 +81,12 @@ const SearchBar: React.FC<SearchBarProps> = ({
                     flex: 1,
                     border: "none",
                     outline: "none",
-                    padding: "5px",
+                    //padding: "5px",
                     background: 'transparent',
                     color: themeColors.text,
                     fontSize: 16,
+                    lineHeight: 1.4,
+                    //backgroundColor: 'red',
                     ...inputStyle
                 }}
                 placeholder={placeholder}
@@ -82,6 +99,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
                     onClick={handleClear}
                     aria-label="Clear"
                     hasShadow={false}
+                    color={clearIconColor || themeColors.text}
+                    iconSize={clearIconSize}
+                    style={{
+                        position: "absolute",
+                        right: 5,
+                        top: 2
+                    }}
                 />
             )}
         </div>

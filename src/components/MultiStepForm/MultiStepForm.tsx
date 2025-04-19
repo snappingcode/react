@@ -6,7 +6,7 @@ import themeColors from "../../config/themeColors";
 interface Step {
     title: string;
     fields: any[];
-    endpoint: string;
+    path: string;
     sendButtonTitle?: string;
     backButtonTitle?: string;
     nextButtonTitle?: string;
@@ -30,10 +30,10 @@ interface MultiStepFormProps {
 const MultiStepForm: React.FC<MultiStepFormProps> = ({
     steps,
     currentStepIndex = 0,
-    onStepSuccess,
-    onStepError,
+    // onStepSuccess,
+    // onStepError,
     onSuccess,
-    onError,
+    //onError,
     primaryColor = "#4caf50",
     finishButtonTitle = "Finish",
 }) => {
@@ -41,20 +41,20 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [stepSuccess, setStepSuccess] = useState(false);
 
-    const handleStepSuccess = (res: any) => {
-        setStepSuccess(true); // Enable "Next" if the step requires success
-        if (onStepSuccess) onStepSuccess(stepIndex, res);
+    // const handleStepSuccess = (res: any) => {
+    //     setStepSuccess(true); // Enable "Next" if the step requires success
+    //     if (onStepSuccess) onStepSuccess(stepIndex, res);
 
-        if (stepIndex === steps.length - 1 && onSuccess) {
-            onSuccess();
-        }
-    };
+    //     if (stepIndex === steps.length - 1 && onSuccess) {
+    //         onSuccess();
+    //     }
+    // };
 
-    const handleStepError = (error: any) => {
-        setStepSuccess(false); // Ensure that "Next" is blocked in case of error
-        if (onStepError) onStepError(stepIndex, error);
-        if (onError) onError(error);
-    };
+    // const handleStepError = (error: any) => {
+    //     setStepSuccess(false); // Ensure that "Next" is blocked in case of error
+    //     if (onStepError) onStepError(stepIndex, error);
+    //     if (onError) onError(error);
+    // };
 
     const currentStep = steps[stepIndex];
 
@@ -70,7 +70,7 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({
                         alignItems: "center",
 
                     }}>
-                        {steps.map((step, index) => (
+                        {steps.map((_step, index) => (
                             <div
                                 key={index}
                                 style={{
@@ -101,19 +101,20 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({
                     <DynamicForm
                         fields={currentStep?.fields}
                         sendButtonTitle={currentStep?.sendButtonTitle || "Next"}
-                        submitEndpoint={currentStep?.endpoint}
+                        //savePath={currentStep?.path}
+                        submitPath={currentStep?.path}
                         onSubmit={() => {
                             setIsSubmitting(true);
                             setStepSuccess(false); // Block "Next" until the submission resolves
                         }}
-                        onSuccess={(res) => {
-                            setIsSubmitting(false);
-                            handleStepSuccess(res);
-                        }}
-                        onError={(error) => {
-                            setIsSubmitting(false);
-                            handleStepError(error);
-                        }}
+                        // onSuccess={(res) => {
+                        //     setIsSubmitting(false);
+                        //     handleStepSuccess(res);
+                        // }}
+                        // onError={(error) => {
+                        //     setIsSubmitting(false);
+                        //     handleStepError(error);
+                        // }}
                         sendButtonStyle={{
                             width: '100%',
                         }}

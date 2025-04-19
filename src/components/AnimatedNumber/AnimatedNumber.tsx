@@ -27,7 +27,7 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
 
     useEffect(() => {
         const startTime = performance.now();
-        const endTime = startTime + duration;
+        // const endTime = startTime + duration;
 
         const animate = (currentTime: number) => {
             const progress = Math.min((currentTime - startTime) / duration, 1); // Ensure progress is between 0 and 1

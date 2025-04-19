@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import SortableElement from './SortableElement';
 import { useDragHandleContext } from './DragHandleContext';
+import NoContent from '../NoContent/NoContent';
+import { themeColors } from '../../config';
 
 interface SortableContentProps {
     items: any[];
     onSortEnd: (newOrder: any[]) => void;
     renderItem: (item: any, index: number) => React.ReactNode;
     useDragHandle: boolean;
+    noContentText?: string;
+    noContentIcon?: string;
 }
 
 const SortableContent: React.FC<SortableContentProps> = ({
@@ -14,6 +18,8 @@ const SortableContent: React.FC<SortableContentProps> = ({
     onSortEnd,
     renderItem,
     useDragHandle,
+    noContentText = 'No content available',
+    noContentIcon = 'records',
 }) => {
     const { isPressingDragHandle } = useDragHandleContext();
     const [draggingIndex, setDraggingIndex] = useState<number | null>(null); // Estado para manejar el índice arrastrado
@@ -44,6 +50,12 @@ const SortableContent: React.FC<SortableContentProps> = ({
 
     return (
         <div>
+            {
+                items.length > 0 ? <></> : <div style={{}}>
+
+                    <NoContent icon={noContentIcon} message={noContentText} iconColor={themeColors.textTint} />
+                </div>
+            }
             {items.map((item, index) => (
                 <SortableElement
                     key={index}

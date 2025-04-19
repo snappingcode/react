@@ -59,7 +59,8 @@ const AlertMessage: React.FC<AlertMessageProps> = ({
         >
             {/* Icon */}
             {icon && <Icon name={icon} style={{
-                marginRight: 10
+                marginRight: 10,
+                ...iconStyle
             }} />}
 
             {/* Message */}

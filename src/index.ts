@@ -3,11 +3,13 @@
 // Buttons
 export { default as Button } from "./components/buttons/Button/Button";
 export { default as IconButton } from "./components/buttons/IconButton/IconButton";
-export { default as LockToggleButton } from "./components/buttons/LockToggleButton/LockToggleButton";
-export { default as PlayPauseButton } from "./components/buttons/PlayPauseButton/PlayPauseButton";
+export { default as IconToggleButton } from "./components/buttons/IconToggleButton/IconToggleButton";
 export { default as ActionsMenuButton } from "./components/buttons/ActionsMenuButton/ActionsMenuButton";
 export { default as CartButton } from "./components/buttons/CartButton/CartButton";
 export { default as CopyButton } from "./components/buttons/CopyButton/CopyButton";
+export { default as ActionButton } from "./components/buttons/ActionButton/ActionButton";
+export { default as ActionIconButton } from "./components/buttons/ActionIconButton/ActionIconButton";
+
 // Fields
 export { default as AutocompleteField } from "./components/fields/AutocompleteField/AutocompleteField";
 export { default as CheckboxField } from "./components/fields/CheckboxField/CheckboxField";
