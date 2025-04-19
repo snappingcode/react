@@ -30,7 +30,7 @@ The following table lists the components included in this package, along with li
 |----------------------|-------------------------------------------------------|--------------------------------------------------------|
 | **DynamicForm**      | [Props](https://github.com/snapping/react/docs/DynamicForm.md)     | [Guide](https://github.com/snapping/react/docs/DynamicFormGuide.md)     |
 | **DynamicIcon**      | [Props](https://github.com/snapping/react/docs/DynamicIcon.md)     | [Guide](https://github.com/snapping/react/docs/DynamicIconGuide.md)     |
-| **Header**           | [Props](https://github.com/snapping/react/docs/Header.md)          | [Guide](https://github.com/snapping/react/docs/HeaderGuide.md)          |
+| **Header**           | [Props](https://github.com/snappingcode/react/blob/main/docs/Header.md)          | [Guide](https://github.com/snappingcode/react/blob/main/docs/HeaderGuide.md)          |
 | **Popover**          | [Props](https://github.com/snapping/react/docs/Popover.md)         | [Guide](https://github.com/snapping/react/docs/PopoverGuide.md)         |
 | **SideMenu**         | [Props](https://github.com/snapping/react/docs/SideMenu.md)        | [Guide](https://github.com/snapping/react/docs/SideMenuGuide.md)        |
 | **Toast**            | [Props](https://github.com/snapping/react/docs/Toast.md)           | [Guide](https://github.com/snapping/react/docs/ToastGuide.md)           |
