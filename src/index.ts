@@ -68,6 +68,8 @@ export { default as Counter } from "./components/Counter/Counter";
 export { default as StackedThumbnails } from "./components/StackedThumbnails/StackedThumbnails";
 export { default as TypingEffect } from "./components/TypingEffect/TypingEffect";
 export { default as ButtonGroup } from "./components/ButtonGroup/ButtonGroup";
+export { default as MultiStepContent } from "./components/MultiStepContent/MultiStepContent";
+export { default as DigitalArchive } from "./components/DigitalArchive/DigitalArchive";
 // Cards
 
 // Modals

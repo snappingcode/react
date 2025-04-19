@@ -4,7 +4,6 @@ import Paper from '../Paper/Paper';
 import DynamicForm from '../DynamicForm/DynamicForm';
 import DynamicList from '../DynamicList/DynamicList';
 import DigitalArchive from '../DigitalArchive/DigitalArchive';
-
 import FormModal from '../modals/FormModal/FormModal';
 import MultiStepContent from '../MultiStepContent/MultiStepContent';
 import SearchBar from '../SearchBar/SearchBar';
