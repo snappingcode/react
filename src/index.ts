@@ -67,7 +67,7 @@ export { default as ActiveFilters } from "./components/ActiveFilters/ActiveFilte
 export { default as Counter } from "./components/Counter/Counter";
 export { default as StackedThumbnails } from "./components/StackedThumbnails/StackedThumbnails";
 export { default as TypingEffect } from "./components/TypingEffect/TypingEffect";
-
+export { default as ButtonGroup } from "./components/ButtonGroup/ButtonGroup";
 // Cards
 
 // Modals
